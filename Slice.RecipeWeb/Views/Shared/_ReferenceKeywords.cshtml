@@ -1,0 +1,18 @@
+﻿@using Slice.Web.Models
+@using Slice.Data
+@using Slice.RecipeWeb.Controllers
+@model ReferenceKeywordsViewModel
+
+<p class="keywords">
+  <strong>Keywords: </strong>
+  @if (Model.KeywordList.Count > 0)
+  {
+    for (int index = 0; index < Model.KeywordList.Count - 1; index++)
+    {
+      ReferenceKeywordInfoDto item = Model.KeywordList[index];
+    <span>@Html.ActionLink(item.KeywordName, RecipeController.KeywordAction, RecipeController.ControllerName, new { keyword = item.KeywordSlug }, new { }),</span>
+    }
+    ReferenceKeywordInfoDto lastItem = Model.KeywordList[Model.KeywordList.Count - 1];
+    <span>@Html.ActionLink(lastItem.KeywordName, RecipeController.KeywordAction, RecipeController.ControllerName, new { keyword = lastItem.KeywordSlug }, new { })</span>
+  }
+</p>

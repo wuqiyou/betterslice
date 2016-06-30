@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A387BC6-F7AD-4840-B72B-9FE1CB2D87B5}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slice.Web</RootNamespace>
+    <AssemblyName>Slice.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework.Component, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Component.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Data, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Globalization, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Security, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Service, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Unity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.UoW, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.UoW.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Validation, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d1f8213984e0de08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\Framework.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Library\Unity\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Unity\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Unity\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.ServiceLocatorAdapter">
+      <HintPath>..\Library\Unity\Microsoft.Practices.Unity.ServiceLocatorAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Library\Packages\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Component, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5637c19aac3788f8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\SubjectEngine.Component.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Configuration">
+      <HintPath>..\Library\Component\SubjectEngine.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5637c19aac3788f8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\SubjectEngine.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5637c19aac3788f8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\SubjectEngine.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\Library\Packages\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\Library\Packages\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\HtmlHelperExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContentBaseController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\NavigateController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\entypo.eot" />
+    <Content Include="Content\fonts\entypo.svg" />
+    <Content Include="Content\fonts\entypo.ttf" />
+    <Content Include="Content\fonts\entypo.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.svg" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
+    <Content Include="Content\fonts\titlinggothicfbnormallight-webfont.eot" />
+    <Content Include="Content\fonts\titlinggothicfbnormallight-webfont.svg" />
+    <Content Include="Content\fonts\titlinggothicfbnormallight-webfont.ttf" />
+    <Content Include="Content\fonts\titlinggothicfbnormallight-webfont.woff" />
+    <Content Include="Content\fonts\titlinggothicfbnormalregula-webfont.eot" />
+    <Content Include="Content\fonts\titlinggothicfbnormalregula-webfont.svg" />
+    <Content Include="Content\fonts\titlinggothicfbnormalregula-webfont.ttf" />
+    <Content Include="Content\fonts\titlinggothicfbnormalregula-webfont.woff" />
+    <Content Include="Content\images\bgGrad.gif" />
+    <Content Include="Content\images\bg_play_pause.png" />
+    <Content Include="Content\images\headerBG.png" />
+    <Content Include="Content\images\logo150x70.png" />
+    <Content Include="Content\images\logo50x30.png" />
+    <Content Include="Content\images\logo90x67.png" />
+    <Content Include="Content\images\navBG.png" />
+    <Content Include="Content\images\size300x250-2.jpg" />
+    <Content Include="Content\images\size300x250-3.jpg" />
+    <Content Include="Content\images\size300x250-4.jpg" />
+    <Content Include="Content\images\size300x250.jpg" />
+    <Content Include="Content\images\size320x50.jpg" />
+    <Content Include="Content\images\size728x90-2.jpg" />
+    <Content Include="Content\images\size728x90.jpg" />
+    <Content Include="Content\images\stripes.png" />
+    <Content Include="Content\objects\pagination.css" />
+    <Content Include="Content\objects\photoGallery.css" />
+    <Content Include="Content\objects\flexslider.css" />
+    <Content Include="Content\objects\rotator.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\objects\ads.js" />
+    <Content Include="Scripts\objects\global.js" />
+    <Content Include="Scripts\objects\header.js" />
+    <Content Include="Scripts\objects\photoGallery.js" />
+    <Content Include="Scripts\objects\rotator.js" />
+    <Content Include="Scripts\objects\timezone.js" />
+    <Content Include="Scripts\pages\contactus.js" />
+    <Content Include="Scripts\pages\review.js" />
+    <Content Include="Scripts\pages\searchbox.js" />
+    <Content Include="Scripts\pages\shows-allShows.js" />
+    <Content Include="Scripts\pages\shows-bpsmall-navigation.js" />
+    <Content Include="Scripts\vendor\enquire.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\vendor\jquery.flexslider-min.js" />
+    <Content Include="Scripts\vendor\jquery.flexslider.js" />
+    <Content Include="Scripts\vendor\jstz.js" />
+    <Content Include="Scripts\vendor\media.match.min.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\vendor\omniture.js" />
+    <Content Include="Scripts\vendor\respond.custom.js" />
+    <Content Include="Scripts\vendor\responsive-nav.min.js" />
+    <Content Include="Scripts\vendor\riloadr.jquery.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Ad.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\_AdSense.cshtml" />
+    <Content Include="Views\Shared\_AdManager.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_LayoutError.cshtml" />
+    <Content Include="Views\Shared\_Metadata.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Slice.Core\Slice.Core.csproj">
+      <Project>{9dbeed37-a25b-4355-a44e-d017a00a7ba6}</Project>
+      <Name>Slice.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.DataConverter\Slice.DataConverter.csproj">
+      <Project>{be3a3410-0450-4776-803d-ab6fd50b786d}</Project>
+      <Name>Slice.DataConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Data\Slice.Data.csproj">
+      <Project>{f5b856bc-950e-4723-85a2-1169429159d5}</Project>
+      <Name>Slice.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Registry\Slice.Registry.csproj">
+      <Project>{07c0baeb-f066-4408-b073-9c233a87853d}</Project>
+      <Name>Slice.Registry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Service.Contract\Slice.Service.Contract.csproj">
+      <Project>{7c53d79a-37a7-47ed-beaa-6c46e32ea07a}</Project>
+      <Name>Slice.Service.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Service\Slice.Service.csproj">
+      <Project>{5ee9a064-a29b-4807-b28e-858fc97ed3f0}</Project>
+      <Name>Slice.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Web.Common\Slice.Web.Common.csproj">
+      <Project>{f6f78d4b-6821-4fd7-be3b-fd864a8793af}</Project>
+      <Name>Slice.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Web.Models\Slice.Web.Models.csproj">
+      <Project>{878c3229-a894-49f2-b604-6b0e4a5400f2}</Project>
+      <Name>Slice.Web.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Default\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Grid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Duc.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_MultiLanguage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Widget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\HeroImage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\BlogDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\ListViewWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\SubjectDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\CardViewWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\RecipeDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\YouTubeVideo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Comment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_SubsiteNav.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widgets\FeaturedContent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\flexslider-icon.eot" />
+    <Content Include="Content\fonts\flexslider-icon.svg" />
+    <Content Include="Content\fonts\flexslider-icon.ttf" />
+    <Content Include="Content\fonts\flexslider-icon.woff" />
+    <Content Include="NLog.config" />
+    <None Include="Properties\PublishProfiles\local publish.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
+    <None Include="Properties\PublishProfiles\testSite.pubxml" />
+    <Content Include="Views\Widgets\PhotoGallery.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Widgets\RotatorWidget.cshtml" />
+    <Content Include="Views\Widgets\PhotoList.cshtml" />
+    <Content Include="Views\Widgets\FeaturedContent2nd.cshtml" />
+    <Content Include="Views\Shared\_MultiLocation.cshtml" />
+    <Content Include="Views\Shared\_TrafficTracking.cshtml" />
+    <Content Include="Views\Shared\_Pagination.cshtml" />
+    <Content Include="Views\Shared\_Review.cshtml" />
+    <Content Include="Views\Review\ReviewList.cshtml" />
+    <Content Include="Views\Widgets\ContactUs.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Shared\_SearchForm.cshtml" />
+    <Content Include="Views\Shared\_Zone.cshtml" />
+    <Content Include="Views\Widgets\RelatedContent.cshtml" />
+    <Content Include="Views\Recipe\Keyword.cshtml" />
+    <Content Include="Views\Shared\_CardView.cshtml" />
+    <Content Include="Views\Recipe\Category.cshtml" />
+    <Content Include="Views\Shared\_ReferenceKeywords.cshtml" />
+    <Content Include="Views\Navigate\MainMenu.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,10 @@
+﻿@using Slice.Web.Models.Widgets
+@model RelatedContent
+
+@if (Model.HasValue)
+{
+  <div class="featuredcontent">
+    <h3>@Model.Title</h3>
+    @Html.Partial("_CardView", Model.CardViewViewModel)
+  </div>
+}

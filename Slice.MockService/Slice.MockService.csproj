@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3C2B400-05AC-4FA1-963B-5C3EE2A63020}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slice.MockService</RootNamespace>
+    <AssemblyName>Slice.MockService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework.Component">
+      <HintPath>..\Library\Component\Framework.Component.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Core">
+      <HintPath>..\Library\Component\Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Data">
+      <HintPath>..\Library\Component\Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Core">
+      <HintPath>..\Library\Component\SubjectEngine.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Data">
+      <HintPath>..\Library\Component\SubjectEngine.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="DataProvider\BlockDataProvider.cs" />
+    <Compile Include="DataProvider\CategoryDataProvider.cs" />
+    <Compile Include="DataProvider\DucDataProvider.cs" />
+    <Compile Include="DataProvider\KeywordDataProvider.cs" />
+    <Compile Include="DataProvider\ReferenceDataProvider.cs" />
+    <Compile Include="DataProvider\TemplateDataProvider.cs" />
+    <Compile Include="GeneralService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceService.cs" />
+    <Compile Include="ReviewService.cs" />
+    <Compile Include="SubsiteService.cs" />
+    <Compile Include="TemplateService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Slice.Core\Slice.Core.csproj">
+      <Project>{9dbeed37-a25b-4355-a44e-d017a00a7ba6}</Project>
+      <Name>Slice.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Data\Slice.Data.csproj">
+      <Project>{f5b856bc-950e-4723-85a2-1169429159d5}</Project>
+      <Name>Slice.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Service.Contract\Slice.Service.Contract.csproj">
+      <Project>{7c53d79a-37a7-47ed-beaa-6c46e32ea07a}</Project>
+      <Name>Slice.Service.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

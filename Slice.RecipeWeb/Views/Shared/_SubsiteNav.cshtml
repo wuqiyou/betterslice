@@ -1,0 +1,18 @@
+﻿@model IList<Slice.Web.Models.MenuItem>
+<nav id="subSiteMenu">
+    <ul class="subnav">
+        @foreach (var item in Model)
+        {
+            <li style="width: @item.WidthPercent%;">
+                @if (item.IsCurrent)
+                {
+                    <a class="current" href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+                }
+                else
+                {
+                    <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+                }
+            </li>
+        }
+    </ul>
+</nav>

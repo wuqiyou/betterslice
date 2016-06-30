@@ -1,0 +1,21 @@
+﻿@using Slice.Web.Models
+@model CardViewViewModel
+
+<ul class="cardview">
+  @if (Model.Items != null)
+  {
+    foreach (var subject in Model.Items)
+    {
+    <li>
+      <a href="@Html.LocalizeHref(@subject.UrlAlias)">
+        <img src="@Html.FullImageUrl(@subject.ImageUrl)" alt="@subject.Title" title="@subject.Title" />
+      </a>
+      <h5><a href="@Html.LocalizeHref(@subject.UrlAlias)">@subject.Title</a></h5>
+    </li>
+    }
+  }
+</ul>
+@if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
+{
+  Html.RenderPartial("_Pagination", Model.PaginationViewModel);
+}

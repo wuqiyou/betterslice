@@ -1,0 +1,33 @@
+﻿@using Slice.Web.Controllers
+@using Slice.Web.Models
+@model ReviewViewModel
+<div id="reviewBlock">
+    <div class="reviewForm">
+        @using (Ajax.BeginForm(ReviewController.SaveReviewAction, ReviewController.ControllerName,
+            new AjaxOptions
+            {
+                UpdateTargetId = "reviewList",
+                OnSuccess = "OnSuccess"
+            }))
+        {
+            <div class="reviewForm-row">
+                Comments welcome 欢迎评论:
+            </div>
+            <div class="reviewForm-row">
+                @Html.TextArea("Content", new { rows = 6, @class = "reviewForm-content" })
+            </div>
+            <div class="reviewForm-row">
+                <input type="submit" value="Submit 发布" class="reviewForm-submit" />
+                <div class="reviewForm-name">
+                    Name 网名 *:
+                    @Html.EditorFor(x => x.Name)
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+            </div>
+            @Html.Hidden("refId", Model.RefId)
+        }
+    </div>
+    <div id="reviewList" class="reviewList">
+        @Html.Action(ReviewController.ReviewListAction, ReviewController.ControllerName, new { refId = Model.RefId })
+    </div>
+</div>

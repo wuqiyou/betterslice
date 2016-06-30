@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{878C3229-A894-49F2-B604-6B0E4A5400F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slice.Web.Models</RootNamespace>
+    <AssemblyName>Slice.Web.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework.Core">
+      <HintPath>..\Library\Component\Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Library\Unity\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Core, Version=1.0.2.40959, Culture=neutral, PublicKeyToken=5637c19aac3788f8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Component\SubjectEngine.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DynamicWidgetViewModel.cs" />
+    <Compile Include="Entity\Cast.cs" />
+    <Compile Include="Entity\Article.cs" />
+    <Compile Include="Entity\Gallery.cs" />
+    <Compile Include="Entity\Photo.cs" />
+    <Compile Include="Entity\Recipe.cs" />
+    <Compile Include="Entity\RecipeIngredient.cs" />
+    <Compile Include="Entity\RecipeInstruction.cs" />
+    <Compile Include="Entity\RecipeRating.cs" />
+    <Compile Include="Entity\Rotator.cs" />
+    <Compile Include="Entity\RotatorItem.cs" />
+    <Compile Include="PageViewModelBase.cs" />
+    <Compile Include="Shared\DucViewModel.cs" />
+    <Compile Include="Shared\GridViewModel.cs" />
+    <Compile Include="Shared\PaginationViewModel.cs" />
+    <Compile Include="Shared\SocialShareBarViewModel.cs" />
+    <Compile Include="Shared\WidgetViewModel.cs" />
+    <Compile Include="CategoryPageViewModel.cs" />
+    <Compile Include="KeywordPageViewModel.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="NavigationModel.cs" />
+    <Compile Include="PageViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewViewModel.cs" />
+    <Compile Include="SearchPageViewModel.cs" />
+    <Compile Include="Shared\AdManagerModel.cs" />
+    <Compile Include="Shared\AdModel.cs" />
+    <Compile Include="Shared\CardViewViewModel.cs" />
+    <Compile Include="Shared\AssetModel.cs" />
+    <Compile Include="Shared\FooterModel.cs" />
+    <Compile Include="Shared\MetadataModel.cs" />
+    <Compile Include="Shared\ReferenceKeywordsViewModel.cs" />
+    <Compile Include="SubsiteHeaderViewModel.cs" />
+    <Compile Include="Widgets\BlogDetail.cs" />
+    <Compile Include="Widgets\CardViewWidget.cs" />
+    <Compile Include="Widgets\CastGroup.cs" />
+    <Compile Include="Widgets\ContactUs.cs" />
+    <Compile Include="Widgets\FeaturedContent.cs" />
+    <Compile Include="Widgets\FeaturedContent2nd.cs" />
+    <Compile Include="Widgets\HeroImage.cs" />
+    <Compile Include="Widgets\IMetadataProvider.cs" />
+    <Compile Include="Widgets\ListViewWidget.cs" />
+    <Compile Include="Widgets\PhotoGallery.cs" />
+    <Compile Include="Widgets\PhotoList.cs" />
+    <Compile Include="Widgets\RecipeDetail.cs" />
+    <Compile Include="Widgets\RelatedContent.cs" />
+    <Compile Include="Widgets\RotatorWidget.cs" />
+    <Compile Include="Widgets\SubjectDetail.cs" />
+    <Compile Include="Widgets\YouTubeVideo.cs" />
+    <Compile Include="Shared\ZoneViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Slice.Core\Slice.Core.csproj">
+      <Project>{9dbeed37-a25b-4355-a44e-d017a00a7ba6}</Project>
+      <Name>Slice.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Data\Slice.Data.csproj">
+      <Project>{f5b856bc-950e-4723-85a2-1169429159d5}</Project>
+      <Name>Slice.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Service.Contract\Slice.Service.Contract.csproj">
+      <Project>{7c53d79a-37a7-47ed-beaa-6c46e32ea07a}</Project>
+      <Name>Slice.Service.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Web.Common\Slice.Web.Common.csproj">
+      <Project>{f6f78d4b-6821-4fd7-be3b-fd864a8793af}</Project>
+      <Name>Slice.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

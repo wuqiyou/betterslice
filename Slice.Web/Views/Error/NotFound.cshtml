@@ -1,0 +1,10 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "NotFound";
+    Layout = "~/Views/Shared/_LayoutError.cshtml";
+}
+
+<h2>NotFound</h2>
+
+<h4>@Model.ControllerName/@Model.ActionName</h4>
+<h4>@Model.Exception</h4>

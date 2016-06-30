@@ -1,0 +1,11 @@
+﻿@using Slice.Web.Models.Widgets
+@model BlogDetail
+<div id="blog-detail" class="subjectDetail">
+  <h1>@Model.Article.Title</h1>
+  <h5>@Model.Article.Subtitle</h5>
+  @if (!string.IsNullOrEmpty(Model.Article.ImageUrl))
+  {
+    <img src="@Html.FullImageUrl(Model.Article.ImageUrl)" />
+  }
+  <div>@Html.Raw(Model.Article.Content)</div>
+</div>

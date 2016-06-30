@@ -1,0 +1,9 @@
+﻿@using Slice.Web.Models.Widgets
+@model HeroImage
+<div id="heroImage">
+    <a href="@Html.LocalizeHref(Model.Href)">
+        <img src="@Html.FullImageUrl(Model.ImageUrl)" alt="@Model.Title" title="@Model.Title"/>
+    </a>
+    <h2><a href="@Html.LocalizeHref(Model.Href)">@Model.Title</a></h2>
+    <div>@Html.Raw(@Model.Description)</div>
+</div>

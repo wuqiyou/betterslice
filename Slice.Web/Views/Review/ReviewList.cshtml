@@ -1,0 +1,13 @@
+﻿@using Slice.Data;
+@model IEnumerable<ReviewDto>
+@{
+  Layout = null;
+}
+<div class="reviewList-title">Comments (@Model.Count())</div>
+@foreach (ReviewDto item in Model)
+{
+  <div class="reviewList-item">
+    <p><strong>@item.IssuedBy</strong> [@item.IssuedTime.ToShortDateString()]</p>
+    <p class="reviewContent">@item.Content</p>
+  </div>
+}

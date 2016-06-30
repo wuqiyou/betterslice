@@ -1,0 +1,17 @@
+﻿@using Slice.Data
+@model Slice.Web.Models.MetadataModel
+
+<meta name="description" content="@Model.Description" />
+@if (!string.IsNullOrWhiteSpace(Model.Keywords))
+{
+    <meta name="keywords" content="@Model.Keywords" />
+}
+<meta property="og:url" content="@Html.AbsoluteFullUrl(Model.OGUrl)" />
+@if (!string.IsNullOrWhiteSpace(Model.OGImage))
+{
+    <meta property="og:image" content="@Html.AbsoluteFullImageUrl(Model.OGImage)" />
+}
+@foreach (MetadataDto item in Model.MetaList)
+{
+    <meta @item.MetaType="@item.MetaKey" content="@item.MetaContent" />
+}

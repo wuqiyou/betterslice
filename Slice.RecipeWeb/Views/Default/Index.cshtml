@@ -1,0 +1,84 @@
+﻿@using SubjectEngine.Core
+@using Slice.Core
+@using Slice.Web.Models
+@using Slice.Data
+@using Slice.RecipeWeb.Controllers
+@model PageViewModel
+
+@if (Model.IsSubsite)
+{
+  @section SubsiteHead {
+    <div id="subSiteHeader" style="background-color: @Model.SubsiteHeader.SubsiteBackColor;">
+      <div id="subSiteLogo">
+        <h2 style="color: @Model.SubsiteHeader.SubsiteTitleColor;">@Model.SubsiteHeader.SubsiteTitle</h2>
+      </div>
+      <div id="contact">
+        @if (!string.IsNullOrEmpty(@Model.SubsiteHeader.Address))
+        {
+          <div><em>Addr: </em>@Model.SubsiteHeader.Address</div>
+        }
+        @if (!string.IsNullOrEmpty(@Model.SubsiteHeader.Phone))
+        {
+          <span><em>Tel: </em>@Model.SubsiteHeader.Phone</span>
+        }
+        @if (!string.IsNullOrEmpty(@Model.SubsiteHeader.Fax))
+        {
+          <span><em>Fax: </em>@Model.SubsiteHeader.Fax</span>
+        }
+        @if (!string.IsNullOrEmpty(@Model.SubsiteHeader.Website))
+        {
+          <div><em>Website: </em><a target="_blank" href="@Model.SubsiteHeader.Website">@Model.SubsiteHeader.Website</a></div>
+        }
+        @if (!string.IsNullOrEmpty(@Model.SubsiteHeader.Email))
+        {
+          <div><em>Email: </em><a href="mailto://@Model.SubsiteHeader.Email">@Model.SubsiteHeader.Email</a></div>
+        }
+      </div>
+    </div>
+    @if (Model.SubsiteHeader.SubsiteMenus != null)
+    {
+      Html.RenderPartial("_SubsiteNav", Model.SubsiteHeader.SubsiteMenus);
+    }
+  }
+}
+@if (!Model.ReferenceInfo.HideTitle)
+{
+  if (Model.SubsiteHeader != null)
+  {
+  <h2>@Model.PageTitle</h2>
+  }
+  else
+  {
+  <h1>@Model.PageTitle</h1>
+  }
+}
+@section FullWidthZone {
+  @foreach (ZoneViewModel zone in Model.Zones.OrderBy(o => o.Row))
+  {
+    if (object.Equals(zone.Style, CmsRegister.FULL_WIDTH_STYLE))
+    {
+      Html.RenderPartial("_Zone", zone);
+    }
+  }
+}
+@foreach (ZoneViewModel zone in Model.Zones.OrderBy(o => o.Row))
+{
+  if (!object.Equals(zone.Style, CmsRegister.FULL_WIDTH_STYLE) && !object.Equals(zone.Style, CmsRegister.RIGHT_RAIL_STYLE))
+  {
+    Html.RenderPartial("_Zone", zone);
+  }
+}
+@section RightRail {
+  @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.BigBox1, CssClass = "ad-labeled bigbox" })
+  @foreach (ZoneViewModel zone in Model.Zones.OrderBy(o => o.Row))
+  {
+    if (object.Equals(zone.Style, CmsRegister.RIGHT_RAIL_STYLE))
+    {
+      Html.RenderPartial("_Zone", zone);
+    }
+  }
+}
+@if (Model.EnableReview)
+{
+  Html.RenderPartial("_Comment", Model);
+}

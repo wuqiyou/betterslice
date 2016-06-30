@@ -1,0 +1,106 @@
+﻿@using Slice.Web.Models.Widgets
+@model PhotoGallery
+
+@if (Model.HasValue)
+{
+    <div id="photo-gallery" class="photo-gallery">
+        <h1>@Model.Gallery.Title</h1>
+        <h5>@Model.Gallery.Subtitle</h5>
+        <p>@Model.Gallery.Abstract</p>
+        <div class="gallery-wrapper">
+            <div class="flexslider">
+                <ul class="slides">
+                    @foreach (var item in Model.Gallery.Items)
+                    {
+                        string classString = item.Index == 0 ? "first-slide" : string.Empty;
+                        <li class="@classString" data-key="@item.Index" data-index="@item.Index" data-title="@item.Title">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <div class="wrapper">
+                                        <img src="@Html.FullImageUrl(item.ImageUrl)" />
+                                        <small>@item.Credit</small>
+                                        <a class="gallery-nav prev">
+                                            <i class="icon-arrow-left"></i>
+                                        </a>
+                                        <a class="gallery-nav next">
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slide-info">
+                                    <div class="slide-index">
+                                        <a class="gallery-nav prev">
+                                            <i class="icon-arrow-left"></i>
+                                        </a>
+                                        <span class="index">
+                                            <strong>@(item.Index + 1)</strong> of <strong>@(Model.Gallery.Items.Count)</strong>
+                                        </span>
+                                        <a class="gallery-nav next">
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <h2>
+                                        @item.Title
+                                    </h2>
+                                    <div class="description">
+                                        @Html.Raw(item.Abstract)
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    @*-- LAST SLIDE --*@
+                    @*                    <li class="last-slide"  data-key="last-slide" data-index="@Model.Gallery.Items.Count">
+                        <div class="last-slide-content">
+                            <a class="start-over">start over</a>
+                        </div>
+                    </li>*@
+                </ul>
+            </div>
+        </div>
+        @if (Model.Gallery.RelatedGalleries.Count > 0)
+        {
+            <div class="more-galleries">
+                <h4>More Galleries</h4>
+                <ul>
+                    @foreach (var item in Model.Gallery.RelatedGalleries)
+                    {
+                        <li>
+                            <a href="@Html.LocalizeHref(@item.UrlAlias)">
+                                <img src="@Html.FullImageUrl(item.ImageUrl)" />
+                            </a>
+                            <h5>
+                                <a href="@Html.LocalizeHref(@item.UrlAlias)">
+                                    @item.Title
+                                </a>
+                            </h5>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            // The slide we should show on load
+            var slideStartIndex = 0
+
+            // get the key of the slide to show from the URL
+            var slideKey = location.hash.replace("#!", "");
+
+            if (slideKey != "") {
+                // find the index of the slide with matching data-key attribute
+                var matchingSlideIndex = parseInt($('.flexslider .slides > li[data-key="' + slideKey + '"]').attr("data-index"));
+
+                // if matchingSlideIndex is a number then use that as the start index
+                if (!isNaN(matchingSlideIndex)) {
+                    slideStartIndex = matchingSlideIndex;
+                }
+            }
+
+            $(".photo-gallery").photoGallery({
+                index: slideStartIndex
+            });
+        });
+    </script>
+}

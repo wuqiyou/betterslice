@@ -1,0 +1,18 @@
+﻿@using Slice.Web.Models.Widgets
+@model PhotoList
+
+@if (Model.Items.Count > 0)
+{
+  <div id="photolist">
+    <h3>@Model.Title</h3>
+    <ul class="cardview">
+      @foreach (var subject in Model.Items)
+      {
+        <li>
+          <img src="@Html.FullImageUrl(@subject.ImageUrl)" alt="@subject.Title" title="@subject.Title" />
+          <h5>@subject.Title</h5>
+        </li>
+      }
+    </ul>
+  </div>
+}

@@ -1,0 +1,86 @@
+﻿@using Slice.Web.Models.Entity
+@model Slice.Web.Models.Widgets.RotatorWidget
+
+@helper Info(RotatorItem item)
+{
+    <h3>
+        <a href="@Html.LocalizeHref(item.TargetUrl)">
+            @item.Title
+        </a>
+    </h3>
+    <div>
+        @Html.Raw(item.Abstract)
+    </div>
+}
+
+@if (Model.HasValue)
+{
+    <div class="rotator" id="@Model.RotatorUniqueId">
+        <div class="flexslider">
+            <ul class="slides">
+                @for (int i = 0; i < Model.RotatorEntity.Items.Count; i++)
+                {
+                    RotatorItem item = Model.RotatorEntity.Items[i];
+                    if (i == 0)
+                    {
+                    @:<li class="flex-active-slide">
+                    }
+                    else
+                    {
+                    @:<li>
+}                  
+                            <div class="slide-wrapper">                                
+                                @*--- INFO TOP ---*@
+                                <div class="info info-top">
+                                    @Info(item)
+                                </div>
+                                @*--- IMAGE ---*@
+                                <div class="image">
+                                    <a href="@Html.LocalizeHref(item.TargetUrl)">
+                                        <img src="@Html.FullImageUrl(item.ImageUrl)" alt="@item.Title" />
+                                    </a>
+                                </div>
+                                @*--- INFO BOTTOM ---*@
+                                <div class="info info-bottom">
+                                    @Info(item)
+                                </div>
+                             </div>                          
+                        @:</li>
+                                                                                 }
+            </ul>
+            <a class="rotator-prev rotator-arrow">
+                <i class="icon-arrow-left"></i>
+            </a>
+            <a class="rotator-next rotator-arrow">
+                <i class="icon-arrow-right"></i>
+            </a>
+        </div>
+        <ol class="rotator-control">
+            @for (int k = 0; k < Model.RotatorEntity.Items.Count; k++)
+            {
+                if (k == 0)
+                {
+                @:<li class="flex-active">
+                }
+                else
+                {
+                @:<li>
+}
+                        <a>
+                            <span>
+                                @k
+                            </span>
+                        </a>
+                    @:</li>   
+                                                             }
+        </ol>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            $('#@Model.RotatorUniqueId\.rotator').rotator({
+                rotatorId: "@Model.RotatorUniqueId"
+            });
+        });
+    </script>
+}

@@ -1,0 +1,26 @@
+﻿@using Slice.Web.Models.Widgets
+@using Slice.RecipeWeb.Controllers
+@model ContactUs
+<div class="contactForm" id="contactBlock">
+    <form id="js-contactUsForm" data-action="@Url.Action(ContactController.SaveFormAction, ContactController.ControllerName)" method="post">
+        <p><strong>Email*:</strong></p>
+        @Html.EditorFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+        <p><strong>Name:</strong></p>
+        @Html.EditorFor(x => x.Name)
+        <p><strong>Content*:</strong></p>
+        @Html.TextArea("Content", new { rows = 6, @class = "contactForm-content" })
+        <p>
+            <input type="submit" value="Submit" class="contactForm-submit" />
+        </p>
+    </form>
+    <div id="js-messageContainer" class="is-hidden">
+        <p>@Model.SuccessfulMessage</p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var contactUsManager = new ContactUsManager({ formId: 'js-contactUsForm', messageContainerId: 'js-messageContainer' });
+        contactUsManager.init();
+    });
+</script>

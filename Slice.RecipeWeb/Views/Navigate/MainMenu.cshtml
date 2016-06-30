@@ -1,0 +1,42 @@
+﻿@model Slice.Web.Models.NavigationModel
+<nav id="nav">
+    <ul class="menu">
+        @foreach (var item in Model.MenuItems)
+        {
+            if (item.IsCurrent)
+            {
+            <li class="current">
+                <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+            </li>
+            }
+            else
+            {
+            <li>
+                <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+            </li>
+            }
+        }
+    </ul>
+</nav>
+@if (Model.SubMenus != null && Model.SubMenus.Count > 0)
+{
+    <nav id="submenuContainer" class="bp-mediumToExtraLarge">
+        <ul class="menu">
+            @foreach (var item in Model.SubMenus)
+            {
+                if (item.IsCurrent)
+                {
+                <li class="current">
+                    <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+                </li>
+                }
+                else
+                {                
+                <li>
+                    <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+                </li>
+                }
+            }
+        </ul>
+    </nav>
+}

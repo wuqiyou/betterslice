@@ -1,0 +1,66 @@
+﻿@using Slice.Web.Models.Widgets
+@using Slice.Web.Models.Entity
+@model RecipeDetail
+
+<div id="recipe" class="subjectDetail">
+  <div id="recipe-basic">
+    <img src="@Html.FullImageUrl(Model.Recipe.ImageUrl)" alt="@Model.Recipe.ImageText" title="@Model.Recipe.ImageText"/>
+    <h1>@Model.Recipe.Name</h1>
+    @if (!string.IsNullOrEmpty(Model.Recipe.Subtitle))
+    {
+      <h5>@Model.Recipe.Subtitle</h5>
+    }
+    <div class="timing-serving">
+      @if (Model.Recipe.TotalTimeMinutes.HasValue && Model.Recipe.TotalTimeMinutes.Value > 0)
+      {
+        <span><strong>TOTAL TIME </strong>@Model.Recipe.TotalTimeMinutes.Value Min</span>
+      }
+      @if (Model.Recipe.PrepareTimeMinutes.HasValue && Model.Recipe.PrepareTimeMinutes.Value > 0)
+      {
+        <span><strong>PREP </strong>@Model.Recipe.PrepareTimeMinutes.Value Min</span>
+      }
+      @if (Model.Recipe.Servings.HasValue && Model.Recipe.Servings.Value > 0)
+      {
+        <span><strong>SERVES </strong>@Model.Recipe.Servings.Value</span>
+      }
+    </div>
+    <div>@Html.Raw(Model.Recipe.Abstract)</div>
+  </div>
+  @{Html.RenderPartial("_ReferenceKeywords", Model.KeywordsViewModel);}
+  <div class="recipe-ingredients">
+    <h2>Ingredients</h2>
+    <ul class="recipe-ingredients-list">
+      @foreach (RecipeIngredient item in Model.Recipe.FirstHalfIngredients)
+      {
+        <li>
+          <p>@Html.Raw(item.Display)</p>
+        </li>
+      }
+    </ul>
+    <ul class="recipe-ingredients-list">
+      @foreach (RecipeIngredient item in Model.Recipe.SecondHalfIngredients)
+      {
+        <li>
+          <p>@Html.Raw(item.Display)</p>
+        </li>
+      }
+    </ul>
+  </div>
+  <div class="recipe-directions">
+    <h2>Directions</h2>
+    <ul class="recipe-directions-list">
+      @foreach (RecipeInstruction item in Model.Recipe.RecipeInstructions)
+      {
+        <li>
+          <p>@item.Description</p>
+        </li>
+      }
+    </ul>
+  </div>
+  @if (Model.Recipe.Tips.TrimHasValue())
+  {
+    <h3>Tips</h3>
+    <div>@Html.Raw(@Model.Recipe.Tips)</div>
+  }
+  @{Html.RenderPartial("_ReferenceKeywords", Model.KeywordsViewModel);}
+</div>

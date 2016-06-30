@@ -1,0 +1,44 @@
+﻿@using Slice.Data
+@using SubjectEngine.Core
+@using Slice.Web.Models
+@model GridViewModel
+
+<table style="width: 98%; border-top: 1px solid #d6d6d6;">
+    @if (Model.Grid.ViewMode == ViewMode.GridView)
+    {
+        <tr>
+            @foreach (var column in Model.Grid.Columns)
+            {
+                <th style="left: auto">@column.ColumnName</th>
+            }
+        </tr>
+    }
+    @foreach (GridRowDto row in Model.GridRows)
+    {
+        <tr>
+            @if (Model.Grid.ViewMode == ViewMode.GridView)
+            {
+                foreach (var column in Model.Grid.Columns)
+                {
+                    DucValueDto value = row.Cells.SingleOrDefault(o => object.Equals(o.DucId, column.Id));
+                <td>
+                    @{Html.RenderPartial("_Duc", new DucViewModel { DucId = column.Id, DucType = column.ColumnType, DucValue = value });}
+                </td>
+                }
+            }
+            else
+            {
+                <td>
+                    <div style="border-bottom: 1px solid #d6d6d6; padding: 0 1%; margin: 1% 0;">
+                        @foreach (var column in Model.Grid.Columns)
+                        {
+                            DucValueDto value = row.Cells.SingleOrDefault(o => object.Equals(o.DucId, column.Id));
+                            Html.RenderPartial("_Duc", new DucViewModel { DucId = column.Id, DucType = column.ColumnType, DucValue = value });
+                        }
+                    </div>
+                </td>
+            }
+            <td>
+        </tr>
+    }
+</table>

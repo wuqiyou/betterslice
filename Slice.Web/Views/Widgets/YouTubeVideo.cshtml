@@ -1,0 +1,12 @@
+﻿@using Slice.Web.Models.Widgets
+@model YouTubeVideo
+
+@if (!string.IsNullOrWhiteSpace(Model.VideoId))
+{
+    <div class="youtube-video">
+        <iframe id="ytplayer" style="width: 100%; height: 100%;"
+        src="http://www.youtube.com/embed/@Model.VideoId?autoplay=@Model.AutoPlay" frameborder="0"></iframe>
+    </div>
+    <h3>@Model.Title</h3>
+    <div>@Html.Raw(@Model.Description)</div>
+}

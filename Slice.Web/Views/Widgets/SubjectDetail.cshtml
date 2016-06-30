@@ -1,0 +1,21 @@
+﻿@using Slice.Web.Models.Widgets
+@model SubjectDetail
+
+<div class="subjectDetail">
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <h1>@Model.Title</h1>
+    }
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="@Html.FullImageUrl(Model.ImageUrl)" alt="@Model.ImageText" title="@Model.ImageText"/>
+    }
+    <div>@Html.Raw(@Model.Description)</div>
+    @if (!string.IsNullOrEmpty(Model.VideoId))
+    {
+        <div class="youtube-video">
+            <iframe id="ytplayer" style="width: 100%; height: 100%;"
+        src="http://www.youtube.com/embed/@Model.VideoId" frameborder="0"></iframe>
+        </div>
+    }
+</div>

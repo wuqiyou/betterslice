@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE3A3410-0450-4776-803D-AB6FD50B786D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slice.DataConverter</RootNamespace>
+    <AssemblyName>Slice.DataConverter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework.Core">
+      <HintPath>..\Library\Component\Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Data">
+      <HintPath>..\Library\Component\Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Core">
+      <HintPath>..\Library\Component\SubjectEngine.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SubjectEngine.Data">
+      <HintPath>..\Library\Component\SubjectEngine.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="BlockInfoConverter.cs" />
+    <Compile Include="KeywordConverter.cs" />
+    <Compile Include="ReferenceKeywordInfoConverter.cs" />
+    <Compile Include="ReviewConverter.cs" />
+    <Compile Include="SubsiteBriefConverter.cs" />
+    <Compile Include="LocationConverter.cs" />
+    <Compile Include="MetadataConverter.cs" />
+    <Compile Include="GridCellInfoConverter.cs" />
+    <Compile Include="GridColumnInfoConverter.cs" />
+    <Compile Include="GridInfoConverter.cs" />
+    <Compile Include="GridRowInfoConverter.cs" />
+    <Compile Include="CategoryConverter.cs" />
+    <Compile Include="LanguageConverter.cs" />
+    <Compile Include="MainMenuConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceInfoConverter.cs" />
+    <Compile Include="ReferenceCategoryInfoConverter.cs" />
+    <Compile Include="SubitemInfoConverter.cs" />
+    <Compile Include="SubitemValueInfoConverter.cs" />
+    <Compile Include="SubjectInfoConverter.cs" />
+    <Compile Include="SubsiteInfoConverter.cs" />
+    <Compile Include="SubsiteMenuConverter.cs" />
+    <Compile Include="TemplateInfoConverter.cs" />
+    <Compile Include="UserConverter.cs" />
+    <Compile Include="ZoneInfoConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Slice.Core\Slice.Core.csproj">
+      <Project>{9dbeed37-a25b-4355-a44e-d017a00a7ba6}</Project>
+      <Name>Slice.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slice.Data\Slice.Data.csproj">
+      <Project>{f5b856bc-950e-4723-85a2-1169429159d5}</Project>
+      <Name>Slice.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

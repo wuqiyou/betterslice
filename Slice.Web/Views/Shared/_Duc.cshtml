@@ -1,0 +1,62 @@
+﻿@using SubjectEngine.Core
+@using Slice.Data
+@using Slice.Web.Models
+@model DucViewModel
+@{
+    DucValueDto value = Model.DucValue;
+    switch (Model.DucType)
+    {
+        case DucTypes.SubTitle:
+            if (value != null)
+            {
+    <h3>@value.ValueText</h3>
+            }
+            break;
+        case DucTypes.Text:
+        case DucTypes.TextArea:
+        case DucTypes.Datetime:
+            if (value != null)
+            {
+    <p>@value.ValueText</p>
+            }
+            break;
+        case DucTypes.Html:
+        case DucTypes.HtmlArea:
+            if (value != null)
+            {
+    <div>@Html.Raw(value.ValueHtml)</div>
+            }
+            break;
+        case DucTypes.Hyperlink:
+            if (value != null)
+            {
+    <h3>
+        @if (string.IsNullOrWhiteSpace(@value.ValueUrl))
+        {
+            @value.ValueText
+        }
+        else
+        {
+            <a href="@Html.LocalizeHref(@value.ValueUrl)">@value.ValueText</a>
+        }
+    </h3>
+            }
+            break;
+        case DucTypes.Image:
+            if (value != null)
+            {
+    <a href="@value.ValueUrl">
+        <img class="ducImage" src="@Html.FullImageUrl(value.ValueUrl)" alt="@value.ValueText" title="@value.ValueText" />
+    </a>
+            }
+            break;
+        case DucTypes.Integer:
+            if (value != null)
+            {
+    <p>@value.ValueInt</p>
+            }
+            break;
+        default:
+            break;
+    }
+}

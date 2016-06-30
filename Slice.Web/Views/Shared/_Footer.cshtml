@@ -1,0 +1,14 @@
+﻿@model Slice.Web.Models.FooterModel
+<nav id="footerContainer">
+  @if (Model.FooterMenus != null)
+  {
+    <ul id="footer-links">
+      @foreach (var item in Model.FooterMenus)
+      {
+        <li>
+          <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+        </li>
+      }
+    </ul>
+  }
+</nav>

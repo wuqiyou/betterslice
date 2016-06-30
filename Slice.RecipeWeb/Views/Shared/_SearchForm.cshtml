@@ -1,0 +1,6 @@
+﻿@using Slice.RecipeWeb.Controllers
+@using (Html.BeginForm(SearchController.SubmitFormAction, SearchController.ControllerName))
+{
+    <input type="search" placeholder="Search" class="navbar-searchField" id="js-searchField" />
+    <input type="submit" class="navbar-searchBtn boxshadow" id="js-searchButton1" value="Search" />
+}

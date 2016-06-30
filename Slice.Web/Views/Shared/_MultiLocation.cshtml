@@ -1,0 +1,17 @@
+﻿@using Slice.Web.Common
+@using Slice.Data
+@using Slice.Web.Models
+@model PageViewModelBase
+<select onchange="document.location.href = '/' + '@ViewContext.RouteData.Values["culture"]' + '/' + this.options[this.selectedIndex].value;">
+    @foreach (LocationDto item in Model.MultipleLocations)
+    {
+        if (item.Id == Model.CurrentLocation.Id)
+        {
+        <option value="@item.LocationSlug" selected="selected">@item.Name</option>
+        }
+        else
+        {
+        <option value="@item.LocationSlug">@item.Name</option>
+        }
+    }
+</select>
