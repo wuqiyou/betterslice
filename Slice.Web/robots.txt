@@ -1,5 +1,3 @@
 ﻿User-agent: *
 Disallow: /Areas/
 Disallow: /Search/
-
-
