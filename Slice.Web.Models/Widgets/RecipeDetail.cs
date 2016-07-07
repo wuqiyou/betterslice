@@ -1,5 +1,6 @@
 ﻿using Slice.Data;
 using Slice.Web.Models.Entity;
+using Slice.Web.Models.Shared;
 using SubjectEngine.Core;
 using System;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Slice.Web.Models.Widgets
     {
         public Recipe Recipe { get; set; }
         public ReferenceKeywordsViewModel KeywordsViewModel { get; set; }
+        public SocialShareBarViewModel SocialShareBarViewModel { get; set; } 
 
         public RecipeDetail()
         {
@@ -109,6 +111,7 @@ namespace Slice.Web.Models.Widgets
             }
             // Keyword view model
             KeywordsViewModel = new ReferenceKeywordsViewModel(referenceInfo);
+            SocialShareBarViewModel = new SocialShareBarViewModel(RequestedUrl, Recipe.Name, Recipe.ImageUrl);
         }
 
         public void UpdateMetadata(MetadataModel metadata)

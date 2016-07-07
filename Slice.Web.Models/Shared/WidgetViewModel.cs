@@ -6,6 +6,7 @@ namespace Slice.Web.Models
     {
         public BlockInfoDto BlockInfo { get; set; }
         public LanguageDto CurrentLanguage { get; set; }
+        public string RequestedUrl { get; set; }
         public int? PageIndex { get; set; }
         public string ZoneStyle { get; set; }
 

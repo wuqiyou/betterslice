@@ -14,14 +14,6 @@ namespace Slice.RecipeWeb.Controllers
         public const string KeywordAction = "Keyword";
         public const string CategoryAction = "Category";
 
-        private int? PageIndex
-        {
-            get
-            {
-                return Request.QueryString[WebContext.Current.PagingQueryString].TryToParse<int>();
-            }
-        }
-
         public ViewResult Keyword(string keyword)
         {
             int pageIndex = PageIndex.HasValue ? PageIndex.Value : 1;

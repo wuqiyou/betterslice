@@ -160,6 +160,7 @@ namespace Slice.Web.Models
                 {
                     zone.Widget.BlockInfo = zoneInfo.Block;
                     zone.Widget.CurrentLanguage = CurrentLanguage;
+                    zone.Widget.RequestedUrl = RequestedUrl;
                     zone.Widget.PageIndex = PageIndex;
                     zone.Widget.ZoneStyle = zone.Style;
                     zone.Widget.Populate(ReferenceInfo);
