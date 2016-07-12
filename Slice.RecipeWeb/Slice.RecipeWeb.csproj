@@ -161,6 +161,7 @@
     <Content Include="Content\images\size728x90-2.jpg" />
     <Content Include="Content\images\size728x90.jpg" />
     <Content Include="Content\images\stripes.png" />
+    <Content Include="Content\objects\socialshare.css" />
     <Content Include="Content\objects\flexslider.css" />
     <Content Include="Content\objects\pagination.css" />
     <Content Include="Content\objects\photoGallery.css" />

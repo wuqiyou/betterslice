@@ -18,6 +18,11 @@ namespace Slice.Web.Models.Widgets
             Recipe = new Recipe();
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/objects/socialshare.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.RecipeBlock.Name))
