@@ -1,8 +1,4 @@
-﻿using Slice.Data;
-using Slice.Web.Common;
-using Slice.Web.Common.Helpers;
-using System.Collections.Generic;
-using System.Text;
+﻿using Slice.Web.Common;
 
 namespace System.Web.Mvc
 {
@@ -37,49 +33,6 @@ namespace System.Web.Mvc
                 url = String.Format("{0}://{1}{2}", controller.Request.Url.Scheme, controller.Request.Url.Host, url);
             }
             return url;
-        }
-
-        public static string LocalizeHrefFromAdmin(this HtmlHelper htmlHelper, string href)
-        {
-            if (WebContext.Current.IsMultiLanguageSupported)
-            {
-                return string.Format("/{0}/{1}", WebContext.Current.DefaultLanguage.Culture, href);
-            }
-            else
-            {
-                return string.Format("/{0}", href);
-            }
-        }
-
-        public static string LocalizeAdminHref(this HtmlHelper htmlHelper, string href)
-        {
-            return string.Format("/{0}", href);
-        }
-
-        public static string GetClientId(this HtmlHelper htmlHelper, object id)
-        {
-            return DucHelper.GetClientId(id);
-        }
-
-        public static string ComposeStringCategoryText(this HtmlHelper htmlHelper, IEnumerable<CategoryDto> categorys)
-        {
-            StringBuilder CategorysText = new StringBuilder();
-            categorys.ForAll(o => CategorysText.AppendFormat("{0},", o.CategoryText));
-            return CategorysText.ToString();
-        }
-
-        public static string ComposeStringCategoryId(this HtmlHelper htmlHelper, IEnumerable<CategoryDto> categorys)
-        {
-            StringBuilder CategorysText = new StringBuilder();
-            categorys.ForAll(o => CategorysText.AppendFormat("{0},", o.Id));
-            return CategorysText.ToString();
-        }
-
-        public static string ComposeStringKeywordText(this HtmlHelper htmlHelper, IEnumerable<ReferenceKeywordInfoDto> keywords)
-        {
-            StringBuilder text = new StringBuilder();
-            keywords.ForAll(o => text.AppendFormat("{0},", o.KeywordName));
-            return text.ToString();
         }
     }
 }
