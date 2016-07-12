@@ -1,4 +1,5 @@
 ﻿using Slice.Data;
+using System;
 
 namespace Slice.Web.Models
 {
@@ -6,7 +7,7 @@ namespace Slice.Web.Models
     {
         public BlockInfoDto BlockInfo { get; set; }
         public LanguageDto CurrentLanguage { get; set; }
-        public string RequestedUrl { get; set; }
+        public Uri RequestedUrl { get; set; }
         public int? PageIndex { get; set; }
         public string ZoneStyle { get; set; }
 

@@ -38,7 +38,7 @@ namespace Slice.RecipeWeb.Controllers
                     throw new HttpException(404, string.Format("Page {0} doesn't exist.", HttpContext.Request.RawUrl));
                 }
 
-                PageViewModel model = new PageViewModel(reference, HttpContext.Request.RawUrl, PageIndex, CurrentLanguage);
+                PageViewModel model = new PageViewModel(reference, HttpContext.Request.Url, PageIndex, CurrentLanguage);
                 model.Populate();
 
                 // Set info for subsite

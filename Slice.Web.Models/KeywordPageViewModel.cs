@@ -2,6 +2,7 @@
 using System.Linq;
 using Slice.Data;
 using Slice.Web.Common;
+using System;
 
 namespace Slice.Web.Models
 {
@@ -10,7 +11,7 @@ namespace Slice.Web.Models
         private string Keyword { get; set; }
         public CardViewViewModel CardViewViewModel { get; set; }
 
-        public KeywordPageViewModel(string keyword, IEnumerable<SubjectInfoDto> items, string requestedUrl, int pageIndex, int pageSize, LanguageDto language)
+        public KeywordPageViewModel(string keyword, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, int pageIndex, int pageSize, LanguageDto language)
             : base(requestedUrl, language)
         {
             Keyword = keyword;

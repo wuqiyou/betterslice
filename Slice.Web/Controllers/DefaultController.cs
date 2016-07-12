@@ -40,7 +40,7 @@ namespace Slice.Web.Controllers
 
                 int? pageIndex = HttpContext.Request.QueryString[WebContext.Current.PagingQueryString].TryToParse<int>();
 
-                PageViewModel model = new PageViewModel(reference, HttpContext.Request.RawUrl, pageIndex, CurrentLanguage);
+                PageViewModel model = new PageViewModel(reference, HttpContext.Request.Url, pageIndex, CurrentLanguage);
                 model.Populate();
 
                 // Set info for subsite

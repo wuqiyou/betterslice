@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using System.Web.Mvc;
-using Slice.Data;
+﻿using Slice.Data;
 using Slice.Web.Common;
 using Slice.Web.Models;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.Mvc;
 
 namespace Slice.Web.Controllers
 {
@@ -20,7 +20,7 @@ namespace Slice.Web.Controllers
             string did = "";
 
             IEnumerable<SubjectInfoDto> result = Service.GetSubjectsBySearch(q, did, pageIndex, pageSize, CurrentLanguage.Id);
-            SearchPageViewModel model = new SearchPageViewModel(q, new SearchResultDto(), HttpContext.Request.RawUrl, CurrentLanguage);
+            SearchPageViewModel model = new SearchPageViewModel(q, new SearchResultDto(), HttpContext.Request.Url, CurrentLanguage);
             model.Populate();
 
             return View(model);

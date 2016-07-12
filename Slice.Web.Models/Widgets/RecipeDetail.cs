@@ -111,7 +111,7 @@ namespace Slice.Web.Models.Widgets
             }
             // Keyword view model
             KeywordsViewModel = new ReferenceKeywordsViewModel(referenceInfo);
-            SocialShareBarViewModel = new SocialShareBarViewModel(RequestedUrl, Recipe.Name, Recipe.ImageUrl);
+            SocialShareBarViewModel = new SocialShareBarViewModel(RequestedUrl.AbsoluteUri, Recipe.Name, Recipe.ImageUrl);
         }
 
         public void UpdateMetadata(MetadataModel metadata)
