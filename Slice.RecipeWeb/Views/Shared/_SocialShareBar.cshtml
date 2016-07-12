@@ -1,7 +1,7 @@
 ﻿@using Slice.Web.Models.Shared
 @model SocialShareBarViewModel
 
-<div class="socialMediaLinks-container">
+<div class="socialMediaLinks-container socialMediaLinks--horizontal">
     @foreach (SocialShareButton button in Model.ShareButtons)
     {
         <a href="#" class="socialMediaLinks-icon socialMediaLinks--@button.Key" onclick="window.open('@button.Url)','_blank','location=yes,height=570,width=520,scrollbars=yes,status=yes')" title="@button.Key">@button.Key</a>
