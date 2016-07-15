@@ -2,11 +2,12 @@
     background-position: center;
     background-repeat: no-repeat;
     display: block;
-    height: 60px;
+    height: 32px;
     text-indent: -99999px;
-    width: 60px;
+    width: 32px;
     margin: 0;
     background-color: #D3D3D3;
+    border-radius: 50%;
 }
 
 .socialMediaLinks--horizontal {
