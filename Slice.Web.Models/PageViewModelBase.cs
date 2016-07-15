@@ -8,7 +8,7 @@ namespace Slice.Web.Models
 {
     public class PageViewModelBase
     {
-        public string RequestedUrl { get; set; }
+        public Uri RequestedUrl { get; set; }
         public string PageTitle { get; set; }
         public string BodyBackgroundColor { get; set; }
         public bool EnableAds { get; set; }
@@ -20,7 +20,7 @@ namespace Slice.Web.Models
         public FooterModel Footer { get; set; }
         public AssetModel AssetModel { get; set; }
 
-        public PageViewModelBase(string requestedUrl, LanguageDto language)
+        public PageViewModelBase(Uri requestedUrl, LanguageDto language)
         {
             RequestedUrl = requestedUrl;
             CurrentLanguage = language;
@@ -49,7 +49,7 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateMetadata()
         {
-            Metadata.OGUrl = RequestedUrl;
+            Metadata.OGUrl = RequestedUrl.AbsolutePath;
             // Const metadata
             Metadata.MetaList.AddRange(WebContext.Current.StaticMetadataList);
         }

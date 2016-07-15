@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Slice.Data;
 using Slice.Web.Common;
+using System;
 
 namespace Slice.Web.Models
 {
@@ -12,7 +13,7 @@ namespace Slice.Web.Models
         public IEnumerable<SubjectInfoDto> Items { get; set; }
         public PaginationViewModel PaginationViewModel { get; set; }
 
-        public SearchPageViewModel(string keyword, SearchResultDto searchResult, string requestedUrl, LanguageDto language)
+        public SearchPageViewModel(string keyword, SearchResultDto searchResult, Uri requestedUrl, LanguageDto language)
             : base(requestedUrl, language)
         {
             Keyword = keyword;

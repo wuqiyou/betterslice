@@ -9,7 +9,6 @@ namespace Slice.Web.Models.Shared
     {
         Facebook,
         Twitter,
-        GooglePlus,
         Pinterest,
     }
 
@@ -17,8 +16,8 @@ namespace Slice.Web.Models.Shared
     {
         public static readonly Dictionary<SocialShareButtonType, string> URL_FORMAT_DEFAULTS = new Dictionary<SocialShareButtonType, string>() {
             // TODO: add share link formats
-            { SocialShareButtonType.Twitter, "https://twitter.com/intent/tweet?url={0}&text={1}" },
             { SocialShareButtonType.Facebook, "http://facebook.com/sharer.php?u={0}" },
+            { SocialShareButtonType.Twitter, "https://twitter.com/intent/tweet?url={0}&text={1}" },
             { SocialShareButtonType.Pinterest, "https://www.pinterest.com/pin/create/bookmarklet/?url={0}&media={2}&description={1}" }
         };
 
@@ -32,7 +31,7 @@ namespace Slice.Web.Models.Shared
         public List<SocialShareButton> ShareButtons { get; set; }
 
         public SocialShareBarViewModel(string pageUrl, string shareTitle = "", string shareImageUrl = "")
-            : this(new SocialShareButtonType[] { SocialShareButtonType.Facebook, SocialShareButtonType.Twitter, SocialShareButtonType.GooglePlus }, pageUrl, shareTitle, shareImageUrl)
+            : this(new SocialShareButtonType[] { SocialShareButtonType.Facebook, SocialShareButtonType.Twitter, SocialShareButtonType.Pinterest }, pageUrl, shareTitle, shareImageUrl)
         {
 
         }
@@ -44,6 +43,7 @@ namespace Slice.Web.Models.Shared
             foreach (SocialShareButtonType icon in icons)
             {
                 SocialShareButton button = new SocialShareButton() { Key = icon.ToString().ToLower(), Name = icon.ToString() };
+                ShareButtons.Add(button);
                 string urlStringFormat = SocialShareButton.URL_FORMAT_DEFAULTS[icon];
                 button.Url = string.Format(urlStringFormat, pageUrl, shareTitle, shareImageUrl);
             }

@@ -1,5 +1,6 @@
 ﻿using Slice.Data;
 using Slice.Web.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +11,7 @@ namespace Slice.Web.Models
         private string Category { get; set; }
         public CardViewViewModel CardViewViewModel { get; set; }
 
-        public CategoryPageViewModel(string category, IEnumerable<SubjectInfoDto> items, string requestedUrl, int pageIndex, int pageSize, LanguageDto language)
+        public CategoryPageViewModel(string category, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, int pageIndex, int pageSize, LanguageDto language)
             : base(requestedUrl, language)
         {
             Category = category;

@@ -1,14 +1,23 @@
-﻿using System.Web.Mvc;
-using Microsoft.Practices.ServiceLocation;
+﻿using Microsoft.Practices.ServiceLocation;
 using Slice.Service.Contract;
 using Slice.Web.Common;
 using Slice.Web.Common.Helpers;
+using System;
+using System.Web.Mvc;
 
 namespace Slice.RecipeWeb.Controllers
 {
     public class ContentBaseController : BaseController
     {
         protected IReferenceService Service { get; set; }
+
+        protected int? PageIndex
+        {
+            get
+            {
+                return Request.QueryString[WebContext.Current.PagingQueryString].TryToParse<int>();
+            }
+        }
 
         public ContentBaseController()
         {

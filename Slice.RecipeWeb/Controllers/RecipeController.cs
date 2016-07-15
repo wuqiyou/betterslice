@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using Slice.Core;
+﻿using Slice.Core;
 using Slice.Data;
 using Slice.Web.Common;
 using Slice.Web.Models;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Slice.RecipeWeb.Controllers
 {
@@ -14,14 +13,6 @@ namespace Slice.RecipeWeb.Controllers
         public const string KeywordAction = "Keyword";
         public const string CategoryAction = "Category";
 
-        private int? PageIndex
-        {
-            get
-            {
-                return Request.QueryString[WebContext.Current.PagingQueryString].TryToParse<int>();
-            }
-        }
-
         public ViewResult Keyword(string keyword)
         {
             int pageIndex = PageIndex.HasValue ? PageIndex.Value : 1;
@@ -30,7 +21,7 @@ namespace Slice.RecipeWeb.Controllers
             {
                 KeywordDto keywordDto = WebContext.Current.RecipeKeywords[keyword];
                 IEnumerable<SubjectInfoDto> result = Service.GetSubjectsByKeyword(keywordDto.Id, CmsRegister.RECIPE_TEMPLATE_ID, pageIndex, pageSize, CurrentLanguage.Id);
-                KeywordPageViewModel model = new KeywordPageViewModel(keywordDto.Name, result, HttpContext.Request.RawUrl, pageIndex, pageSize, CurrentLanguage);
+                KeywordPageViewModel model = new KeywordPageViewModel(keywordDto.Name, result, HttpContext.Request.Url, pageIndex, pageSize, CurrentLanguage);
                 model.Populate();
 
                 return View(model);
@@ -50,7 +41,7 @@ namespace Slice.RecipeWeb.Controllers
             {
                 CategoryDto categoryDto = WebContext.Current.RecipeCategories[category];
                 IEnumerable<SubjectInfoDto> result = Service.GetSubjectsByCategory(categoryDto.Id, CmsRegister.RECIPE_TEMPLATE_ID, pageIndex, pageSize, CurrentLanguage.Id);
-                CategoryPageViewModel model = new CategoryPageViewModel(categoryDto.CategoryText, result, HttpContext.Request.RawUrl, pageIndex, pageSize, CurrentLanguage);
+                CategoryPageViewModel model = new CategoryPageViewModel(categoryDto.CategoryText, result, HttpContext.Request.Url, pageIndex, pageSize, CurrentLanguage);
                 model.Populate();
 
                 return View(model);

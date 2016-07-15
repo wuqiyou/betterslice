@@ -16,7 +16,7 @@ namespace Slice.Web.Models
         public bool IsSubsite { get; set; }
         public SubsiteHeaderViewModel SubsiteHeader { get; set; }
 
-        public PageViewModel(ReferenceInfoDto referenceInfo, string requestedUrl, int? pageIndex, LanguageDto language)
+        public PageViewModel(ReferenceInfoDto referenceInfo, Uri requestedUrl, int? pageIndex, LanguageDto language)
             : base(requestedUrl, language)
         {
             ReferenceInfo = referenceInfo;
@@ -122,7 +122,7 @@ namespace Slice.Web.Models
             // Set current selected menu item
             foreach (MenuItem item in SubsiteHeader.SubsiteMenus.Reverse())
             {
-                item.IsCurrent = RequestedUrl.StartsWith(item.NavigateUrl);
+                item.IsCurrent = RequestedUrl.AbsolutePath.StartsWith(item.NavigateUrl);
                 if (item.IsCurrent)
                 {
                     // As soon as we find one, skip the loop
@@ -160,6 +160,7 @@ namespace Slice.Web.Models
                 {
                     zone.Widget.BlockInfo = zoneInfo.Block;
                     zone.Widget.CurrentLanguage = CurrentLanguage;
+                    zone.Widget.RequestedUrl = RequestedUrl;
                     zone.Widget.PageIndex = PageIndex;
                     zone.Widget.ZoneStyle = zone.Style;
                     zone.Widget.Populate(ReferenceInfo);
