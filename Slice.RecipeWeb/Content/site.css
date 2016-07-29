@@ -684,28 +684,7 @@ ul.subnav {
         margin-bottom: 0.75em;
     }
 
-.subjectDetail {
-    margin: 0;
-    display: inline-block;
-}
-
-    .subjectDetail h5 {
-        color: #656565;
-        text-align: center;
-    }
-
-    .subjectDetail hr {
-        border-color: #656565;
-    }
-
-    .subjectDetail img {
-        margin: 0.5em;
-        width: 100%;
-        max-width: 600px;
-        max-height: 98%;
-    }
-
-.youtube-video {
+.youtubeVideo {
     margin: 0;
     padding: 1em 0;
     width: 854px;
@@ -779,20 +758,6 @@ ul.subnav {
 .reviewContent {
     word-wrap: break-word;
 }
-
-#blog-detail {
-    margin-top: 1em;
-    padding: 1em;
-    border: 1px dotted #d6d6d6;
-}
-
-    #blog-detail h1 {
-        text-align: center;
-    }
-
-    #blog-detail h5 {
-        border-bottom: 1px solid #d6d6d6;
-    }
 
 .keywords a {
     color: #c51b13;
@@ -913,7 +878,7 @@ ul.subnav {
         margin: 0 auto;
     }
 
-    .youtube-video {
+    .youtubeVideo {
         width: 320px;
         height: 200px;
     }

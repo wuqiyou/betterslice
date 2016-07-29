@@ -161,6 +161,8 @@
     <Content Include="Content\images\size728x90-2.jpg" />
     <Content Include="Content\images\size728x90.jpg" />
     <Content Include="Content\images\stripes.png" />
+    <Content Include="Content\objects\blogDetail.css" />
+    <Content Include="Content\objects\subjectDetail.css" />
     <Content Include="Content\objects\recipeDetail.css" />
     <Content Include="Content\objects\socialShare.css" />
     <Content Include="Content\objects\flexslider.css" />

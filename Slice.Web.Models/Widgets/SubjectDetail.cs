@@ -21,6 +21,11 @@ namespace Slice.Web.Models.Widgets
             VideoId = string.Empty;
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/objects/subjectDetail.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.SubjectDetailBlock.Title))
