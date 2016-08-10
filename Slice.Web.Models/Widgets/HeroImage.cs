@@ -20,6 +20,11 @@ namespace Slice.Web.Models.Widgets
             Description = string.Empty;
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/widgets/heroImage.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.HeroImageBlock.Image))

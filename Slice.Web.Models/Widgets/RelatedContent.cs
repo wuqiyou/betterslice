@@ -14,6 +14,11 @@ namespace Slice.Web.Models.Widgets
             Title = "Related content";
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/widgets/relatedContent.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.RelatedSubjects != null)

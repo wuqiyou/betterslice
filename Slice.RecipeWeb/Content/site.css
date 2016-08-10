@@ -486,7 +486,7 @@ ul.menu {
     padding: 0 1em;
 }
 
-ul.nonestyle, ul.cardview {
+ul.nonestyle {
     list-style: none;
     list-style-image: none;
 }
@@ -626,63 +626,6 @@ ul.subnav {
             overflow: hidden;
             clear: both;
         }
-
-/* ------------------------------------------------------------------------------
-		Item List, left to right, max 3 items per row
---------------------------------------------------------------------------------- */
-.cardview {
-    padding: 0;
-    margin: 0;
-    font-size: 1.1em;
-}
-
-    .cardview li {
-        border: 1px solid #ededed;
-        padding: 0;
-        width: 282px;
-        float: left;
-        margin: 0 28px 10px 0;
-    }
-
-        .cardview li a img {
-            width: 280px;
-            border: 1px solid #bebebe;
-        }
-
-        .cardview li h5 {
-            width: 280px;
-            min-height: 3.5em;
-            text-wrap: normal;
-            text-align: center;
-        }
-
-    .cardview:before, .cardview:after {
-        content: ".";
-        display: block;
-        height: 0;
-        overflow: hidden;
-    }
-
-    .cardview li:hover {
-        border: 1px solid #c51b13;
-    }
-
-    .cardview:after {
-        clear: both;
-    }
-
-.featuredcontent {
-    padding: 0;
-}
-
-    .featuredcontent h3 {
-        color: #c51b13;
-        border-bottom: 1px solid #d6d6d6;
-        padding: 0 0 .5em 0;
-        text-transform: uppercase;
-        font-family: 'titlinggothic-regular';
-        margin-bottom: 0.75em;
-    }
 
 .youtubeVideo {
     margin: 0;

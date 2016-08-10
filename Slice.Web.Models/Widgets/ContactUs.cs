@@ -19,8 +19,6 @@ namespace Slice.Web.Models.Widgets
 
         public override void UpdateAsset(AssetModel asset)
         {
-            base.UpdateAsset(asset);
-
             asset.AddTailJSPath("~/Scripts/pages/contactus.js");
         }
 

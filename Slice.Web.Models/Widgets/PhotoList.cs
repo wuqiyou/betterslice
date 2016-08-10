@@ -17,6 +17,11 @@ namespace Slice.Web.Models.Widgets
             Items = new List<Photo>();
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/widgets/photoList.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.PhotoList.Title))

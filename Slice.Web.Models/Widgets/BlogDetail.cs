@@ -17,7 +17,7 @@ namespace Slice.Web.Models.Widgets
 
         public override void UpdateAsset(AssetModel asset)
         {
-            asset.AddCSSPath("~/Content/objects/blogDetail.css");
+            asset.AddCSSPath("~/Content/widgets/blogDetail.css");
         }
 
         public override void Populate(ReferenceInfoDto referenceInfo)
