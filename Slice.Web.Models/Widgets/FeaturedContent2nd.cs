@@ -15,6 +15,7 @@ namespace Slice.Web.Models.Widgets
 
         public override void UpdateAsset(AssetModel asset)
         {
+            asset.AddCSSPath("~/Content/objects/cardView.css");
             asset.AddCSSPath("~/Content/widgets/featuredContent.css");
         }
 
