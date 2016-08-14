@@ -18,7 +18,11 @@ namespace Slice.Web.Models.Widgets
 
         public override void UpdateAsset(AssetModel asset)
         {
-            asset.AddCSSPath("~/Content/objects/pagination.css");
+            asset.AddCSSPath("~/Content/objects/cardView.css");
+            if (CardViewViewModel.PaginationViewModel != null && !CardViewViewModel.PaginationViewModel.IsSuppressed)
+            {
+                asset.AddCSSPath("~/Content/objects/pagination.css");
+            }
         }
 
         public override void Populate(ReferenceInfoDto referenceInfo)

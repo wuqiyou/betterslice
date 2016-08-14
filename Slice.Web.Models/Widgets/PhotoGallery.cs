@@ -18,7 +18,7 @@ namespace Slice.Web.Models.Widgets
         public override void UpdateAsset(AssetModel asset)
         {
             asset.AddCSSPath("~/Content/objects/flexslider.css");
-            asset.AddCSSPath("~/Content/objects/photoGallery.css");
+            asset.AddCSSPath("~/Content/widgets/photoGallery.css");
             asset.AddTailJSPath("~/Scripts/vendor/jquery.flexslider.js");
             asset.AddTailJSPath("~/Scripts/objects/photoGallery.js");
         }

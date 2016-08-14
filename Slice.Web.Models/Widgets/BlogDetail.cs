@@ -15,6 +15,11 @@ namespace Slice.Web.Models.Widgets
             Article = new Article();
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/widgets/blogDetail.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.BlogDetail.Title))

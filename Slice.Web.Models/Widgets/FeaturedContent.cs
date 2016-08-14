@@ -13,6 +13,12 @@ namespace Slice.Web.Models.Widgets
             Title = string.Empty;
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/objects/cardView.css");
+            asset.AddCSSPath("~/Content/widgets/featuredContent.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.FeaturedContent.Title))

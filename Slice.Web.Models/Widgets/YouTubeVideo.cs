@@ -20,6 +20,11 @@ namespace Slice.Web.Models.Widgets
             AutoPlay = 0;
         }
 
+        public override void UpdateAsset(AssetModel asset)
+        {
+            asset.AddCSSPath("~/Content/widgets/youtubeVideo.css");
+        }
+
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.YouTubeVideoBlock.VideoId))
