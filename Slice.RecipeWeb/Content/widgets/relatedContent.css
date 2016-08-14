@@ -1,0 +1,12 @@
+.relatedcontent {
+    padding: 0;
+}
+
+    .relatedcontent h3 {
+        color: #c51b13;
+        border-bottom: 1px solid #d6d6d6;
+        padding: 0 0 .5em 0;
+        text-transform: uppercase;
+        font-family: 'titlinggothic-regular';
+        margin-bottom: 0.75em;
+    }
