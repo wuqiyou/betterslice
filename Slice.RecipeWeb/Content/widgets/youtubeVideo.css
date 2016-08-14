@@ -1,0 +1,13 @@
+.youtubeVideo {
+    margin: 0;
+    padding: 1em 0;
+    width: 854px;
+    height: 480px;
+}
+
+@media (min-width: 0) and (max-width: 45em) {
+    .youtubeVideo {
+        width: 320px;
+        height: 200px;
+    }
+}

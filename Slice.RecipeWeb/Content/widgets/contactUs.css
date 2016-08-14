@@ -1,0 +1,17 @@
+.contactForm {
+    margin-top: 1em;
+    padding: 0em 1em;
+    border: 1px solid #d6d6d6;
+    background-color: #efefef;
+}
+
+.contactForm-submit {
+    font-size: 1.1em;
+    clear: both;
+    font-family: Montserrat,sans-serif;
+    padding: 0.25em 0.5em;
+}
+
+.contactForm-content {
+    width: 100%;
+}

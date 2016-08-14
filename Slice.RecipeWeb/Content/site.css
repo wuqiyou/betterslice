@@ -562,92 +562,6 @@ ul.subnav {
     max-height: 400px;
 }
 
-#heroImage {
-    width: 100%;
-    border-bottom: 4px solid #d6d6d6;
-    margin: 1em 0;
-    padding: 0 2% 1% 1%;
-    position: relative;
-}
-
-    #heroImage p {
-        color: #656565;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.4em;
-    }
-
-    #heroImage:before, #heroImage:after {
-        content: ".";
-        display: block;
-        height: 0;
-        overflow: hidden;
-    }
-
-    #heroImage:after {
-        clear: both;
-    }
-
-/* ------------------------------------------------------------------------------
-		Subject List, one row per subject
---------------------------------------------------------------------------------- */
-.listview {
-    margin: 0;
-    padding: 0;
-    font-size: 1.1em;
-}
-
-    .listview li {
-        padding: 0.5em 0 0 0;
-        margin: 0 0 10px 0;
-        border: 1px solid #ededed;
-    }
-
-        .listview li a img {
-            float: left;
-            margin: 0em 2em 1em 0em;
-            width: 180px;
-            border: 1px solid #bebebe;
-        }
-
-        .listview li div {
-            font-size: 0.875em;
-            line-height: 1.5em;
-        }
-
-        .listview li:hover {
-            border: 1px solid #c51b13;
-        }
-
-        .listview li:before, .listview li:after {
-            content: ".";
-            display: block;
-            height: 0;
-            overflow: hidden;
-            clear: both;
-        }
-
-.youtubeVideo {
-    margin: 0;
-    padding: 1em 0;
-    width: 854px;
-    height: 480px;
-}
-
-.contactForm {
-    margin-top: 1em;
-    padding: 0em 1em;
-    border: 1px solid #d6d6d6;
-    background-color: #efefef;
-}
-
-.contactForm-submit {
-    font-size: 1.1em;
-    clear: both;
-    font-family: Montserrat,sans-serif;
-    padding: 0.25em 0.5em;
-}
-
 .reviewForm {
     margin-top: 1em;
     padding: 0.25em 1em 0.5em 1em;
@@ -671,7 +585,7 @@ ul.subnav {
     float: right;
 }
 
-.reviewForm-content, .contactForm-content {
+.reviewForm-content{
     width: 100%;
 }
 
@@ -816,16 +730,6 @@ ul.subnav {
                 font-size: 1.1em;
             }
 
-    #heroImage > a img {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .youtubeVideo {
-        width: 320px;
-        height: 200px;
-    }
-
     h1 {
         font-size: 1.2em;
     }
@@ -928,17 +832,6 @@ ul.subnav {
         margin-right: -320px;
         padding: 0;
     }
-
-    #heroImage > a {
-        float: left;
-        width: 70%;
-        margin-right: 1em;
-    }
-
-        #heroImage > a img {
-            width: 100%;
-            max-width: 600px;
-        }
 }
 
 @media screen and (min-width: 45em) {
