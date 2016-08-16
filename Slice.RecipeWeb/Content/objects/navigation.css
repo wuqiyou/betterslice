@@ -1,1 +1,120 @@
-﻿
+﻿ul.menu {
+    text-transform: none;
+}
+
+
+#submenuContainer {
+    margin: 0 auto;
+    padding: 0;
+    height: 2.25em;
+    width: 100%;
+    max-width: 1280px;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+    #submenuContainer ul li a {
+        color: #404040;
+        font-size: 1.1em;
+    }
+
+        #submenuContainer ul li a:hover {
+            color: #7cb842;
+        }
+
+    #submenuContainer ul li.current a {
+        color: #7cb842;
+    }
+
+    #submenuContainer ul.menu li {
+        padding: 0.25em 0.75em 0.25em 0.75em;
+    }
+
+@media (min-width: 0) and (max-width: 45em) {
+    #nav {
+        clear: both;
+        border-bottom: 0.5em solid #ababab;
+        box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+    }
+
+        #nav ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: block;
+        }
+
+    ul.menu li {
+        display: table;
+        width: 100%;
+        border-bottom: 1px solid #d6d6d6;
+        font-size: 0.9em;
+        padding: 1em;
+        background: #ffffff;
+    }
+
+        ul.menu li a {
+            color: #404040;
+            display: table-cell;
+            margin: 0 auto;
+            vertical-align: middle;
+            line-height: 1.125em;
+        }
+
+            ul.menu li a:after {
+                font-family: 'entypo';
+                content: '\e003';
+                float: right;
+                color: #961d7b;
+                font-size: 1.1em;
+            }
+}
+
+@media (min-width: 45em) {
+    #nav {
+        margin: 0;
+        padding: 0;
+        height: 2.5em;
+        width: 100%;
+        background-color: #129EB5;
+        /*background-image: url('images/bgGrad.gif');
+    background-repeat: repeat-y;*/
+    }
+
+    ul.menu {
+        margin: 0 auto;
+        padding: 0.275em 0 0 0;
+        /* for IE 6/7 */
+        *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+        /* non-JS fallback */
+        *zoom: 1;
+        max-width: 1280px;
+        text-align: left;
+    }
+
+        ul.menu li {
+            margin: 0;
+            padding: 0.25em 0.75em 0.5em 0.75em;
+            position: relative;
+            float: none;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+            ul.menu li a {
+                color: #EFEFEF;
+                font-size: 1.25em;
+            }
+
+                ul.menu li a:hover {
+                    color: #404040;
+                }
+
+            ul.menu li.current {
+                background-color: #F9F9F9;
+            }
+
+                ul.menu li.current a {
+                    color: #404040;
+                }
+}

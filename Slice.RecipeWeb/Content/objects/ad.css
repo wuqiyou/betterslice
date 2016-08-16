@@ -1,0 +1,36 @@
+﻿/*
+    TODO: uncomment this after ad implemnted
+    */
+/*.ad-labeled:after {
+    background: url("images/stripes.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #E4E4E4;
+    color: #404040;
+    content: "ADVERTISMENT";
+    display: block;
+    font-size: 0.625em;
+    height: 2em;
+    line-height: 1.25em;
+    margin: 0;
+    padding: 0.375em 0;
+    text-align: center;
+    width: 100%;
+}*/
+
+.bigbox {
+    width: 300px;
+    height: 250px;
+    border: 1px solid #E4E4E4;
+    margin: 0.25em 0 2em 0;
+}
+
+.ad-bigbox1-empty {
+    width: 298px;
+    height: 250px;
+    background: url("/Content/images/size300x250.jpg");
+}
+
+.ad-bigbox2-empty {
+    width: 298px;
+    height: 250px;
+    background: url("/Content/images/size300x250-2.jpg");
+}

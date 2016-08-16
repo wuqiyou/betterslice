@@ -15,7 +15,16 @@ namespace Slice.RecipeWeb
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
             Bundle cssBundle = new StyleBundle(BundleConfig.CSSBundles);
-            cssBundle.Include("~/Content/site.css");
+            cssBundle.Include(
+                "~/Content/site.css",
+                "~/Content/objects/ad.css",
+                "~/Content/objects/footer.css",
+                "~/Content/objects/genericBlock.css",
+                "~/Content/objects/navigation.css",
+                "~/Content/objects/comment.css",
+                //"~/Content/objects/review.css",
+                "~/Content/objects/subsiteNav.css"
+                );
             foreach (string path in asset.IncludeCSSPaths)
             {
                 cssBundle.Include(path);
