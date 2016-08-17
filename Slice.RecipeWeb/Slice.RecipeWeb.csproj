@@ -162,6 +162,13 @@
     <Content Include="Content\images\size728x90.jpg" />
     <Content Include="Content\images\stripes.png" />
     <Content Include="Content\objects\cardView.css" />
+    <Content Include="Content\objects\ad.css" />
+    <Content Include="Content\objects\comment.css" />
+    <Content Include="Content\objects\review.css" />
+    <Content Include="Content\objects\genericBlock.css" />
+    <Content Include="Content\objects\navigation.css" />
+    <Content Include="Content\objects\subsiteNav.css" />
+    <Content Include="Content\objects\footer.css" />
     <Content Include="Content\widgets\blogDetail.css" />
     <Content Include="Content\widgets\contactUs.css" />
     <Content Include="Content\widgets\featuredContent.css" />

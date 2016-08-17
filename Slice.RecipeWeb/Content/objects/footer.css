@@ -1,0 +1,25 @@
+﻿#footerContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+
+#footer-links {
+    margin: 0;
+    padding: 0.5em 1em;
+    position: relative;
+}
+
+    #footer-links li {
+        margin: 0 0 0 0.5em;
+        padding: 0.25em 0.5em 0 0;
+        display: inline-block;
+        border-right: 1px solid #ddd;
+    }
+
+        #footer-links li a {
+            color: #404040;
+            font-size: 1em;
+            text-transform: none;
+        }
