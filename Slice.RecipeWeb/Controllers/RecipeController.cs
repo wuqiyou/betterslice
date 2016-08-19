@@ -35,13 +35,13 @@ namespace Slice.RecipeWeb.Controllers
         public ViewResult Category(string category)
         {
             int pageIndex = PageIndex.HasValue ? PageIndex.Value : 1;
-            int pageSize = 12;
+            int pageSize = 24;
 
             if (WebContext.Current.RecipeCategories.ContainsKey(category))
             {
                 CategoryDto categoryDto = WebContext.Current.RecipeCategories[category];
                 IEnumerable<SubjectInfoDto> result = Service.GetSubjectsByCategory(categoryDto.Id, CmsRegister.RECIPE_TEMPLATE_ID, pageIndex, pageSize, CurrentLanguage.Id);
-                CategoryPageViewModel model = new CategoryPageViewModel(categoryDto.CategoryText, result, HttpContext.Request.Url, pageIndex, pageSize, CurrentLanguage);
+                CategoryPageViewModel model = new CategoryPageViewModel(categoryDto.CategoryText, result, HttpContext.Request.Url, CurrentLanguage);
                 model.Populate();
 
                 return View(model);
@@ -50,6 +50,16 @@ namespace Slice.RecipeWeb.Controllers
             {
                 return null;
             }
+        }
+
+        public PartialViewResult LoadMore(int categoryId, int? pageIndex)
+        {
+            if (!pageIndex.HasValue)
+            {
+                pageIndex = 1;
+            }
+            IEnumerable<SubjectInfoDto> result = Service.GetSubjectsByCategory(categoryId, CmsRegister.RECIPE_TEMPLATE_ID, pageIndex.Value, 24, CurrentLanguage.Id);
+            return PartialView("_SubjectList", result);
         }
     }
 }

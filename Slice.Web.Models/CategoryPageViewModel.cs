@@ -11,13 +11,13 @@ namespace Slice.Web.Models
         private string Category { get; set; }
         public CardViewViewModel CardViewViewModel { get; set; }
 
-        public CategoryPageViewModel(string category, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, int pageIndex, int pageSize, LanguageDto language)
+        public CategoryPageViewModel(string category, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, LanguageDto language)
             : base(requestedUrl, language)
         {
             Category = category;
             int totalCount = items.Any() ? items.First<SubjectInfoDto>().TotalCount : 0;
 
-            CardViewViewModel = new CardViewViewModel(items, true, totalCount, pageIndex, pageSize, WebContext.Current.PagerWindowSize);
+            CardViewViewModel = new CardViewViewModel(items);
         }
 
         protected override void PopulateMetadata()

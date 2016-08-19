@@ -50,7 +50,7 @@ namespace Slice.Web.Controllers
             {
                 CategoryDto categoryDto = WebContext.Current.RecipeCategories[category];
                 IEnumerable<SubjectInfoDto> result = Service.GetSubjectsByCategory(categoryDto.Id, CmsRegister.RECIPE_TEMPLATE_ID, pageIndex, pageSize, CurrentLanguage.Id);
-                CategoryPageViewModel model = new CategoryPageViewModel(categoryDto.CategoryText, result, HttpContext.Request.Url, pageIndex, pageSize, CurrentLanguage);
+                CategoryPageViewModel model = new CategoryPageViewModel(categoryDto.CategoryText, result, HttpContext.Request.Url, CurrentLanguage);
                 model.Populate();
 
                 return View(model);

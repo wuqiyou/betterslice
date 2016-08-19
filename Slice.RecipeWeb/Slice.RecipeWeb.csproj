@@ -329,6 +329,7 @@
     <Content Include="Content\fonts\titlinggothicfbnormalregula-webfont.woff" />
     <None Include="Properties\PublishProfiles\testdeploy.pubxml" />
     <Content Include="Views\Shared\_SocialShareBar.cshtml" />
+    <Content Include="Views\Shared\_SubjectList.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
