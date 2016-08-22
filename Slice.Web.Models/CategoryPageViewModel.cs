@@ -1,8 +1,6 @@
 ﻿using Slice.Data;
-using Slice.Web.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Slice.Web.Models
 {
@@ -15,8 +13,6 @@ namespace Slice.Web.Models
             : base(requestedUrl, language)
         {
             Category = category;
-            int totalCount = items.Any() ? items.First<SubjectInfoDto>().TotalCount : 0;
-
             CardViewViewModel = new CardViewViewModel(items);
         }
 
