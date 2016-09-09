@@ -7,7 +7,7 @@ namespace Slice.Web.Models.Widgets
     public class RelatedContent : WidgetViewModel
     {
         public string Title { get; set; }
-        public CardViewViewModel CardViewViewModel { get; set; }
+        public IEnumerable<SubjectInfoDto> Items { get; set; }
 
         public RelatedContent()
         {
@@ -27,7 +27,7 @@ namespace Slice.Web.Models.Widgets
                 IList<SubjectInfoDto> items = referenceInfo.RelatedSubjects.Where(o => !object.Equals(o.ReferenceId, referenceInfo.ReferenceId)).ToList();
                 // Set flag
                 HasValue = items.Count > 0;
-                CardViewViewModel = new CardViewViewModel(items);
+                Items = items;
             }
         }
     }

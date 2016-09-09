@@ -78,7 +78,6 @@
     <Compile Include="SearchPageViewModel.cs" />
     <Compile Include="Shared\AdManagerModel.cs" />
     <Compile Include="Shared\AdModel.cs" />
-    <Compile Include="Shared\CardViewViewModel.cs" />
     <Compile Include="Shared\AssetModel.cs" />
     <Compile Include="Shared\FooterModel.cs" />
     <Compile Include="Shared\MetadataModel.cs" />

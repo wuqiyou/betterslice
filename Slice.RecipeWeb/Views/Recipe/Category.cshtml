@@ -6,8 +6,12 @@
 
 <div class="zoneContainer">
     <ul class="cardview nonestyle infinite-scroll">
-        @Html.Partial("_SubjectList", Model.CardViewViewModel.Items)
+        @Html.Partial("_SubjectsCardView", Model.Items)
     </ul>
+    @if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
+    {
+        Html.RenderPartial("_Pagination", Model.PaginationViewModel);
+    }
 </div>
 
 @section RightRail {

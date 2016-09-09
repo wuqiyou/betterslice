@@ -37,7 +37,10 @@ namespace Slice.Web.Models
             base.UpdateAsset();
 
             AssetModel.AddCSSPath("~/Content/objects/cardView.css");
-            AssetModel.AddCSSPath("~/Content/objects/pagination.css");
+            if (PaginationViewModel != null && !PaginationViewModel.IsSuppressed)
+            {
+                AssetModel.AddCSSPath("~/Content/objects/pagination.css");
+            }
         }
     }
 }

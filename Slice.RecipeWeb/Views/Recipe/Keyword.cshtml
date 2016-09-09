@@ -6,7 +6,7 @@
 
 <div class="zoneContainer">
     <ul class="cardview nonestyle">
-        @Html.Partial("_SubjectList", Model.Items)
+        @Html.Partial("_SubjectsCardView", Model.Items)
     </ul>
     @if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
     {
