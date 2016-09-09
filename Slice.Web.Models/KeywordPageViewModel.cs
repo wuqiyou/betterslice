@@ -1,23 +1,28 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Slice.Data;
+﻿using Slice.Data;
 using Slice.Web.Common;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Slice.Web.Models
 {
     public class KeywordPageViewModel : PageViewModelBase
     {
         private string Keyword { get; set; }
-        public CardViewViewModel CardViewViewModel { get; set; }
+        public IEnumerable<SubjectInfoDto> Items { get; set; }
+        public PaginationViewModel PaginationViewModel { get; set; }
 
         public KeywordPageViewModel(string keyword, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, int pageIndex, int pageSize, LanguageDto language)
             : base(requestedUrl, language)
         {
             Keyword = keyword;
+            Items = items;
             int totalCount = items.Any() ? items.First<SubjectInfoDto>().TotalCount : 0;
-
-            CardViewViewModel = new CardViewViewModel(items, true, totalCount, pageIndex, pageSize, WebContext.Current.PagerWindowSize);
+            if (totalCount > 0)
+            {
+                PaginationViewModel = new PaginationViewModel(totalCount, pageIndex, pageSize, WebContext.Current.PagerWindowSize);
+                PaginationViewModel.ShowTotal = false;
+            }
         }
 
         protected override void PopulateMetadata()
@@ -32,7 +37,10 @@ namespace Slice.Web.Models
             base.UpdateAsset();
 
             AssetModel.AddCSSPath("~/Content/objects/cardView.css");
-            AssetModel.AddCSSPath("~/Content/objects/pagination.css");
+            if (PaginationViewModel != null && !PaginationViewModel.IsSuppressed)
+            {
+                AssetModel.AddCSSPath("~/Content/objects/pagination.css");
+            }
         }
     }
 }

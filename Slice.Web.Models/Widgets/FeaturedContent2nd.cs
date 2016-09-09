@@ -1,12 +1,13 @@
 ﻿using Slice.Data;
 using SubjectEngine.Core;
+using System.Collections.Generic;
 
 namespace Slice.Web.Models.Widgets
 {
     public class FeaturedContent2nd : WidgetViewModel
     {
         public string Title { get; set; }
-        public CardViewViewModel CardViewViewModel { get; set; }
+        public IEnumerable<SubjectInfoDto> Items { get; set; }
 
         public FeaturedContent2nd()
         {
@@ -33,7 +34,7 @@ namespace Slice.Web.Models.Widgets
                 if (value.AttachedSubjects != null && value.AttachedSubjects.Count > 0)
                 {
                     HasValue = true;
-                    CardViewViewModel = new CardViewViewModel(value.AttachedSubjects);
+                    Items = value.AttachedSubjects;
                 }
             }
         }

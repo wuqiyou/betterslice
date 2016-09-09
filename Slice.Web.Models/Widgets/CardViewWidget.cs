@@ -10,7 +10,8 @@ namespace Slice.Web.Models.Widgets
 {
     public class CardViewWidget : WidgetViewModel
     {
-        public CardViewViewModel CardViewViewModel { get; set; }
+        public IEnumerable<SubjectInfoDto> Items { get; set; }
+        public PaginationViewModel PaginationViewModel { get; set; }
 
         public CardViewWidget()
         {
@@ -19,7 +20,7 @@ namespace Slice.Web.Models.Widgets
         public override void UpdateAsset(AssetModel asset)
         {
             asset.AddCSSPath("~/Content/objects/cardView.css");
-            if (CardViewViewModel.PaginationViewModel != null && !CardViewViewModel.PaginationViewModel.IsSuppressed)
+            if (PaginationViewModel != null && !PaginationViewModel.IsSuppressed)
             {
                 asset.AddCSSPath("~/Content/objects/pagination.css");
             }
@@ -47,12 +48,18 @@ namespace Slice.Web.Models.Widgets
 
             object languageId = CurrentLanguage != null ? CurrentLanguage.Id : null;
             IReferenceService service = ServiceLocator.Current.GetInstance<IReferenceService>();
-            IEnumerable<SubjectInfoDto>  items = service.GetAttachedSubjects(referenceInfo.ReferenceId,
+            IEnumerable<SubjectInfoDto> items = service.GetAttachedSubjects(referenceInfo.ReferenceId,
                         BlockRegister.CardViewWidget.ReferenceList,
                         currentPage, pageSize, languageId);
             int totalCount = items.Any() ? items.First<SubjectInfoDto>().TotalCount : 0;
 
-            CardViewViewModel = new CardViewViewModel(items, showPagination, totalCount, currentPage, pageSize, WebContext.Current.PagerWindowSize);
+            Items = items;
+
+            if (totalCount > 0)
+            {
+                PaginationViewModel = new PaginationViewModel(totalCount, currentPage, pageSize, WebContext.Current.PagerWindowSize);
+                PaginationViewModel.ShowTotal = false;
+            }
         }
     }
 }

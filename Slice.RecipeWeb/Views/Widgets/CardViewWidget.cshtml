@@ -2,5 +2,11 @@
 @model CardViewWidget
 
 <div class="@Model.ZoneStyle">
-  @Html.Partial("_CardView", Model.CardViewViewModel)
+  <ul class="cardview nonestyle">
+    @Html.Partial("_SubjectsCardView", Model.Items)
+  </ul>
+  @if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
+  {
+    Html.RenderPartial("_Pagination", Model.PaginationViewModel);
+  }
 </div>

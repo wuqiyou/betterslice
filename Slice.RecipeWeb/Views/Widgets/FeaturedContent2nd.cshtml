@@ -5,6 +5,8 @@
 {
   <div id="featuredcontent2" class="featuredcontent">
     <h3>@Model.Title</h3>
-    @Html.Partial("_CardView", Model.CardViewViewModel)
+    <ul class="cardview nonestyle">
+      @Html.Partial("_SubjectsCardView", Model.Items)
+    </ul>
   </div>
 }
