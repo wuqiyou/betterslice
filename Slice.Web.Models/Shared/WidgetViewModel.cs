@@ -1,5 +1,7 @@
-﻿using Slice.Data;
+﻿using Slice.Core;
+using Slice.Data;
 using System;
+using System.Collections.Generic;
 
 namespace Slice.Web.Models
 {
@@ -12,9 +14,11 @@ namespace Slice.Web.Models
         public string ZoneStyle { get; set; }
 
         public bool HasValue { get; set; }
+        public IList<AdUnitModel> AdUnits { get; set; }
 
         public WidgetViewModel()
         {
+            AdUnits = new List<AdUnitModel>();
         }
 
         public virtual void Populate(ReferenceInfoDto referenceInfo)
@@ -22,6 +26,10 @@ namespace Slice.Web.Models
         }
 
         public virtual void UpdateAsset(AssetModel asset)
+        {
+        }
+
+        public virtual void RegisterAds(AdManagerModel adManager)
         {
         }
     }

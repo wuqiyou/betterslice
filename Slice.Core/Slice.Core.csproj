@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="AdSlot.cs" />
     <Compile Include="CmsRegister.cs" />
+    <Compile Include="AdType.cs" />
     <Compile Include="InstanceTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringHelper.cs" />

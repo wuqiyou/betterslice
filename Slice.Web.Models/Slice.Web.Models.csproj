@@ -63,6 +63,7 @@
     <Compile Include="Entity\Rotator.cs" />
     <Compile Include="Entity\RotatorItem.cs" />
     <Compile Include="PageViewModelBase.cs" />
+    <Compile Include="Shared\AdUnitModel.cs" />
     <Compile Include="Shared\DucViewModel.cs" />
     <Compile Include="Shared\GridViewModel.cs" />
     <Compile Include="Shared\PaginationViewModel.cs" />

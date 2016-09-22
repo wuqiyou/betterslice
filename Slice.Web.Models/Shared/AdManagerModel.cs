@@ -5,18 +5,29 @@ namespace Slice.Web.Models
 {
     public class AdManagerModel
     {
-        public IList<AdSlot> AdSlots { get; set; }
+        public IList<AdUnitModel> AdUnits { get; set; }
         public Dictionary<string, string> KeyValuePairs { get; set; }
 
         public AdManagerModel()
         {
-            AdSlots = new List<AdSlot>();
+            AdUnits = new List<AdUnitModel>();
             KeyValuePairs = new Dictionary<string, string>();
+        }
+
+        public AdUnitModel Register(AdType type)
+        {
+            // Instanciate AdUnit
+            AdUnitModel adUnit = new AdUnitModel(type);
+            // Add to the list
+            AdUnits.Add(adUnit);
+            // Set the position
+            adUnit.SetPosition(1);
+            return adUnit;
         }
 
         public void AddSlot(AdSlot slot)
         {
-            AdSlots.Add(slot);
+            //AdSlots.Add(slot);
         }
 
         public void AddKeyValue(string key, string value)

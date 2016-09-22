@@ -1,4 +1,5 @@
-﻿using Slice.Data;
+﻿using Slice.Core;
+using Slice.Data;
 using Slice.Web.Models.Entity;
 using Slice.Web.Models.Shared;
 using SubjectEngine.Core;
@@ -23,6 +24,13 @@ namespace Slice.Web.Models.Widgets
             asset.AddCSSPath("~/Content/widgets/recipeDetail.css");
             asset.AddCSSPath("~/Content/widgets/subjectDetail.css");
             asset.AddCSSPath("~/Content/objects/socialShare.css");
+        }
+
+        public override void RegisterAds(AdManagerModel adManager)
+        {
+            // Register ads for this widget
+            AdUnitModel adUnitModel = adManager.Register(AdType.DoubleBox);
+            AdUnits.Add(adUnitModel);
         }
 
         public override void Populate(ReferenceInfoDto referenceInfo)

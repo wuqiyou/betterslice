@@ -19,6 +19,7 @@ namespace Slice.Web.Models
         public MetadataModel Metadata { get; set; }
         public FooterModel Footer { get; set; }
         public AssetModel AssetModel { get; set; }
+        public IList<AdUnitModel> AdUnits { get; set; }
 
         public PageViewModelBase(Uri requestedUrl, LanguageDto language)
         {
@@ -28,6 +29,7 @@ namespace Slice.Web.Models
             AdManagerModel = new AdManagerModel();
             Footer = new FooterModel();
             AssetModel = new AssetModel();
+            AdUnits = new List<AdUnitModel>();
         }
 
         public void Populate()

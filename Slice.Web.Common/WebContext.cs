@@ -51,7 +51,7 @@ namespace Slice.Web.Common
         public Dictionary<string, LanguageDto> LanguageDicByCulture { get; set; }
         public LanguageDto DefaultLanguage { get; set; }
 
-        public Dictionary<AdSlot, Point> AdSlotSizes { get; set; }
+        public Dictionary<AdType, Point> AdSlotSizes { get; set; }
 
         public Dictionary<string, KeywordDto> RecipeKeywords { get; set; }
         public Dictionary<string, CategoryDto> RecipeCategories { get; set; }
@@ -59,7 +59,7 @@ namespace Slice.Web.Common
         // Instance Interface
         private WebContext()
         {
-            AdSlotSizes = new Dictionary<AdSlot, Point>();
+            AdSlotSizes = new Dictionary<AdType, Point>();
             StaticMetadataList = new List<MetadataDto>();
             LanguageDic = new Dictionary<object, LanguageDto>();
             LanguageDicByCulture = new Dictionary<string, LanguageDto>();
@@ -129,15 +129,14 @@ namespace Slice.Web.Common
 
         private void InitAdSlotSize()
         {
-            AdSlotSizes.Add(AdSlot.Leaderboard, new Point(728, 90));
-            AdSlotSizes.Add(AdSlot.BigBox1, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.BigBox2, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Advertorial, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Logo, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Ribbon, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.DoubleBox, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Wallpaper, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Windowshade, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Leaderboard, new Point(728, 90));
+            AdSlotSizes.Add(AdType.BigBox, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Advertorial, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Logo, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Ribbon, new Point(300, 250));
+            AdSlotSizes.Add(AdType.DoubleBox, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Wallpaper, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Windowshade, new Point(300, 250));
         }
 
         private void InitRecipeKeywordsAndCategories()

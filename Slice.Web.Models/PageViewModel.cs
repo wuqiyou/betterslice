@@ -64,6 +64,11 @@ namespace Slice.Web.Models
         protected override void PopulateAdManager()
         {
             base.PopulateAdManager();
+            // Widget level Ad register
+            foreach (ZoneViewModel zone in Zones)
+            {
+                zone.Widget.RegisterAds(AdManagerModel);
+            }
         }
 
         protected override void UpdateAsset()
