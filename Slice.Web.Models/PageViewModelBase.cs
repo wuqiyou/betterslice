@@ -76,9 +76,8 @@ namespace Slice.Web.Models
             if (EnableAds)
             {
                 // TODO: add all kinds of Ad
-                AdManagerModel.AddSlot(AdSlot.Leaderboard);
-                AdManagerModel.AddSlot(AdSlot.BigBox1);
-                AdManagerModel.AddSlot(AdSlot.BigBox2);
+                AdUnitModel adUnitModel = AdManagerModel.Register(AdType.Leaderboard);
+                AdUnits.Add(adUnitModel);
 
                 AdManagerModel.AddKeyValue("site", "betterswing");
                 AdManagerModel.AddKeyValue("network", "test");

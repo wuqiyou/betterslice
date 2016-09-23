@@ -249,7 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Ad.cshtml" />
+    <Content Include="Views\Shared\_AdUnit.cshtml" />
     <Content Include="Views\Shared\_AdManager.cshtml" />
     <Content Include="Views\Shared\_AdSense.cshtml" />
     <Content Include="Views\Shared\_Widget.cshtml" />

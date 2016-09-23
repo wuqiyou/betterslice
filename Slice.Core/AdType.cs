@@ -5,11 +5,8 @@ namespace Slice.Core
     {
         Leaderboard,
         BigBox,
-        Advertorial,
-        Logo,
-        Ribbon,
-        DoubleBox,
+        DoubleBigBox,
         Wallpaper,
-        Windowshade,
+        Billboard,
     }
 }

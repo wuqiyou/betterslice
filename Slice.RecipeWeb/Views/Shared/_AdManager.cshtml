@@ -18,18 +18,9 @@
 </script>
 <script type='text/javascript'>
     googletag.cmd.push(function () {
-        @{
-            int index = 1;
-            foreach (AdSlot slot in Model.AdSlots)
-            {
-                string divId = string.Format(WebContext.Current.AdSlotFormatString, slot.ToString().ToLower());
-                if (WebContext.Current.AdSlotSizes.ContainsKey(slot))
-                {
-                    System.Drawing.Point adSize = WebContext.Current.AdSlotSizes[slot];
-                    @: googletag.defineSlot('@WebContext.Current.AdServiceUnit', [@adSize.X, @adSize.Y], '@divId').addService(googletag.companionAds()).addService(googletag.pubads()).setTargeting('pos', '@index');
-                    index++;
-                }
-            }
+        @foreach (AdUnitModel adUnit in Model.AdUnits)
+        {
+            @: googletag.defineSlot('@WebContext.Current.AdServiceUnit', @adUnit.Sizes, '@adUnit.UniqureId').addService(googletag.companionAds()).addService(googletag.pubads()).setTargeting('pos', '@adUnit.Position');
         }
         @foreach (var item in Model.KeyValuePairs)
         {

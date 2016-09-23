@@ -29,7 +29,7 @@ namespace Slice.Web.Models.Widgets
         public override void RegisterAds(AdManagerModel adManager)
         {
             // Register ads for this widget
-            AdUnitModel adUnitModel = adManager.Register(AdType.DoubleBox);
+            AdUnitModel adUnitModel = adManager.Register(AdType.DoubleBigBox);
             AdUnits.Add(adUnitModel);
         }
 

@@ -1,4 +1,5 @@
-﻿using Slice.Data;
+﻿using Slice.Core;
+using Slice.Data;
 using Slice.Web.Common;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,17 @@ namespace Slice.Web.Models
             base.PopulateMetadata();
 
             Metadata.Title = Category + " Recipes";
+        }
+
+        protected override void PopulateAdManager()
+        {
+            base.PopulateAdManager();
+
+            // Register 2 bigbox ads
+            AdUnitModel adUnitModel = AdManagerModel.Register(AdType.BigBox, "ad-labeled bigbox");
+            AdUnits.Add(adUnitModel);
+            adUnitModel = AdManagerModel.Register(AdType.BigBox, "ad-labeled bigbox");
+            AdUnits.Add(adUnitModel);
         }
 
         protected override void UpdateAsset()

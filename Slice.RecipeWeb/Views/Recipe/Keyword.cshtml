@@ -15,6 +15,6 @@
 </div>
 
 @section RightRail {
-    @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.BigBox1, CssClass = "ad-labeled bigbox" })
-    @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.BigBox2, CssClass = "ad-labeled bigbox bp-mediumToExtraLarge" })
+    @Html.Partial("_AdUnit", Model.AdUnits[1])
+    @Html.Partial("_AdUnit", Model.AdUnits[2])
 }

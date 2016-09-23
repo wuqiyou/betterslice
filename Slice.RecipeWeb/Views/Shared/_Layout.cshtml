@@ -39,7 +39,7 @@
         <div id="headerContainer">
             <a id="site-logo" class="bp-mediumToExtraLarge" href='@Html.LocalizeHref("")'></a>
             <div id="ad-top">
-                @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.Leaderboard, CssClass = "leaderboard" })
+                @Html.Partial("_AdUnit", ((PageViewModelBase)Model).AdUnits[0])
             </div>
         </div>
     </header>

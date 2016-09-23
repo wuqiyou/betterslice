@@ -1,29 +1,22 @@
 ﻿using Slice.Core;
+using Slice.Web.Common;
 
 namespace Slice.Web.Models
 {
     public class AdUnitModel
     {
-        public AdType AdType { get; private set; }
         public int Position { get; private set; }
+        public string UniqureId { get; private set; }
+        public string Sizes { get; private set; }
+        public string CssClass { get; set; }
 
-        public string UniqureId
-        {
-            get
-            {
-                return string.Format("ad-{0}-{1}", AdType.ToString().ToLower(), Position);
-            }
-        }
-
-        public AdUnitModel(AdType type)
-        {
-            AdType = type;
-            Position = 1;
-        }
-
-        public void SetPosition(int position)
+        public AdUnitModel(AdType type, int position, string cssClass = "")
         {
             Position = position;
+            CssClass = cssClass;
+            //UniqureId = string.Format("ad-{0}-{1}", type.ToString().ToLower(), position);
+            UniqureId = string.Format("ad-{0}", type.ToString().ToLower());
+            Sizes = WebContext.Current.AdSlotSizes[type];
         }
     }
 }

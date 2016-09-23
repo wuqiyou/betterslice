@@ -51,7 +51,7 @@ namespace Slice.Web.Common
         public Dictionary<string, LanguageDto> LanguageDicByCulture { get; set; }
         public LanguageDto DefaultLanguage { get; set; }
 
-        public Dictionary<AdType, Point> AdSlotSizes { get; set; }
+        public Dictionary<AdType, string> AdSlotSizes { get; set; }
 
         public Dictionary<string, KeywordDto> RecipeKeywords { get; set; }
         public Dictionary<string, CategoryDto> RecipeCategories { get; set; }
@@ -59,7 +59,7 @@ namespace Slice.Web.Common
         // Instance Interface
         private WebContext()
         {
-            AdSlotSizes = new Dictionary<AdType, Point>();
+            AdSlotSizes = new Dictionary<AdType, string>();
             StaticMetadataList = new List<MetadataDto>();
             LanguageDic = new Dictionary<object, LanguageDto>();
             LanguageDicByCulture = new Dictionary<string, LanguageDto>();
@@ -129,14 +129,11 @@ namespace Slice.Web.Common
 
         private void InitAdSlotSize()
         {
-            AdSlotSizes.Add(AdType.Leaderboard, new Point(728, 90));
-            AdSlotSizes.Add(AdType.BigBox, new Point(300, 250));
-            AdSlotSizes.Add(AdType.Advertorial, new Point(300, 250));
-            AdSlotSizes.Add(AdType.Logo, new Point(300, 250));
-            AdSlotSizes.Add(AdType.Ribbon, new Point(300, 250));
-            AdSlotSizes.Add(AdType.DoubleBox, new Point(300, 250));
-            AdSlotSizes.Add(AdType.Wallpaper, new Point(300, 250));
-            AdSlotSizes.Add(AdType.Windowshade, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Leaderboard, "[[728, 90], [320, 50], [970, 90]]");
+            AdSlotSizes.Add(AdType.BigBox, "[300, 250]");
+            AdSlotSizes.Add(AdType.DoubleBigBox, "[300, 600]");
+            AdSlotSizes.Add(AdType.Wallpaper, "[1, 1]");
+            AdSlotSizes.Add(AdType.Billboard, "[970, 250]");
         }
 
         private void InitRecipeKeywordsAndCategories()
