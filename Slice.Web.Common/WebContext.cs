@@ -31,7 +31,6 @@ namespace Slice.Web.Common
         // Site settings from web.config
         public bool RunOnMockData { get; set; }
         public string AdServiceUnit { get; set; }
-        public string AdSlotFormatString { get; set; }
         public string SiteName { get; set; }
         public string ImageServeRoot { get; set; }
         public int DefaultLanguageId { get; set; }
@@ -113,7 +112,6 @@ namespace Slice.Web.Common
         {
             RunOnMockData = Convert.ToBoolean(ConfigurationManager.AppSettings["RunOnMockData"]);
             AdServiceUnit = ConfigurationManager.AppSettings["AdServiceUnit"];
-            AdSlotFormatString = ConfigurationManager.AppSettings["AdSlotFormatString"];
             SiteName = ConfigurationManager.AppSettings["SiteName"];
             ImageServeRoot = ConfigurationManager.AppSettings["ImageServeRoot"];
             DefaultLanguageId = Convert.ToInt32(ConfigurationManager.AppSettings["DefaultLanguageId"]);
