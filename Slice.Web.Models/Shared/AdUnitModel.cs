@@ -14,8 +14,7 @@ namespace Slice.Web.Models
         {
             Position = position;
             CssClass = cssClass;
-            //UniqureId = string.Format("ad-{0}-{1}", type.ToString().ToLower(), position);
-            UniqureId = string.Format("ad-{0}", type.ToString().ToLower());
+            UniqureId = string.Format("ad-{0}-{1}", type.ToString().ToLower(), position);
             Sizes = WebContext.Current.AdSlotSizes[type];
         }
     }

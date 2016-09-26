@@ -33,17 +33,6 @@ namespace Slice.Web.Models
             Metadata.Title = Category + " Recipes";
         }
 
-        protected override void PopulateAdManager()
-        {
-            base.PopulateAdManager();
-
-            // Register 2 bigbox ads
-            AdUnitModel adUnitModel = AdManagerModel.Register(AdType.BigBox, "ad-labeled bigbox");
-            AdUnits.Add(adUnitModel);
-            adUnitModel = AdManagerModel.Register(AdType.BigBox, "ad-labeled bigbox");
-            AdUnits.Add(adUnitModel);
-        }
-
         protected override void UpdateAsset()
         {
             base.UpdateAsset();

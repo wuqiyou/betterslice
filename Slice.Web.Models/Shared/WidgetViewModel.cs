@@ -14,22 +14,12 @@ namespace Slice.Web.Models
         public string ZoneStyle { get; set; }
 
         public bool HasValue { get; set; }
-        public IList<AdUnitModel> AdUnits { get; set; }
-
-        public WidgetViewModel()
-        {
-            AdUnits = new List<AdUnitModel>();
-        }
 
         public virtual void Populate(ReferenceInfoDto referenceInfo)
         {
         }
 
         public virtual void UpdateAsset(AssetModel asset)
-        {
-        }
-
-        public virtual void RegisterAds(AdManagerModel adManager)
         {
         }
     }

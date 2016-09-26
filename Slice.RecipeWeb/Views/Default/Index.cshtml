@@ -69,6 +69,10 @@
   }
 }
 @section RightRail {
+  @{
+    AdUnitModel bigbox1 = Model.AdManagerModel.Register(AdType.BigBox);
+    Html.RenderPartial("_AdUnit", bigbox1);
+  }
   @foreach (ZoneViewModel zone in Model.Zones.OrderBy(o => o.Row))
   {
     if (object.Equals(zone.Style, CmsRegister.RIGHT_RAIL_STYLE))
