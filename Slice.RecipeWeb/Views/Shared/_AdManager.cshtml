@@ -22,7 +22,7 @@
         {
             @: googletag.defineSlot('@WebContext.Current.AdServiceUnit', @adUnit.Sizes, '@adUnit.UniqureId').addService(googletag.companionAds()).addService(googletag.pubads()).setTargeting('pos', '@adUnit.Position');
         }
-        @foreach (var item in Model.KeyValuePairs)
+        @foreach (var item in Model.TargetingSettings)
         {
             @: googletag.pubads().setTargeting('@item.Key', '@item.Value');
         }

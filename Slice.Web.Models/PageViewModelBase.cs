@@ -19,6 +19,7 @@ namespace Slice.Web.Models
         public MetadataModel Metadata { get; set; }
         public FooterModel Footer { get; set; }
         public AssetModel AssetModel { get; set; }
+        public IList<AdUnitModel> AdUnits { get; set; }
 
         public PageViewModelBase(Uri requestedUrl, LanguageDto language)
         {
@@ -28,6 +29,7 @@ namespace Slice.Web.Models
             AdManagerModel = new AdManagerModel();
             Footer = new FooterModel();
             AssetModel = new AssetModel();
+            AdUnits = new List<AdUnitModel>();
         }
 
         public void Populate()
@@ -71,14 +73,15 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateAdManager()
         {
-            if (EnableAds)
-            {
-                AdManagerModel.AddKeyValue("site", "betterswing");
-                AdManagerModel.AddKeyValue("network", "test");
-                AdManagerModel.AddKeyValue("page", "show");
-                //AdSettings.KeyValuePairs.Add("section", "show");
-                //AdSettings.KeyValuePairs.Add("liveinsite", "show");
-            }
+            // register leaderboard
+            AdUnitModel adUnitModel = AdManagerModel.Register(AdType.Leaderboard);
+            AdUnits.Add(adUnitModel);
+
+            AdManagerModel.AddSetting("site", "betterswing");
+            AdManagerModel.AddSetting("network", "test");
+            AdManagerModel.AddSetting("page", "show");
+            //AdSettings.KeyValuePairs.Add("section", "show");
+            //AdSettings.KeyValuePairs.Add("liveinsite", "show");
         }
 
         protected virtual void UpdateAsset()

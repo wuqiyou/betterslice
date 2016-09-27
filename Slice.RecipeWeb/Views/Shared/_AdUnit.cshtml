@@ -1,18 +1,22 @@
 ﻿@using Slice.Web.Models
 @using Slice.Web.Common
 @model AdUnitModel
-<div id="@Model.UniqureId" class="@Model.CssClass">
-    @if (WebContext.Current.EnableAds)
-    {
-        <script type="text/javascript">
-            googletag.cmd.push(function () {
-                googletag.display("@Model.UniqureId");
+
+@{
+  string cssClass = ViewData["cssClass"].ToString();
+}
+<div id="@Model.UniqureId" class="@cssClass">
+  @if (WebContext.Current.EnableAds)
+  {
+    <script type="text/javascript">
+      googletag.cmd.push(function () {
+        googletag.display("@Model.UniqureId");
             });
-        </script>
-    }
-    else
-    {
-        <div id="@Model.UniqureId-empty" class="@Model.UniqureId-empty">
-        </div>
-    }
+    </script>
+  }
+  else
+  {
+    <div id="@Model.UniqureId-empty" class="@Model.UniqureId-empty">
+    </div>
+  }
 </div>

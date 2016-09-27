@@ -6,27 +6,27 @@ namespace Slice.Web.Models
     public class AdManagerModel
     {
         public IList<AdUnitModel> AdUnits { get; set; }
-        public Dictionary<string, string> KeyValuePairs { get; set; }
-        public Dictionary<AdType, int> UnitsCounterByType { get; set; }
+        public Dictionary<string, string> TargetingSettings { get; set; }
+        public Dictionary<AdType, int> AdsCounterByType { get; set; }
 
         public AdManagerModel()
         {
             AdUnits = new List<AdUnitModel>();
-            KeyValuePairs = new Dictionary<string, string>();
-            UnitsCounterByType = new Dictionary<AdType, int>();
+            TargetingSettings = new Dictionary<string, string>();
+            AdsCounterByType = new Dictionary<AdType, int>();
         }
 
         public AdUnitModel Register(AdType type, string cssClass = "")
         {
             // Get position of current requested Ad
             int position = 1;
-            if (UnitsCounterByType.ContainsKey(type))
+            if (AdsCounterByType.ContainsKey(type))
             {
-                position = ++UnitsCounterByType[type];
+                position = ++AdsCounterByType[type];
             }
             else
             {
-                UnitsCounterByType.Add(type, position);
+                AdsCounterByType.Add(type, position);
             }
 
             // Instanciate AdUnit
@@ -36,11 +36,11 @@ namespace Slice.Web.Models
             return adUnit;
         }
 
-        public void AddKeyValue(string key, string value)
+        public void AddSetting(string key, string value)
         {
-            if (!KeyValuePairs.ContainsKey(key))
+            if (!TargetingSettings.ContainsKey(key))
             {
-                KeyValuePairs.Add(key, value);
+                TargetingSettings.Add(key, value);
             }
         }
     }

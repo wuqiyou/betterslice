@@ -40,8 +40,8 @@
       <a id="site-logo" class="bp-mediumToExtraLarge" href='@Html.LocalizeHref("")'></a>
       <div id="ad-top">
         @{
-          AdUnitModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.Register(AdType.Leaderboard);
-          Html.RenderPartial("_AdUnit", adUnitModel);
+          AdUnitModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
+          Html.RenderPartial("_AdUnit", adUnitModel, new ViewDataDictionary { { "cssClass", "leaderboard" } });
         }
       </div>
     </div>

@@ -43,5 +43,15 @@ namespace Slice.Web.Models
                 AssetModel.AddCSSPath("~/Content/objects/pagination.css");
             }
         }
+
+        protected override void PopulateAdManager()
+        {
+            base.PopulateAdManager();
+
+            AdUnitModel bigbox1 = AdManagerModel.Register(AdType.BigBox);
+            AdUnits.Add(bigbox1);
+            AdUnitModel bigbox2 = AdManagerModel.Register(AdType.BigBox);
+            AdUnits.Add(bigbox2);
+        }
     }
 }
