@@ -87,6 +87,7 @@
     <Compile Include="Widgets\CardViewWidget.cs" />
     <Compile Include="Widgets\CastGroup.cs" />
     <Compile Include="Widgets\ContactUs.cs" />
+    <Compile Include="Widgets\AdWidget.cs" />
     <Compile Include="Widgets\FeaturedContent.cs" />
     <Compile Include="Widgets\FeaturedContent2nd.cs" />
     <Compile Include="Widgets\HeroImage.cs" />
