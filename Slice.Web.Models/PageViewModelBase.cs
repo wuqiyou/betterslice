@@ -74,8 +74,7 @@ namespace Slice.Web.Models
         protected virtual void PopulateAdManager()
         {
             // register leaderboard
-            AdUnitModel adUnitModel = AdManagerModel.Register(AdType.Leaderboard);
-            AdUnits.Add(adUnitModel);
+            AdUnits.Add(AdManagerModel.Register(AdType.Leaderboard));
 
             AdManagerModel.AddSetting("site", "betterswing");
             AdManagerModel.AddSetting("network", "test");

@@ -10,6 +10,12 @@ namespace Slice.Web.Models.Widgets
 
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
+            AdType = Core.AdType.BigBox;
+        }
+
+        public override void RegisterAds(AdManagerModel adManager)
+        {
+            AdUnits.Add(adManager.Register(AdType));
         }
     }
 }

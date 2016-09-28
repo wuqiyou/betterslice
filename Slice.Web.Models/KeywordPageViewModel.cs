@@ -48,8 +48,8 @@ namespace Slice.Web.Models
         {
             base.PopulateAdManager();
 
-            AdUnitModel bigbox1 = AdManagerModel.Register(AdType.BigBox);
-            AdUnits.Add(bigbox1);
+            // Register 1 BigBox ad
+            AdUnits.Add(AdManagerModel.Register(AdType.BigBox));
         }
     }
 }

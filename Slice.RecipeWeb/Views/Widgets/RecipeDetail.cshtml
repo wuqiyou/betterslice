@@ -1,4 +1,5 @@
-﻿@using Slice.Web.Models.Widgets
+﻿@using Slice.Web.Models
+@using Slice.Web.Models.Widgets
 @using Slice.Web.Models.Entity
 @model RecipeDetail
 
@@ -31,6 +32,10 @@
       @Html.Raw(Model.Recipe.Abstract)
     </div>
   </div>
+  @{
+    AdUnitModel bigbox1 = Model.AdUnits[0];
+    Html.RenderPartial("_AdUnit", bigbox1, new ViewDataDictionary { { "cssClass", "ad-labeled bigbox" } });
+  }
   <div class="recipe-ingredients">
     <h2>Ingredients</h2>
     <ul class="recipe-ingredients-list">

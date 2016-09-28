@@ -1,15 +1,15 @@
 ﻿@using Slice.Web.Models.Widgets
 @model BlogDetail
 <div id="blogDetail" class="blogDetail">
-    <h1 class="blogDetail-title">@Model.Article.Title</h1>
-    <h5 class="blogDetail-subTitle">@Model.Article.Subtitle</h5>
-    @if (!string.IsNullOrEmpty(Model.Article.ImageUrl))
-    {
-        <img class="blogDetail-img" src="@Html.FullImageUrl(Model.Article.ImageUrl)" />
-    }
-    <div class="blogDetail-content">
-        <p>
-            @Html.Raw(Model.Article.Content)
-        </p>
-    </div>
+  <h1 class="blogDetail-title">@Model.Article.Title</h1>
+  <h5 class="blogDetail-subTitle">@Model.Article.Subtitle</h5>
+  @if (!string.IsNullOrEmpty(Model.Article.ImageUrl))
+  {
+    <img class="blogDetail-img" src="@Html.FullImageUrl(Model.Article.ImageUrl)" />
+  }
+  <div class="blogDetail-content">
+    <p>
+      @Html.Raw(Model.Article.Content)
+    </p>
+  </div>
 </div>
