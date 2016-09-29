@@ -26,12 +26,6 @@ namespace Slice.Web.Models.Widgets
             asset.AddCSSPath("~/Content/objects/socialShare.css");
         }
 
-        // TODO: add a BigBox for testing
-        public override void RegisterAds(AdManagerModel adManager)
-        {
-            AdUnits.Add(adManager.Register(AdType.BigBox));
-        }
-
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.RecipeBlock.Name))

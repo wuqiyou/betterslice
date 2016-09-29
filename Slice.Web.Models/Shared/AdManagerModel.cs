@@ -16,7 +16,7 @@ namespace Slice.Web.Models
             AdsCounterByType = new Dictionary<AdType, int>();
         }
 
-        public AdUnitModel Register(AdType type, string cssClass = "")
+        public AdUnitModel Register(AdType type)
         {
             // Get position of current requested Ad
             int position = 1;
@@ -30,7 +30,7 @@ namespace Slice.Web.Models
             }
 
             // Instanciate AdUnit
-            AdUnitModel adUnit = new AdUnitModel(type, position, cssClass);
+            AdUnitModel adUnit = new AdUnitModel(type, position);
             // Add to the list
             AdUnits.Add(adUnit);
             return adUnit;

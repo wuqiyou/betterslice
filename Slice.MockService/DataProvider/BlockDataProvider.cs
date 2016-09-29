@@ -94,6 +94,16 @@ namespace Slice.MockService.DataProvider
             return block;
         }
 
+        public static BlockInfoDto MockAdWidget()
+        {
+            BlockInfoDto block = new BlockInfoDto();
+            block.Name = "AdWidget";
+            block.WidgetName = "AdWidget";
+            block.IsBuiltIn = true;
+
+            return block;
+        }
+
         public static BlockInfoDto MockPhotoGallery()
         {
             BlockInfoDto block = new BlockInfoDto();

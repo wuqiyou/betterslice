@@ -1,7 +1,7 @@
 ﻿/*
     TODO: uncomment this after ad implemnted
     */
-/*.ad-labeled:after {
+.ad-labeled:after {
     background: url("images/stripes.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #E4E4E4;
     color: #404040;
@@ -14,13 +14,13 @@
     padding: 0.375em 0;
     text-align: center;
     width: 100%;
-}*/
+}
 
-.leaderboard {
+.ad-leaderboard {
     margin: 0 auto;
 }
 
-.bigbox {
+.ad-bigbox {
     width: 300px;
     height: 250px;
     border: 1px solid #E4E4E4;

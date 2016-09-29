@@ -1,0 +1,8 @@
+﻿@using Slice.Web.Models.Widgets
+@using Slice.Web.Models
+@model AdWidget
+
+@{
+  AdUnitModel adUnit = Model.AdUnits[0];
+  Html.RenderPartial("_AdUnit", adUnit);
+}

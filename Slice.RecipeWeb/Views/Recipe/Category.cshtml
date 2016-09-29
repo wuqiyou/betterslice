@@ -17,8 +17,8 @@
 @section RightRail {
   @{
     AdUnitModel bigbox1 = Model.AdManagerModel.AdUnits[1];
-    Html.RenderPartial("_AdUnit", bigbox1, new ViewDataDictionary { { "cssClass", "ad-labeled bigbox" } });
+    Html.RenderPartial("_AdUnit", bigbox1);
     AdUnitModel bigbox2 = Model.AdManagerModel.AdUnits[2];
-    Html.RenderPartial("_AdUnit", bigbox2, new ViewDataDictionary { { "cssClass", "ad-labeled bigbox" } });
+    Html.RenderPartial("_AdUnit", bigbox2);
   }
 }

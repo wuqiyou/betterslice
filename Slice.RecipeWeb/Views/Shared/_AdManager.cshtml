@@ -20,7 +20,7 @@
     googletag.cmd.push(function () {
         @foreach (AdUnitModel adUnit in Model.AdUnits)
         {
-            @: googletag.defineSlot('@WebContext.Current.AdServiceUnit', @adUnit.Sizes, '@adUnit.UniqureId').addService(googletag.companionAds()).addService(googletag.pubads()).setTargeting('pos', '@adUnit.Position');
+            @: googletag.defineSlot('@WebContext.Current.AdServiceUnit', @adUnit.Sizes, '@adUnit.UniqueId').addService(googletag.companionAds()).addService(googletag.pubads()).setTargeting('pos', '@adUnit.Position');
         }
         @foreach (var item in Model.TargetingSettings)
         {

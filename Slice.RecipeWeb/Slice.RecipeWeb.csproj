@@ -329,6 +329,7 @@
     <None Include="Properties\PublishProfiles\testdeploy.pubxml" />
     <Content Include="Views\Shared\_SocialShareBar.cshtml" />
     <Content Include="Views\Shared\_SubjectsCardView.cshtml" />
+    <Content Include="Views\Widgets\AdWidget.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

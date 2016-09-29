@@ -41,7 +41,7 @@
       <div id="ad-top">
         @{
           AdUnitModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
-          Html.RenderPartial("_AdUnit", adUnitModel, new ViewDataDictionary { { "cssClass", "leaderboard" } });
+          Html.RenderPartial("_AdUnit", adUnitModel);
         }
       </div>
     </div>

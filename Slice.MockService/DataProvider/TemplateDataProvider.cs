@@ -28,6 +28,11 @@ namespace Slice.MockService.DataProvider
             zones.Add(zone3);
             zone3.Block = BlockDataProvider.MockFeaturedContent2nd();
 
+            ZoneInfoDto zone4 = new ZoneInfoDto();
+            zones.Add(zone4);
+            zone4.Style = CmsRegister.RIGHT_RAIL_STYLE;
+            zone4.Block = BlockDataProvider.MockAdWidget();
+
             return template;
         }
 
@@ -59,6 +64,11 @@ namespace Slice.MockService.DataProvider
             ZoneInfoDto zone1 = new ZoneInfoDto();
             zones.Add(zone1);
             zone1.Block = BlockDataProvider.MockRecipeDetail();
+
+            ZoneInfoDto zone3 = new ZoneInfoDto();
+            zones.Add(zone3);
+            zone3.Style = CmsRegister.RIGHT_RAIL_STYLE;
+            zone3.Block = BlockDataProvider.MockAdWidget();
 
             ZoneInfoDto zone2 = new ZoneInfoDto();
             zones.Add(zone2);
