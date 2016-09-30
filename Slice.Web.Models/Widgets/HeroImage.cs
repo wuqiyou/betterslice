@@ -20,7 +20,7 @@ namespace Slice.Web.Models.Widgets
             Description = string.Empty;
         }
 
-        public override void UpdateAsset(AssetModel asset)
+        public override void UpdateAsset(AssetViewModel asset)
         {
             asset.AddCSSPath("~/Content/widgets/heroImage.css");
         }

@@ -13,7 +13,7 @@ namespace Slice.Web.Models.Widgets
             AdType = Core.AdType.BigBox;
         }
 
-        public override void RegisterAds(AdManagerModel adManager)
+        public override void RegisterAds(AdManagerViewModel adManager)
         {
             AdUnits.Add(adManager.Register(AdType));
         }

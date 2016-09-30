@@ -31,7 +31,7 @@
   @Scripts.Render(BundleConfig.HeadJSBundles)
   @if (Model.AdManagerModel != null)
   {
-    Html.RenderPartial("_AdManager", (AdManagerModel)Model.AdManagerModel);
+    Html.RenderPartial("_AdManager", (AdManagerViewModel)Model.AdManagerModel);
   }
 </head>
 <body style="background-color: @Model.BodyBackgroundColor;">
@@ -40,7 +40,7 @@
       <a id="site-logo" class="bp-mediumToExtraLarge" href='@Html.LocalizeHref("")'></a>
       <div id="ad-top">
         @{
-          AdUnitModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
+          AdUnitViewModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
           Html.RenderPartial("_AdUnit", adUnitModel);
         }
       </div>
@@ -60,7 +60,7 @@
     </div>
   </div>
   <footer>
-    @{Html.RenderPartial("_Footer", (FooterModel)Model.Footer);}
+    @{Html.RenderPartial("_Footer", (FooterViewModel)Model.Footer);}
   </footer>
   @Scripts.Render(BundleConfig.TailJSBundles)
   @if (Model.EnableTracking)

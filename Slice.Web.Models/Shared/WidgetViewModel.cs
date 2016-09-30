@@ -12,22 +12,22 @@ namespace Slice.Web.Models
         public Uri RequestedUrl { get; set; }
         public int? PageIndex { get; set; }
         public string ZoneStyle { get; set; }
-        public IList<AdUnitModel> AdUnits { get; set; }
+        public IList<AdUnitViewModel> AdUnits { get; set; }
 
         public bool HasValue { get; set; }
 
         public WidgetViewModel()
         {
-            AdUnits = new List<AdUnitModel>();
+            AdUnits = new List<AdUnitViewModel>();
         }
 
         public abstract void Populate(ReferenceInfoDto referenceInfo);
 
-        public virtual void UpdateAsset(AssetModel asset)
+        public virtual void UpdateAsset(AssetViewModel asset)
         {
         }
 
-        public virtual void RegisterAds(AdManagerModel adManager)
+        public virtual void RegisterAds(AdManagerViewModel adManager)
         {
         }
     }

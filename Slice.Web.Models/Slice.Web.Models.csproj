@@ -63,7 +63,7 @@
     <Compile Include="Entity\Rotator.cs" />
     <Compile Include="Entity\RotatorItem.cs" />
     <Compile Include="PageViewModelBase.cs" />
-    <Compile Include="Shared\AdUnitModel.cs" />
+    <Compile Include="Shared\AdUnitViewModel.cs" />
     <Compile Include="Shared\DucViewModel.cs" />
     <Compile Include="Shared\GridViewModel.cs" />
     <Compile Include="Shared\PaginationViewModel.cs" />
@@ -77,9 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewViewModel.cs" />
     <Compile Include="SearchPageViewModel.cs" />
-    <Compile Include="Shared\AdManagerModel.cs" />
-    <Compile Include="Shared\AssetModel.cs" />
-    <Compile Include="Shared\FooterModel.cs" />
+    <Compile Include="Shared\AdManagerViewModel.cs" />
+    <Compile Include="Shared\AssetViewModel.cs" />
+    <Compile Include="Shared\FooterViewModel.cs" />
     <Compile Include="Shared\MetadataModel.cs" />
     <Compile Include="Shared\ReferenceKeywordsViewModel.cs" />
     <Compile Include="SubsiteHeaderViewModel.cs" />

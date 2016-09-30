@@ -1,7 +1,7 @@
 ﻿@using Slice.Web.Common
 @using Slice.Core
 @using Slice.Web.Models
-@model AdManagerModel
+@model AdManagerViewModel
 <script type='text/javascript'>
     var googletag = googletag || {};
     googletag.cmd = googletag.cmd || [];
@@ -18,7 +18,7 @@
 </script>
 <script type='text/javascript'>
     googletag.cmd.push(function () {
-        @foreach (AdUnitModel adUnit in Model.AdUnits)
+        @foreach (AdUnitViewModel adUnit in Model.AdUnits)
         {
             @: googletag.defineSlot('@WebContext.Current.AdServiceUnit', @adUnit.Sizes, '@adUnit.UniqueId').addService(googletag.companionAds()).addService(googletag.pubads()).setTargeting('pos', '@adUnit.Position');
         }

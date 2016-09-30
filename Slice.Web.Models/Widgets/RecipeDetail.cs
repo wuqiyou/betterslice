@@ -19,7 +19,7 @@ namespace Slice.Web.Models.Widgets
             Recipe = new Recipe();
         }
 
-        public override void UpdateAsset(AssetModel asset)
+        public override void UpdateAsset(AssetViewModel asset)
         {
             asset.AddCSSPath("~/Content/widgets/recipeDetail.css");
             asset.AddCSSPath("~/Content/widgets/subjectDetail.css");

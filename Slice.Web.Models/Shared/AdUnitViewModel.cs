@@ -3,14 +3,14 @@ using Slice.Web.Common;
 
 namespace Slice.Web.Models
 {
-    public class AdUnitModel
+    public class AdUnitViewModel
     {
         public int Position { get; private set; }
         public string UniqueId { get; private set; }
         public string Sizes { get; private set; }
         public string CssClass { get; private set; }
 
-        public AdUnitModel(AdType type, int position)
+        public AdUnitViewModel(AdType type, int position)
         {
             Position = position;
             string typeStr = type.ToString().ToLower();

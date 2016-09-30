@@ -2,7 +2,7 @@
 
 namespace Slice.Web.Models
 {
-    public class FooterModel
+    public class FooterViewModel
     {
         public IList<MenuItem> FooterMenus { get; set; }
     }

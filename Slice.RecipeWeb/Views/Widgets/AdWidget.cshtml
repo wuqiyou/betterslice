@@ -3,6 +3,6 @@
 @model AdWidget
 
 @{
-  AdUnitModel adUnit = Model.AdUnits[0];
+  AdUnitViewModel adUnit = Model.AdUnits[0];
   Html.RenderPartial("_AdUnit", adUnit);
 }

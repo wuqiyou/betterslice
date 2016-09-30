@@ -17,7 +17,7 @@ namespace Slice.Web.Models.Widgets
             Items = new List<Photo>();
         }
 
-        public override void UpdateAsset(AssetModel asset)
+        public override void UpdateAsset(AssetViewModel asset)
         {
             asset.AddCSSPath("~/Content/widgets/photoList.css");
         }
