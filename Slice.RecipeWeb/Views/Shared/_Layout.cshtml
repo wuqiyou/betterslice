@@ -6,7 +6,7 @@
 @using Slice.RecipeWeb.Controllers
 
 @{
-    BundleConfig.RegisterBundles(Model.AssetModel); 
+  BundleConfig.RegisterBundles(Model.AssetModel); 
 }
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -16,53 +16,56 @@
 <html class="no-js">
 <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
-    <link href="~/favicon.ico?v=1" rel="shortcut icon" type="image/png" />
-    @Styles.Render(BundleConfig.CSSBundles)
-    <title>@Model.PageTitle | @Slice.Web.Common.WebContext.Current.SiteName</title>
-    @if (Model.Metadata != null)
-    {
-        Html.RenderPartial("_Metadata", (MetadataModel)Model.Metadata);
-    }
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    @Scripts.Render(BundleConfig.HeadJSBundles)
-    @if (Model.AdManagerModel != null)
-    {
-        //Html.RenderPartial("_AdManager", (AdManagerModel)Model.AdManagerModel);
-    }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+  <link href="~/favicon.ico?v=1" rel="shortcut icon" type="image/png" />
+  @Styles.Render(BundleConfig.CSSBundles)
+  <title>@Model.PageTitle | @Slice.Web.Common.WebContext.Current.SiteName</title>
+  @if (Model.Metadata != null)
+  {
+    Html.RenderPartial("_Metadata", (MetadataModel)Model.Metadata);
+  }
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+  @Scripts.Render(BundleConfig.HeadJSBundles)
+  @if (Model.AdManagerModel != null)
+  {
+    Html.RenderPartial("_AdManager", (AdManagerViewModel)Model.AdManagerModel);
+  }
 </head>
 <body style="background-color: @Model.BodyBackgroundColor;">
-    <header>
-        <div id="headerContainer">
-            <a id="site-logo" class="bp-mediumToExtraLarge" href='@Html.LocalizeHref("")'></a>
-            <div id="ad-top">
-                @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.Leaderboard, CssClass = "leaderboard" })
-            </div>
-        </div>
-    </header>
-    @{Html.RenderAction(NavigateController.MainMenuAction, NavigateController.ControllerName);}
-    <div id="main">
-        @RenderSection("SubsiteHead", required: false)
-        @RenderSection("FullWidthZone", required: false)
-        <div id="container">
-            <div id="mainwell">
-                @RenderBody()
-            </div>
-            <aside id="rightRail">
-                @RenderSection("RightRail", required: false)
-            </aside>
-        </div>
+  <header>
+    <div id="headerContainer">
+      <a id="site-logo" class="bp-mediumToExtraLarge" href='@Html.LocalizeHref("")'></a>
+      <div id="ad-top">
+        @{
+          AdUnitViewModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
+          Html.RenderPartial("_AdUnit", adUnitModel);
+        }
+      </div>
     </div>
-    <footer>
-        @{Html.RenderPartial("_Footer", (FooterModel)Model.Footer);}
-    </footer>
-    @Scripts.Render(BundleConfig.TailJSBundles)
-    @if (Model.EnableTracking)
-    {
-        Html.RenderPartial("_TrafficTracking");
-    }
+  </header>
+  @{Html.RenderAction(NavigateController.MainMenuAction, NavigateController.ControllerName);}
+  <div id="main">
+    @RenderSection("SubsiteHead", required: false)
+    @RenderSection("FullWidthZone", required: false)
+    <div id="container">
+      <div id="mainwell">
+        @RenderBody()
+      </div>
+      <aside id="rightRail">
+        @RenderSection("RightRail", required: false)
+      </aside>
+    </div>
+  </div>
+  <footer>
+    @{Html.RenderPartial("_Footer", (FooterViewModel)Model.Footer);}
+  </footer>
+  @Scripts.Render(BundleConfig.TailJSBundles)
+  @if (Model.EnableTracking)
+  {
+    Html.RenderPartial("_TrafficTracking");
+  }
 </body>
 </html>

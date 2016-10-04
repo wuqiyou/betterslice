@@ -2,13 +2,13 @@
 
 namespace Slice.Web.Models
 {
-    public class AssetModel
+    public class AssetViewModel
     {
         public List<string> IncludeCSSPaths { get; set; }
         public List<string> IncludeHeadJSPaths { get; set; }
         public List<string> IncludeTailJSPaths { get; set; }
 
-        public AssetModel()
+        public AssetViewModel()
         {
             IncludeCSSPaths = new List<string>();
             IncludeHeadJSPaths = new List<string>();

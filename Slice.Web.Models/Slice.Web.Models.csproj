@@ -63,6 +63,7 @@
     <Compile Include="Entity\Rotator.cs" />
     <Compile Include="Entity\RotatorItem.cs" />
     <Compile Include="PageViewModelBase.cs" />
+    <Compile Include="Shared\AdUnitViewModel.cs" />
     <Compile Include="Shared\DucViewModel.cs" />
     <Compile Include="Shared\GridViewModel.cs" />
     <Compile Include="Shared\PaginationViewModel.cs" />
@@ -76,10 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewViewModel.cs" />
     <Compile Include="SearchPageViewModel.cs" />
-    <Compile Include="Shared\AdManagerModel.cs" />
-    <Compile Include="Shared\AdModel.cs" />
-    <Compile Include="Shared\AssetModel.cs" />
-    <Compile Include="Shared\FooterModel.cs" />
+    <Compile Include="Shared\AdManagerViewModel.cs" />
+    <Compile Include="Shared\AssetViewModel.cs" />
+    <Compile Include="Shared\FooterViewModel.cs" />
     <Compile Include="Shared\MetadataModel.cs" />
     <Compile Include="Shared\ReferenceKeywordsViewModel.cs" />
     <Compile Include="SubsiteHeaderViewModel.cs" />
@@ -87,6 +87,7 @@
     <Compile Include="Widgets\CardViewWidget.cs" />
     <Compile Include="Widgets\CastGroup.cs" />
     <Compile Include="Widgets\ContactUs.cs" />
+    <Compile Include="Widgets\AdWidget.cs" />
     <Compile Include="Widgets\FeaturedContent.cs" />
     <Compile Include="Widgets\FeaturedContent2nd.cs" />
     <Compile Include="Widgets\HeroImage.cs" />

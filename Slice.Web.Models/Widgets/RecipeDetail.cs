@@ -1,4 +1,5 @@
-﻿using Slice.Data;
+﻿using Slice.Core;
+using Slice.Data;
 using Slice.Web.Models.Entity;
 using Slice.Web.Models.Shared;
 using SubjectEngine.Core;
@@ -18,7 +19,7 @@ namespace Slice.Web.Models.Widgets
             Recipe = new Recipe();
         }
 
-        public override void UpdateAsset(AssetModel asset)
+        public override void UpdateAsset(AssetViewModel asset)
         {
             asset.AddCSSPath("~/Content/widgets/recipeDetail.css");
             asset.AddCSSPath("~/Content/widgets/subjectDetail.css");

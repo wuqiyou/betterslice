@@ -31,7 +31,6 @@ namespace Slice.Web.Common
         // Site settings from web.config
         public bool RunOnMockData { get; set; }
         public string AdServiceUnit { get; set; }
-        public string AdSlotFormatString { get; set; }
         public string SiteName { get; set; }
         public string ImageServeRoot { get; set; }
         public int DefaultLanguageId { get; set; }
@@ -51,7 +50,7 @@ namespace Slice.Web.Common
         public Dictionary<string, LanguageDto> LanguageDicByCulture { get; set; }
         public LanguageDto DefaultLanguage { get; set; }
 
-        public Dictionary<AdSlot, Point> AdSlotSizes { get; set; }
+        public Dictionary<AdType, string> AdSlotSizes { get; set; }
 
         public Dictionary<string, KeywordDto> RecipeKeywords { get; set; }
         public Dictionary<string, CategoryDto> RecipeCategories { get; set; }
@@ -59,7 +58,7 @@ namespace Slice.Web.Common
         // Instance Interface
         private WebContext()
         {
-            AdSlotSizes = new Dictionary<AdSlot, Point>();
+            AdSlotSizes = new Dictionary<AdType, string>();
             StaticMetadataList = new List<MetadataDto>();
             LanguageDic = new Dictionary<object, LanguageDto>();
             LanguageDicByCulture = new Dictionary<string, LanguageDto>();
@@ -113,7 +112,6 @@ namespace Slice.Web.Common
         {
             RunOnMockData = Convert.ToBoolean(ConfigurationManager.AppSettings["RunOnMockData"]);
             AdServiceUnit = ConfigurationManager.AppSettings["AdServiceUnit"];
-            AdSlotFormatString = ConfigurationManager.AppSettings["AdSlotFormatString"];
             SiteName = ConfigurationManager.AppSettings["SiteName"];
             ImageServeRoot = ConfigurationManager.AppSettings["ImageServeRoot"];
             DefaultLanguageId = Convert.ToInt32(ConfigurationManager.AppSettings["DefaultLanguageId"]);
@@ -129,15 +127,11 @@ namespace Slice.Web.Common
 
         private void InitAdSlotSize()
         {
-            AdSlotSizes.Add(AdSlot.Leaderboard, new Point(728, 90));
-            AdSlotSizes.Add(AdSlot.BigBox1, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.BigBox2, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Advertorial, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Logo, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Ribbon, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.DoubleBox, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Wallpaper, new Point(300, 250));
-            AdSlotSizes.Add(AdSlot.Windowshade, new Point(300, 250));
+            AdSlotSizes.Add(AdType.Leaderboard, "[[728, 90], [320, 50], [970, 90]]");
+            AdSlotSizes.Add(AdType.BigBox, "[300, 250]");
+            AdSlotSizes.Add(AdType.DoubleBigBox, "[300, 600]");
+            AdSlotSizes.Add(AdType.Wallpaper, "[1, 1]");
+            AdSlotSizes.Add(AdType.Billboard, "[970, 250]");
         }
 
         private void InitRecipeKeywordsAndCategories()

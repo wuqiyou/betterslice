@@ -15,7 +15,7 @@ namespace Slice.Web.Models.Widgets
             Article = new Article();
         }
 
-        public override void UpdateAsset(AssetModel asset)
+        public override void UpdateAsset(AssetViewModel asset)
         {
             asset.AddCSSPath("~/Content/widgets/blogDetail.css");
         }

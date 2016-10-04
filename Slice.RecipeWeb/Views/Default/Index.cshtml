@@ -69,7 +69,6 @@
   }
 }
 @section RightRail {
-  @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.BigBox1, CssClass = "ad-labeled bigbox" })
   @foreach (ZoneViewModel zone in Model.Zones.OrderBy(o => o.Row))
   {
     if (object.Equals(zone.Style, CmsRegister.RIGHT_RAIL_STYLE))

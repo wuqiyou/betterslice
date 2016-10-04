@@ -1,4 +1,5 @@
-﻿using Slice.Data;
+﻿using Slice.Core;
+using Slice.Data;
 using Slice.Web.Common;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,14 @@ namespace Slice.Web.Models
             {
                 AssetModel.AddCSSPath("~/Content/objects/pagination.css");
             }
+        }
+
+        protected override void PopulateAdManager()
+        {
+            base.PopulateAdManager();
+
+            // Register 1 BigBox ad
+            AdUnits.Add(AdManagerModel.Register(AdType.BigBox));
         }
     }
 }

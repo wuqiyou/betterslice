@@ -249,7 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Ad.cshtml" />
+    <Content Include="Views\Shared\_AdUnit.cshtml" />
     <Content Include="Views\Shared\_AdManager.cshtml" />
     <Content Include="Views\Shared\_AdSense.cshtml" />
     <Content Include="Views\Shared\_Widget.cshtml" />
@@ -329,6 +329,7 @@
     <None Include="Properties\PublishProfiles\testdeploy.pubxml" />
     <Content Include="Views\Shared\_SocialShareBar.cshtml" />
     <Content Include="Views\Shared\_SubjectsCardView.cshtml" />
+    <Content Include="Views\Widgets\AdWidget.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

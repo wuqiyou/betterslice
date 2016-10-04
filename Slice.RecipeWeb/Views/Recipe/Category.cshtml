@@ -5,16 +5,20 @@
 <h1>@Model.PageTitle</h1>
 
 <div class="zoneContainer">
-    <ul class="cardview nonestyle infinite-scroll">
-        @Html.Partial("_SubjectsCardView", Model.Items)
-    </ul>
-    @if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
-    {
-        Html.RenderPartial("_Pagination", Model.PaginationViewModel);
-    }
+  <ul class="cardview nonestyle infinite-scroll">
+    @Html.Partial("_SubjectsCardView", Model.Items)
+  </ul>
+  @if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
+  {
+    Html.RenderPartial("_Pagination", Model.PaginationViewModel);
+  }
 </div>
 
 @section RightRail {
-    @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.BigBox1, CssClass = "ad-labeled bigbox" })
-    @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.BigBox2, CssClass = "ad-labeled bigbox bp-mediumToExtraLarge" })
+  @{
+    AdUnitViewModel bigbox1 = Model.AdManagerModel.AdUnits[1];
+    Html.RenderPartial("_AdUnit", bigbox1);
+    AdUnitViewModel bigbox2 = Model.AdManagerModel.AdUnits[2];
+    Html.RenderPartial("_AdUnit", bigbox2);
+  }
 }

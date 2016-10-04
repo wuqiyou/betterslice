@@ -15,7 +15,7 @@ namespace Slice.Web.Models.Widgets
             Gallery = new Gallery();
         }
 
-        public override void UpdateAsset(AssetModel asset)
+        public override void UpdateAsset(AssetViewModel asset)
         {
             asset.AddCSSPath("~/Content/objects/flexslider.css");
             asset.AddCSSPath("~/Content/widgets/photoGallery.css");

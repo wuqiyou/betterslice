@@ -15,19 +15,21 @@ namespace Slice.Web.Models
         public bool EnableReview { get; set; }
         public bool EnableTracking { get; set; }
         public LanguageDto CurrentLanguage { get; set; }
-        public AdManagerModel AdManagerModel { get; set; }
+        public AdManagerViewModel AdManagerModel { get; set; }
         public MetadataModel Metadata { get; set; }
-        public FooterModel Footer { get; set; }
-        public AssetModel AssetModel { get; set; }
+        public FooterViewModel Footer { get; set; }
+        public AssetViewModel AssetModel { get; set; }
+        public IList<AdUnitViewModel> AdUnits { get; set; }
 
         public PageViewModelBase(Uri requestedUrl, LanguageDto language)
         {
             RequestedUrl = requestedUrl;
             CurrentLanguage = language;
             Metadata = new MetadataModel();
-            AdManagerModel = new AdManagerModel();
-            Footer = new FooterModel();
-            AssetModel = new AssetModel();
+            AdManagerModel = new AdManagerViewModel();
+            Footer = new FooterViewModel();
+            AssetModel = new AssetViewModel();
+            AdUnits = new List<AdUnitViewModel>();
         }
 
         public void Populate()
@@ -71,19 +73,14 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateAdManager()
         {
-            if (EnableAds)
-            {
-                // TODO: add all kinds of Ad
-                AdManagerModel.AddSlot(AdSlot.Leaderboard);
-                AdManagerModel.AddSlot(AdSlot.BigBox1);
-                AdManagerModel.AddSlot(AdSlot.BigBox2);
+            // register leaderboard
+            AdUnits.Add(AdManagerModel.Register(AdType.Leaderboard));
 
-                AdManagerModel.AddKeyValue("site", "betterswing");
-                AdManagerModel.AddKeyValue("network", "test");
-                AdManagerModel.AddKeyValue("page", "show");
-                //AdSettings.KeyValuePairs.Add("section", "show");
-                //AdSettings.KeyValuePairs.Add("liveinsite", "show");
-            }
+            AdManagerModel.AddSetting("site", "betterswing");
+            AdManagerModel.AddSetting("network", "test");
+            AdManagerModel.AddSetting("page", "show");
+            //AdSettings.KeyValuePairs.Add("section", "show");
+            //AdSettings.KeyValuePairs.Add("liveinsite", "show");
         }
 
         protected virtual void UpdateAsset()

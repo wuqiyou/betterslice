@@ -269,10 +269,6 @@ a {
     content: "\f0c9";
 }
 
-.leaderboard {
-    margin: 0 auto;
-}
-
 /* responsive-nav.js v1.0.14 by @viljamis */
 
 .js #nav {
@@ -440,13 +436,6 @@ ul.nonestyle {
         max-height: 4em;
     }
 
-    .ad-leaderboard-empty {
-        margin: 0 auto;
-        width: 320px;
-        height: 50px;
-        background: url("images/size320x50.jpg");
-    }
-
     #mobile-toggle {
         width: 100%;
         border-bottom: 5px solid #f2f2f2;
@@ -506,13 +495,6 @@ ul.nonestyle {
 @media (min-width: 45em) {
     #ad-top {
         min-height: 6.2em;
-    }
-
-    .ad-leaderboard-empty {
-        margin: 0 auto;
-        width: 728px;
-        height: 90px;
-        background: url("images/size728x90.jpg");
     }
 
     #site-logo {

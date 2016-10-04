@@ -1,0 +1,19 @@
+﻿@using Slice.Web.Models
+@using Slice.Web.Common
+@model AdUnitViewModel
+
+<div id="@Model.UniqueId" class="@Model.CssClass">
+  @if (WebContext.Current.EnableAds)
+  {
+    <script type="text/javascript">
+      googletag.cmd.push(function () {
+        googletag.display("@Model.UniqueId");
+      });
+    </script>
+  }
+  else
+  {
+    <div id="@Model.UniqueId-empty" class="@Model.UniqueId-empty">
+    </div>
+  }
+</div>

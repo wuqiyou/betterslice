@@ -40,6 +40,16 @@ namespace Slice.Web.Models
             }
         }
 
+        protected override void PopulateAdManager()
+        {
+            base.PopulateAdManager();
+            // Loop all widgets to register Ads for each widget
+            foreach (ZoneViewModel zone in Zones)
+            {
+                zone.Widget.RegisterAds(AdManagerModel);
+            }
+        }
+
         protected override void PopulateMetadata()
         {
             base.PopulateMetadata();
@@ -59,11 +69,6 @@ namespace Slice.Web.Models
                     metadataProvider.UpdateMetadata(Metadata);
                 }
             }
-        }
-
-        protected override void PopulateAdManager()
-        {
-            base.PopulateAdManager();
         }
 
         protected override void UpdateAsset()

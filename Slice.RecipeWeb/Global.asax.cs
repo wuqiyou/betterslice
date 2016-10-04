@@ -29,7 +29,6 @@ namespace Slice.RecipeWeb
             RunOnMockData = Convert.ToBoolean(v);
             WebContext.Current.RunOnMockData = RunOnMockData;
             WebContext.Current.AdServiceUnit = ConfigurationManager.AppSettings["AdServiceUnit"];
-            WebContext.Current.AdSlotFormatString = ConfigurationManager.AppSettings["AdSlotFormatString"];
 
             InitUnity();
             InitFramework();
