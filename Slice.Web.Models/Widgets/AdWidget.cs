@@ -10,6 +10,7 @@ namespace Slice.Web.Models.Widgets
 
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
+            // TODO: hard code as a BigBox, init AdType based on reference data later. 
             AdType = Core.AdType.BigBox;
         }
 
