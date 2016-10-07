@@ -149,6 +149,8 @@
     <Content Include="Content\images\bgGrad.gif" />
     <Content Include="Content\images\bg_play_pause.png" />
     <Content Include="Content\images\headerBG.png" />
+    <Content Include="Content\images\headerBGTexture.png" />
+    <Content Include="Content\images\headerBGTexture_Purple.png" />
     <Content Include="Content\images\logo150x70.png" />
     <Content Include="Content\images\logo50x30.png" />
     <Content Include="Content\images\logo90x67.png" />

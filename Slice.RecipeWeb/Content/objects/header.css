@@ -1,7 +1,7 @@
 ﻿header {
     width: 100%;
     position: relative;
-    background: #EFEFEF;
+    background-image: url("/Content/images/headerBGTexture.png");
     z-index: 50;
 }
 
