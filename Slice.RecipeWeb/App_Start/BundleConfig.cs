@@ -18,6 +18,7 @@ namespace Slice.RecipeWeb
             cssBundle.Include(
                 "~/Content/site.css",
                 "~/Content/objects/ad.css",
+                "~/Content/objects/header.css",
                 "~/Content/objects/footer.css",
                 "~/Content/objects/genericBlock.css",
                 "~/Content/objects/navigation.css",

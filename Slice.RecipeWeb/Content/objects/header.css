@@ -48,7 +48,7 @@
         text-indent: -999em;
         width: 4em;
         height: 2em;
-        background: url("images/logo50x30.png") no-repeat;
+        background: url("/Content/images/logo50x30.png") no-repeat;
     }
 }
 
@@ -65,6 +65,6 @@
         text-indent: -999em;
         width: 150px;
         height: 70px;
-        background: url("images/logo150x70.png") no-repeat;
+        background: url("/Content/images/logo150x70.png") no-repeat;
     }
 }

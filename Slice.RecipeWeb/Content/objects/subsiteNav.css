@@ -1,4 +1,32 @@
-﻿ul.subnav {
+﻿
+#subSiteHeader {
+    padding: 0;
+    overflow: hidden;
+}
+
+    #subSiteHeader #subSiteLogo {
+        padding-left: 0.75em;
+        width: 50%;
+        float: left;
+    }
+
+    #subSiteHeader #contact {
+        margin-top: 0.25em;
+        float: right;
+    }
+
+#subSiteLogo h2 {
+    font-size: 2em;
+    text-transform: none;
+}
+
+#subSiteMenu {
+    margin: 1.5em 0 1em 0;
+    overflow: hidden;
+    padding: 0 1em;
+}
+
+ul.subnav {
     margin: 0 auto;
     padding: 0;
     width: 100%;
