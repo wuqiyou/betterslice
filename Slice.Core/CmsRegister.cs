@@ -5,6 +5,8 @@ namespace Slice.Core
     {
         public const string FULL_WIDTH_STYLE = "FullWidth";
         public const string RIGHT_RAIL_STYLE = "RightRail";
+        public const string MAIN_WELL_STYLE = "Main";
+
         public const int CONTENT_FOLDER_ID = 2;
         public const int SUPPLIER_TEMPLATE_ID = 17;
         public const int SERVICE_TEMPLATE_ID = 18;
