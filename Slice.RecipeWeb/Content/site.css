@@ -293,101 +293,6 @@ a {
 /* --------------------------------------------------------------------------
     S T R U C T U R E
 --------------------------------------------------------------------------- */
-header {
-    width: 100%;
-    position: relative;
-    background: #EFEFEF;
-    z-index: 50;
-}
-
-footer {
-    width: 100%;
-    clear: both;
-    padding-top: 1em;
-    padding-bottom: 1.25em;
-    box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-/*footer {
-    max-width: 1280px;
-    margin: 0 auto;
-}*/
-
-#headerContainer {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0.25em 0 0 0;
-    /* for IE 6/7 */
-    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-    /* non-JS fallback */
-    *zoom: 1;
-    position: relative;
-}
-
-    #headerContainer:before, #headerContainer:after {
-        content: ".";
-        display: block;
-        height: 0;
-        overflow: hidden;
-    }
-
-    #headerContainer:after {
-        clear: both;
-    }
-
-#viewerOptions {
-    float: right;
-    margin-top: 0.5em;
-    padding: 0 2%;
-}
-
-    #viewerOptions select {
-        width: 6.75em;
-    }
-
-#locationOptions {
-    margin-top: 0.5em;
-}
-
-#languageOptions {
-    margin-top: 0em;
-}
-
-#ad-top {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 0.25em;
-    text-align: center;
-}
-
-#subSiteHeader {
-    padding: 0;
-    overflow: hidden;
-}
-
-    #subSiteHeader #subSiteLogo {
-        padding-left: 0.75em;
-        width: 50%;
-        float: left;
-    }
-
-    #subSiteHeader #contact {
-        margin-top: 0.25em;
-        float: right;
-    }
-
-#subSiteLogo h2 {
-    font-size: 2em;
-    text-transform: none;
-}
-
-#subSiteMenu {
-    margin: 1.5em 0 1em 0;
-    overflow: hidden;
-    padding: 0 1em;
-}
 
 ul.nonestyle {
     list-style: none;
@@ -431,34 +336,9 @@ ul.nonestyle {
 		Responsive design
 --------------------------------------------------------------------------------- */
 @media (min-width: 0) and (max-width: 45em) {
-    #ad-top {
-        height: 4em;
-        max-height: 4em;
-    }
-
     #mobile-toggle {
         width: 100%;
         border-bottom: 5px solid #f2f2f2;
-    }
-
-    #site-logo {
-        margin: 0.25em;
-        float: right;
-        display: block;
-        text-indent: -999em;
-        width: 4em;
-        height: 2em;
-        background: url("images/logo50x30.png") no-repeat;
-    }
-
-    #locationOptions {
-        margin: 0 0.25em 0 0;
-        float: right;
-    }
-
-    #languageOptions {
-        margin: 0;
-        float: right;
     }
 
     #container {
@@ -493,21 +373,6 @@ ul.nonestyle {
 }
 
 @media (min-width: 45em) {
-    #ad-top {
-        min-height: 6.2em;
-    }
-
-    #site-logo {
-        float: left;
-        margin: 0.25em 0 0 0.5em;
-        padding: 0.5em 0.75em;
-        display: block;
-        text-indent: -999em;
-        width: 150px;
-        height: 70px;
-        background: url("images/logo150x70.png") no-repeat;
-    }
-
     #container {
         padding: 0 330px 0 0;
         overflow: hidden;

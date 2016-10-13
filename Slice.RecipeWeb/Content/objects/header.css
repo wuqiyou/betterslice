@@ -1,0 +1,71 @@
+﻿header {
+    width: 100%;
+    position: relative;
+    background: #EFEFEF;
+    /*background-image: url("/Content/images/headerBGTexture.png");*/
+    z-index: 50;
+}
+
+#headerContainer {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.25em 0 0 0;
+    /* for IE 6/7 */
+    *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+    /* non-JS fallback */
+    *zoom: 1;
+    position: relative;
+}
+
+    #headerContainer:before, #headerContainer:after {
+        content: ".";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+
+    #headerContainer:after {
+        clear: both;
+    }
+
+#ad-top {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0.25em;
+    text-align: center;
+}
+
+@media (min-width: 0) and (max-width: 45em) {
+    #ad-top {
+        height: 4em;
+        max-height: 4em;
+    }
+
+    #site-logo {
+        margin: 0.25em;
+        float: right;
+        display: block;
+        text-indent: -999em;
+        width: 4em;
+        height: 2em;
+        background: url("/Content/images/logo50x30.png") no-repeat;
+    }
+}
+
+@media (min-width: 45em) {
+    #ad-top {
+        min-height: 6.2em;
+    }
+
+    #site-logo {
+        float: left;
+        margin: 0.25em 0 0 0.5em;
+        padding: 0.5em 0.75em;
+        display: block;
+        text-indent: -999em;
+        width: 150px;
+        height: 70px;
+        background: url("/Content/images/logo150x70.png") no-repeat;
+    }
+}

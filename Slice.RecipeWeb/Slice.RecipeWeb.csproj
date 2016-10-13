@@ -149,6 +149,8 @@
     <Content Include="Content\images\bgGrad.gif" />
     <Content Include="Content\images\bg_play_pause.png" />
     <Content Include="Content\images\headerBG.png" />
+    <Content Include="Content\images\headerBGTexture.png" />
+    <Content Include="Content\images\headerBGTexture_Purple.png" />
     <Content Include="Content\images\logo150x70.png" />
     <Content Include="Content\images\logo50x30.png" />
     <Content Include="Content\images\logo90x67.png" />
@@ -164,6 +166,7 @@
     <Content Include="Content\objects\cardView.css" />
     <Content Include="Content\objects\ad.css" />
     <Content Include="Content\objects\comment.css" />
+    <Content Include="Content\objects\header.css" />
     <Content Include="Content\objects\review.css" />
     <Content Include="Content\objects\genericBlock.css" />
     <Content Include="Content\objects\navigation.css" />
