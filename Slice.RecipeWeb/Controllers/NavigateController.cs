@@ -20,10 +20,10 @@ namespace Slice.RecipeWeb.Controllers
         {
             string urlAlias = Request.RawUrl.TrimStart('/');
             NavigationModel model = new NavigationModel();
-            model.MenuItems = new List<MenuItem>();
+            model.MenuItems = new List<MenuItemViewModel>();
             foreach (MainMenuDto item in WebContext.Current.MainMenus)
             {
-                MenuItem menuItem = new MenuItem();
+                MenuItemViewModel menuItem = new MenuItemViewModel();
                 model.MenuItems.Add(menuItem);
                 menuItem.Tooltip = item.Tooltip;
                 if (item.MainMenuLanguagesDic != null && item.MainMenuLanguagesDic.ContainsKey(CurrentLanguage.Id))
@@ -38,10 +38,10 @@ namespace Slice.RecipeWeb.Controllers
                 menuItem.IsCurrent = !string.IsNullOrEmpty(urlAlias) && urlAlias.StartsWith(item.NavigateUrl);
                 if (menuItem.IsCurrent && item.SubMenus != null)
                 {
-                    model.SubMenus = new List<MenuItem>();
+                    model.SubMenus = new List<MenuItemViewModel>();
                     foreach (MainMenuDto subitem in item.SubMenus)
                     {
-                        MenuItem subMenu = new MenuItem();
+                        MenuItemViewModel subMenu = new MenuItemViewModel();
                         model.SubMenus.Add(subMenu);
                         if (item.MainMenuLanguagesDic != null && subitem.MainMenuLanguagesDic.ContainsKey(CurrentLanguage.Id))
                         {

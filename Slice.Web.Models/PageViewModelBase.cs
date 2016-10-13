@@ -27,7 +27,7 @@ namespace Slice.Web.Models
             CurrentLanguage = language;
             Metadata = new MetadataModel();
             AdManagerModel = new AdManagerViewModel();
-            Footer = new FooterViewModel();
+            Footer = new FooterViewModel(language);
             AssetModel = new AssetViewModel();
             AdUnits = new List<AdUnitViewModel>();
         }
@@ -89,23 +89,13 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateFooter()
         {
-            // Footer menu
-            Footer.FooterMenus = new List<MenuItem>();
-            foreach (MainMenuDto item in WebContext.Current.MainMenus)
-            {
-                MenuItem newItem = new MenuItem();
-                Footer.FooterMenus.Add(newItem);
-                if (item.MainMenuLanguagesDic != null && item.MainMenuLanguagesDic.ContainsKey(CurrentLanguage.Id))
-                {
-                    newItem.MenuText = item.MainMenuLanguagesDic[CurrentLanguage.Id].MenuText;
-                }
-                else
-                {
-                    newItem.MenuText = item.MenuText;
-                }
-                newItem.NavigateUrl = item.NavigateUrl;
-                newItem.Tooltip = item.Tooltip;
-            }
+            // Main menu
+            Footer.AddMenu(WebContext.Current.MainMenus, "Main");
+
+            // Inspiration menu
+            //MenuViewModel inspiration = new MenuViewModel();
+            //inspiration.Title = "Inspiration";
+
         }
     }
 }

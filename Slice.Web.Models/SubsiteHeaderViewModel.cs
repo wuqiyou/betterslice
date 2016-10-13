@@ -14,6 +14,6 @@ namespace Slice.Web.Models
         public string SubsiteBackColor { get; set; }
         public string SubsiteTitleColor { get; set; }
         public string SubsiteBannerUrl { get; set; }
-        public IList<MenuItem> SubsiteMenus { get; set; }
+        public IList<MenuItemViewModel> SubsiteMenus { get; set; }
     }
 }

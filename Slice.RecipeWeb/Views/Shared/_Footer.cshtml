@@ -1,10 +1,11 @@
-﻿@model Slice.Web.Models.FooterViewModel
+﻿@using Slice.Web.Models
+@model FooterViewModel
 <nav id="footerContainer">
-  @if (Model.FooterMenus != null)
+  @foreach (MenuViewModel menu in Model.FooterMenus)
   {
-    <span class="">Inspiration</span>
+    <span class="">@menu.Title</span>
     <ul id="footer-links">
-      @foreach (var item in Model.FooterMenus)
+      @foreach (MenuItemViewModel item in menu.MenuItems)
       {
         <li>
           <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
