@@ -93,6 +93,12 @@ namespace Slice.Web.Models
             Footer.AddMenu(WebContext.Current.MainMenus, "Main");
 
             // Inspiration menu
+            List<MainMenuDto> items = new List<MainMenuDto>();
+            MainMenuDto item1 = new MainMenuDto() { MenuText = "Chicken", NavigateUrl = "/" };
+            items.Add(item1);
+            MainMenuDto item2 = new MainMenuDto() { MenuText = "Pork", NavigateUrl = "/" };
+            items.Add(item2);
+            Footer.AddMenu(items, "Inspiration");
             //MenuViewModel inspiration = new MenuViewModel();
             //inspiration.Title = "Inspiration";
 
