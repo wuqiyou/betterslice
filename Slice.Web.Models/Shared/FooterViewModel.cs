@@ -1,5 +1,5 @@
-﻿using Slice.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Slice.Data;
 
 namespace Slice.Web.Models
 {
@@ -16,13 +16,8 @@ namespace Slice.Web.Models
 
         public void AddMenu(IList<MainMenuDto> menuItems, string menuTitle)
         {
-            MenuViewModel menu = new MenuViewModel(CurrentLanguage);
+            MenuViewModel menu = new MenuViewModel(menuItems, CurrentLanguage, menuTitle);
             FooterMenus.Add(menu);
-            menu.Title = menuTitle;
-            foreach (MainMenuDto menuItem in menuItems)
-            {
-                menu.AddMenuItem(menuItem);
-            }
         }
     }
 }
