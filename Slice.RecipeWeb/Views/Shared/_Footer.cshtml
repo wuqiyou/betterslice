@@ -1,16 +1,18 @@
 ﻿@using Slice.Web.Models
 @model FooterViewModel
-<nav id="footerContainer">
+<div class="footerContainer">
   @foreach (MenuViewModel menu in Model.FooterMenus)
   {
-    <span class="">@menu.Title</span>
-    <ul id="footer-links">
-      @foreach (MenuItemViewModel item in menu.MenuItems)
-      {
-        <li>
-          <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
-        </li>
-      }
-    </ul>
+    <nav class="footer-menu">
+      <h3>@menu.Title</h3>
+      <ul class="footer-menu-links">
+        @foreach (MenuItemViewModel item in menu.MenuItems)
+        {
+          <li>
+            <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+          </li>
+        }
+      </ul>
+    </nav>
   }
-</nav>
+</div>
