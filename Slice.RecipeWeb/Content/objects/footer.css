@@ -12,12 +12,12 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 1em 0;
-    display: inline-block;
 }
 
 .footer-menu {
+    display: inline-block;
     margin-right: 4em;
-    float: left;
+    vertical-align: top;
 }
 
 .footer-menu-links {
@@ -37,3 +37,18 @@
             font-size: 1em;
             text-transform: none;
         }
+
+
+.floating-box {
+    display: inline-block;
+    margin-right: 4em;
+    border: 3px solid #73AD21;
+}
+
+.after-box {
+    border: 3px solid red;
+}
+
+.test {
+    height: 175px;
+}
