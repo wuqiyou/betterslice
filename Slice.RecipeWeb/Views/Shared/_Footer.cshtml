@@ -4,12 +4,12 @@
   @foreach (MenuViewModel menu in Model.FooterMenus)
   {
     <nav class="footer-menu">
-      <h3>@menu.Title</h3>
+      <h3 class="footer-menu-header">@menu.Title</h3>
       <ul class="footer-menu-links">
         @foreach (MenuItemViewModel item in menu.MenuItems)
         {
-          <li>
-            <a href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+          <li class="footer-menu-item">
+            <a class="footer-menu-item-link" href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
           </li>
         }
       </ul>

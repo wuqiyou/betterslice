@@ -20,23 +20,29 @@
     vertical-align: top;
 }
 
+.footer-menu-header {
+    margin: 0;
+    padding: 0.5em 0em;
+    text-transform: uppercase;
+}
+
 .footer-menu-links {
     margin: 0;
     padding: 0.5em 0em;
 }
 
-    .footer-menu-links li {
-        margin: 0 0 0.5em 0;
-        padding: 0;
-        display: block;
-        line-height: 20px;
-    }
+.footer-menu-item {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    display: block;
+    line-height: 20px;
+}
 
-        .footer-menu-links li a {
-            color: #FFFFFF;
-            font-size: 1em;
-            text-transform: none;
-        }
+.footer-menu-item-link {
+    color: #FFF;
+    font-size: 1em;
+    text-transform: none;
+}
 
 
 .floating-box {
