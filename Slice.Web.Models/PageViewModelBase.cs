@@ -99,9 +99,14 @@ namespace Slice.Web.Models
             MainMenuDto item2 = new MainMenuDto() { MenuText = "Pork", NavigateUrl = "/" };
             items.Add(item2);
             Footer.AddMenu(items, "Inspiration");
-            //MenuViewModel inspiration = new MenuViewModel();
-            //inspiration.Title = "Inspiration";
 
+            // AboutUs menu
+            List<MainMenuDto> aboutUsMenu = new List<MainMenuDto>();
+            MainMenuDto aboutUsItem1 = new MainMenuDto() { MenuText = "About Us", NavigateUrl = "/about-us" };
+            aboutUsMenu.Add(aboutUsItem1);
+            MainMenuDto aboutUsItem2 = new MainMenuDto() { MenuText = "Contact Us", NavigateUrl = "/contact-us" };
+            aboutUsMenu.Add(aboutUsItem2);
+            Footer.AddMenu(aboutUsMenu, "About Us");
         }
     }
 }
