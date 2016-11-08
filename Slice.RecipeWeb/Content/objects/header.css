@@ -42,14 +42,14 @@
         max-height: 4em;
     }
 
-    #site-logo {
+    .site-logo {
         margin: 0.25em;
         float: right;
         display: block;
         text-indent: -999em;
         width: 4em;
         height: 2em;
-        background: url("/Content/images/logo50x30.png") no-repeat;
+        background: url("/Content/images/logo_hotpizza50x30.png") no-repeat;
     }
 }
 
@@ -58,7 +58,7 @@
         min-height: 6.2em;
     }
 
-    #site-logo {
+    .site-logo {
         float: left;
         margin: 0.25em 0 0 0.5em;
         padding: 0.5em 0.75em;
@@ -66,6 +66,6 @@
         text-indent: -999em;
         width: 150px;
         height: 70px;
-        background: url("/Content/images/logo150x70.png") no-repeat;
+        background: url("/Content/images/logo_hotpizza140x60.png") no-repeat;
     }
 }

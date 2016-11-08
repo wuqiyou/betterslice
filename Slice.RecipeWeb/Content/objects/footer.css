@@ -16,8 +16,9 @@
 
 .footer-menu {
     display: inline-block;
-    margin-right: 4em;
+    margin-right: 1em;
     vertical-align: top;
+    width: 20%;
 }
 
 .footer-menu-header {
@@ -42,19 +43,4 @@
     color: #FFF;
     font-size: 1em;
     text-transform: none;
-}
-
-
-.floating-box {
-    display: inline-block;
-    margin-right: 4em;
-    border: 3px solid #73AD21;
-}
-
-.after-box {
-    border: 3px solid red;
-}
-
-.test {
-    height: 175px;
 }
