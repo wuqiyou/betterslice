@@ -4,7 +4,7 @@
   @foreach (MenuViewModel menu in Model.FooterMenus)
   {
     <nav class="footer-menu">
-      <h3 class="footer-menu-header">@menu.Title</h3>
+      <h5 class="footer-menu-header">@menu.Title</h5>
       <ul class="footer-menu-links">
         @foreach (MenuItemViewModel item in menu.MenuItems)
         {

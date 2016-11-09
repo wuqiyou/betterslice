@@ -154,6 +154,8 @@
     <Content Include="Content\images\logo150x70.png" />
     <Content Include="Content\images\logo50x30.png" />
     <Content Include="Content\images\logo90x67.png" />
+    <Content Include="Content\images\logo_hotpizza140x60.png" />
+    <Content Include="Content\images\logo_hotpizza50x30.png" />
     <Content Include="Content\images\navBG.png" />
     <Content Include="Content\images\size300x250-2.jpg" />
     <Content Include="Content\images\size300x250-3.jpg" />
