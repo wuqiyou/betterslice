@@ -106,12 +106,12 @@ namespace Slice.Web.Models
             // Set meta title for subsite
             Metadata.Title = string.Format("{0} | {1}", SubsiteHeader.SubsiteTitle, Metadata.Title);
             // Setup sub site menus
-            SubsiteHeader.SubsiteMenus = new List<MenuItem>();
+            SubsiteHeader.SubsiteMenus = new List<MenuItemViewModel>();
             int menuItems = subsite.Menus.Count();
             float widthPercent = 100 / menuItems;
             foreach (SubsiteMenuDto item in subsite.Menus.OrderBy(o => o.Sort))
             {
-                MenuItem newItem = new MenuItem();
+                MenuItemViewModel newItem = new MenuItemViewModel();
                 SubsiteHeader.SubsiteMenus.Add(newItem);
                 if (item.SubsiteMenuLanguagesDic.ContainsKey(CurrentLanguage.Id))
                 {
@@ -125,7 +125,7 @@ namespace Slice.Web.Models
                 newItem.WidthPercent = widthPercent;
             }
             // Set current selected menu item
-            foreach (MenuItem item in SubsiteHeader.SubsiteMenus.Reverse())
+            foreach (MenuItemViewModel item in SubsiteHeader.SubsiteMenus.Reverse())
             {
                 item.IsCurrent = RequestedUrl.AbsolutePath.StartsWith(item.NavigateUrl);
                 if (item.IsCurrent)

@@ -4,7 +4,7 @@ namespace Slice.Web.Models
 {
     public class NavigationModel
     {
-        public IList<MenuItem> MenuItems { get; set; }
-        public IList<MenuItem> SubMenus { get; set; }
+        public IList<MenuItemViewModel> MenuItems { get; set; }
+        public IList<MenuItemViewModel> SubMenus { get; set; }
     }
 }

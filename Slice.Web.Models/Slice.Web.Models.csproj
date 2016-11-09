@@ -64,6 +64,7 @@
     <Compile Include="Entity\RotatorItem.cs" />
     <Compile Include="PageViewModelBase.cs" />
     <Compile Include="Shared\AdUnitViewModel.cs" />
+    <Compile Include="Shared\MenuViewModel.cs" />
     <Compile Include="Shared\DucViewModel.cs" />
     <Compile Include="Shared\GridViewModel.cs" />
     <Compile Include="Shared\PaginationViewModel.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Shared\WidgetViewModel.cs" />
     <Compile Include="CategoryPageViewModel.cs" />
     <Compile Include="KeywordPageViewModel.cs" />
-    <Compile Include="MenuItem.cs" />
+    <Compile Include="MenuItemViewModel.cs" />
     <Compile Include="NavigationModel.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

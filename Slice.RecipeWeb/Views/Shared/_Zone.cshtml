@@ -1,10 +1,10 @@
 ﻿@using Slice.Web.Models
 @model ZoneViewModel
 
-<div class="zoneContainer">
-  @if (Model.Widget != null)
-  {
-    if (Model.Widget.BlockInfo.IsBuiltIn)
+@if (Model.Widget != null)
+{
+  <div class="blockContainer">
+    @if (Model.Widget.BlockInfo.IsBuiltIn)
     {
       Html.RenderPartial(string.Format("~/Views/Widgets/{0}.cshtml", Model.Widget.BlockInfo.WidgetName), Model.Widget);
     }
@@ -12,5 +12,5 @@
     {
       Html.RenderPartial("_Widget", Model.Widget);
     }
-  }
-</div>
+  </div>
+}
