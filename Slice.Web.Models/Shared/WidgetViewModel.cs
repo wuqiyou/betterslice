@@ -1,7 +1,7 @@
-﻿using Slice.Core;
-using Slice.Data;
+﻿using Slice.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Slice.Web.Models
 {
@@ -29,6 +29,22 @@ namespace Slice.Web.Models
 
         public virtual void RegisterAds(AdManagerViewModel adManager)
         {
+        }
+
+        protected SubitemInfoDto GetSubitemInfo(int subitemId)
+        {
+            return BlockInfo.Subitems.SingleOrDefault(o => object.Equals(o.SubitemId, subitemId));
+        }
+
+        protected string GetValueText(ReferenceInfoDto referenceInfo, int subitemId)
+        {
+            if (referenceInfo.ValuesDic.ContainsKey(subitemId))
+            {
+                return referenceInfo.ValuesDic[subitemId].ValueText;
+            }
+
+            SubitemInfoDto subitem = GetSubitemInfo(subitemId);
+            return subitem != null ? subitem.DefaultValue : null;
         }
     }
 }

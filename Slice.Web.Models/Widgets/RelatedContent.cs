@@ -1,4 +1,5 @@
 ﻿using Slice.Data;
+using SubjectEngine.Core;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,6 +23,8 @@ namespace Slice.Web.Models.Widgets
 
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
+            Title = GetValueText(referenceInfo, BlockRegister.RelatedContent.Title);
+
             if (referenceInfo.RelatedSubjects != null)
             {
                 IList<SubjectInfoDto> items = referenceInfo.RelatedSubjects.Where(o => !object.Equals(o.ReferenceId, referenceInfo.ReferenceId)).ToList();

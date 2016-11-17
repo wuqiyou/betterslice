@@ -21,6 +21,7 @@ namespace Slice.DataConverter
             dto.SubitemId = entity.Id;
             dto.ItemKey = entity.ItemKey;
             dto.ItemLabel = entity.ItemLabel;
+            dto.DefaultValue = entity.DefaultValue;
             dto.IsMetaProvider = entity.IsMetaProvider;
             dto.DucType = entity.DucType;
 

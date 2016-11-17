@@ -91,6 +91,10 @@ namespace Slice.MockService.DataProvider
             block.WidgetName = BlockRegister.RelatedContent.WidgetName;
             block.IsBuiltIn = true;
 
+            List<SubitemInfoDto> items = new List<SubitemInfoDto>();
+            block.Subitems = items;
+            items.Add(new SubitemInfoDto { SubitemId = BlockRegister.RelatedContent.Title, DefaultValue = "Similar Content" });
+
             return block;
         }
 
@@ -100,6 +104,10 @@ namespace Slice.MockService.DataProvider
             block.Name = "AdWidget";
             block.WidgetName = "AdWidget";
             block.IsBuiltIn = true;
+
+            List<SubitemInfoDto> items = new List<SubitemInfoDto>();
+            block.Subitems = items;
+            items.Add(new SubitemInfoDto { SubitemId = BlockRegister.AdWidget.AdType, DefaultValue = "1" });
 
             return block;
         }

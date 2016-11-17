@@ -1,6 +1,7 @@
 ﻿using Slice.Core;
 using Slice.Data;
 using SubjectEngine.Core;
+using System;
 
 namespace Slice.Web.Models.Widgets
 {
@@ -10,6 +11,8 @@ namespace Slice.Web.Models.Widgets
 
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
+            string adType = GetValueText(referenceInfo, BlockRegister.AdWidget.AdType);
+            Enum.TryParse(
             // TODO: hard code as a BigBox, init AdType based on reference data later. 
             AdType = Core.AdType.BigBox;
         }
