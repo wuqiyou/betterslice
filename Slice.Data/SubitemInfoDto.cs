@@ -8,6 +8,7 @@ namespace Slice.Data
         public object SubitemId { get; set; }
         public string ItemKey { get; set; }
         public string ItemLabel { get; set; }
+        public string DefaultValue { get; set; }
         public bool IsMetaProvider { get; set; }
         public DucTypes DucType { get; set; }
         public GridDto Grid { get; set; }

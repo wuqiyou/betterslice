@@ -3,10 +3,10 @@ namespace Slice.Core
 {
     public enum AdType
     {
-        Leaderboard,
-        BigBox,
-        DoubleBigBox,
-        Wallpaper,
-        Billboard,
+        BigBox = 1,
+        DoubleBigBox = 2,
+        Leaderboard = 3,
+        Wallpaper = 4,
+        Billboard = 5,
     }
 }

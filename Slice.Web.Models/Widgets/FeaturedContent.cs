@@ -22,11 +22,7 @@ namespace Slice.Web.Models.Widgets
 
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
-            if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.FeaturedContent.Title))
-            {
-                DucValueDto value = referenceInfo.ValuesDic[BlockRegister.FeaturedContent.Title];
-                Title = value.ValueText;
-            }
+            Title = GetValueText(referenceInfo, BlockRegister.FeaturedContent.Title);
 
             if (referenceInfo.ValuesDic.ContainsKey(BlockRegister.FeaturedContent.FeatureItemCollection))
             {
