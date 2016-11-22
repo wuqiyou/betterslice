@@ -12,9 +12,15 @@ namespace Slice.Web.Models.Widgets
         public override void Populate(ReferenceInfoDto referenceInfo)
         {
             string adType = GetValueText(referenceInfo, BlockRegister.AdWidget.AdType);
-            Enum.TryParse(
-            // TODO: hard code as a BigBox, init AdType based on reference data later. 
-            AdType = Core.AdType.BigBox;
+            int? adTypeInt = adType.TryToParse<int>();
+            if (adTypeInt.HasValue)
+            {
+                AdType = (Core.AdType)adTypeInt.Value;
+            }
+            else
+            {
+                AdType = Core.AdType.BigBox;
+            }
         }
 
         public override void RegisterAds(AdManagerViewModel adManager)
