@@ -21,7 +21,7 @@ namespace Slice.DataConverter
 
             dto.Id = entity.Id;
             dto.CategoryText = entity.CategoryText;
-            dto.Slug = entity.CategoryText.ToSlug();
+            dto.Slug = entity.Slug;
             dto.TemplateId = entity.TemplateId;
 
             return dto;
@@ -32,6 +32,14 @@ namespace Slice.DataConverter
             CategoryData dto = new CategoryData();
             dto.Id = entity.Id;
             dto.CategoryText = entity.CategoryText;
+            if (!string.IsNullOrEmpty(entity.Slug))
+            {
+                dto.Slug = entity.Slug;
+            }
+            else
+            {
+                dto.Slug = entity.CategoryText.ToSlug();
+            }
             dto.TemplateId = entity.TemplateId;
 
             return dto;

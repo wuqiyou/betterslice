@@ -22,7 +22,7 @@ namespace Slice.DataConverter
             dto.Id = entity.Id;
             dto.KeywordId = entity.KeywordId;
             dto.KeywordName = entity.KeywordName;
-            dto.KeywordSlug = entity.KeywordName.ToSlug();
+            dto.KeywordSlug = string.IsNullOrEmpty(entity.KeywordSlug) ? entity.KeywordName.ToSlug() : entity.KeywordSlug;
             dto.Sort = entity.Sort;
 
             return dto;
