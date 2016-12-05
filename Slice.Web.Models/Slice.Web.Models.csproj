@@ -71,7 +71,7 @@
     <Compile Include="Shared\SocialShareBarViewModel.cs" />
     <Compile Include="Shared\WidgetViewModel.cs" />
     <Compile Include="CategoryPageViewModel.cs" />
-    <Compile Include="KeywordPageViewModel.cs" />
+    <Compile Include="TagPageViewModel.cs" />
     <Compile Include="MenuItemViewModel.cs" />
     <Compile Include="NavigationModel.cs" />
     <Compile Include="PageViewModel.cs" />

@@ -25,18 +25,18 @@ namespace Slice.RecipeWeb
             );
             routes.MapRoute(
                 name: "RecipeByCategory",
-                url: "recipe/category/{category}",
+                url: "recipe/{category}",
                 defaults: new { controller = "Recipe", action = "Category" },
                 namespaces: new[] { "Slice.RecipeWeb.Controllers" }
             );
             routes.MapRoute(
                 name: "RecipeByKeyword",
-                url: "recipe/keyword/{keyword}",
-                defaults: new { controller = "Recipe", action = "Keyword" },
+                url: "recipe/tag/{tag}",
+                defaults: new { controller = "Recipe", action = "Tag" },                
                 namespaces: new[] { "Slice.RecipeWeb.Controllers" }
             );
             routes.MapRoute(
-                name: "TemplatePages",
+                name: "TemplatedPages",
                 url: "{*urlAlias}",
                 defaults: new { controller = "Default", action = "Index", urlAlias = "home" },
                 namespaces: new[] { "Slice.RecipeWeb.Controllers" }

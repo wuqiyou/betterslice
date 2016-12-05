@@ -10,18 +10,18 @@ namespace Slice.RecipeWeb.Controllers
     public class RecipeController : ContentBaseController
     {
         public const string ControllerName = "Recipe";
-        public const string KeywordAction = "Keyword";
         public const string CategoryAction = "Category";
+        public const string TagAction = "Tag";
 
-        public ViewResult Keyword(string keyword)
+        public ViewResult Tag(string tag)
         {
             int pageIndex = PageIndex.HasValue ? PageIndex.Value : 1;
             int pageSize = 12;
-            if (WebContext.Current.RecipeKeywords.ContainsKey(keyword))
+            if (WebContext.Current.RecipeKeywords.ContainsKey(tag))
             {
-                KeywordDto keywordDto = WebContext.Current.RecipeKeywords[keyword];
+                KeywordDto keywordDto = WebContext.Current.RecipeKeywords[tag];
                 IEnumerable<SubjectInfoDto> result = Service.GetSubjectsByKeyword(keywordDto.Id, CmsRegister.RECIPE_TEMPLATE_ID, pageIndex, pageSize, CurrentLanguage.Id);
-                KeywordPageViewModel model = new KeywordPageViewModel(keywordDto.Name, result, HttpContext.Request.Url, pageIndex, pageSize, CurrentLanguage);
+                TagPageViewModel model = new TagPageViewModel(keywordDto.Name, result, HttpContext.Request.Url, pageIndex, pageSize, CurrentLanguage);
                 model.Populate();
 
                 return View(model);

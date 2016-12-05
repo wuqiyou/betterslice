@@ -11,7 +11,7 @@ namespace Slice.Web.Models.Widgets
     public class RecipeDetail : WidgetViewModel, IMetadataProvider
     {
         public Recipe Recipe { get; set; }
-        public ReferenceKeywordsViewModel KeywordsViewModel { get; set; }
+        public ReferenceKeywordsViewModel TagsViewModel { get; set; }
         public SocialShareBarViewModel SocialShareBarViewModel { get; set; } 
 
         public RecipeDetail()
@@ -118,7 +118,7 @@ namespace Slice.Web.Models.Widgets
                 }
             }
             // Keyword view model
-            KeywordsViewModel = new ReferenceKeywordsViewModel(referenceInfo);
+            TagsViewModel = new ReferenceKeywordsViewModel(referenceInfo);
             SocialShareBarViewModel = new SocialShareBarViewModel(RequestedUrl.AbsoluteUri, Recipe.Name, Recipe.ImageUrl);
         }
 

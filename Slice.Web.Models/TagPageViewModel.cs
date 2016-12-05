@@ -1,19 +1,19 @@
-﻿using Slice.Core;
-using Slice.Data;
-using Slice.Web.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Slice.Core;
+using Slice.Data;
+using Slice.Web.Common;
 
 namespace Slice.Web.Models
 {
-    public class KeywordPageViewModel : PageViewModelBase
+    public class TagPageViewModel : PageViewModelBase
     {
         private string Keyword { get; set; }
         public IEnumerable<SubjectInfoDto> Items { get; set; }
         public PaginationViewModel PaginationViewModel { get; set; }
 
-        public KeywordPageViewModel(string keyword, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, int pageIndex, int pageSize, LanguageDto language)
+        public TagPageViewModel(string keyword, IEnumerable<SubjectInfoDto> items, Uri requestedUrl, int pageIndex, int pageSize, LanguageDto language)
             : base(requestedUrl, language)
         {
             Keyword = keyword;

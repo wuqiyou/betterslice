@@ -1,9 +1,9 @@
-﻿using Slice.Core;
-using Slice.Data;
-using Slice.Web.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Slice.Core;
+using Slice.Data;
+using Slice.Web.Common;
 
 namespace Slice.Web.Models
 {
