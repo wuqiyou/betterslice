@@ -229,7 +229,7 @@
   <ItemGroup>
     <Content Include="Views\Navigate\MainMenu.cshtml" />
     <Content Include="Views\Recipe\Category.cshtml" />
-    <Content Include="Views\Recipe\Keyword.cshtml" />
+    <Content Include="Views\Recipe\Tag.cshtml" />
     <Content Include="Views\Review\ReviewList.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
@@ -266,7 +266,7 @@
     <Content Include="Views\Shared\_LayoutError.cshtml" />
     <Content Include="Views\Shared\_Metadata.cshtml" />
     <Content Include="Views\Shared\_Pagination.cshtml" />
-    <Content Include="Views\Shared\_ReferenceKeywords.cshtml" />
+    <Content Include="Views\Shared\_ReferenceTags.cshtml" />
     <Content Include="Views\Shared\_SearchForm.cshtml" />
     <Content Include="Views\Shared\_SubsiteNav.cshtml" />
     <Content Include="Views\Shared\_TrafficTracking.cshtml" />
