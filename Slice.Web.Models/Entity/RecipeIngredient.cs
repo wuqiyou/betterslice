@@ -20,11 +20,15 @@ namespace Slice.Web.Models.Entity
             get
             {
                 StringBuilder result = new StringBuilder();
-                result.Append(StringHelper.ConvertToFraction(Quantity));
-                result.Append(" ");
 
-                result.Append(UnitOfMeasure);
-                result.Append(" ");
+                string quantityDisplay = StringHelper.ConvertToFraction(Quantity);
+                if (quantityDisplay != string.Empty)
+                {
+                    result.Append(quantityDisplay);
+                    result.Append(" ");
+                    result.Append(UnitOfMeasure);
+                    result.Append(" ");
+                }
 
                 result.Append(IngredientName);
 
