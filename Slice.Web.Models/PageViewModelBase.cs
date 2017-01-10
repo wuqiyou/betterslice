@@ -51,7 +51,7 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateMetadata()
         {
-            Metadata.OGUrl = RequestedUrl.AbsolutePath;
+            Metadata.OGUrl = RequestedUrl.AbsoluteUri;
             // Const metadata
             Metadata.MetaList.AddRange(WebContext.Current.StaticMetadataList);
         }

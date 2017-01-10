@@ -14,6 +14,7 @@ namespace Slice.Web.Models
         public string Description { get; set; }
         public string Keywords { get; set; }
         public string OGImage { get; set; }
+        // Absolute url string
         public string OGUrl { get; set; }
         public List<MetadataDto> MetaList { get; set; }
     }
