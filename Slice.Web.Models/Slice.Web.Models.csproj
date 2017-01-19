@@ -72,7 +72,7 @@
     <Compile Include="Shared\WidgetViewModel.cs" />
     <Compile Include="CategoryPageViewModel.cs" />
     <Compile Include="TagPageViewModel.cs" />
-    <Compile Include="MenuItemViewModel.cs" />
+    <Compile Include="Shared\MenuItemViewModel.cs" />
     <Compile Include="NavigationModel.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

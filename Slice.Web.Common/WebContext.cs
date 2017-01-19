@@ -44,7 +44,8 @@ namespace Slice.Web.Common
         public int MaxPageSize { get; set; }
 
         public IEnumerable<MetadataDto> StaticMetadataList { get; set; }
-        public IList<MainMenuDto> MainMenus { get; set; }
+        public IList<MainMenuDto> HeaderMenus { get; set; }
+        public IList<MainMenuDto> FooterMenus { get; set; }
         public Dictionary<string, string> SubsiteRedirectDic { get; set; }
         public Dictionary<object, LanguageDto> LanguageDic { get; set; }
         public Dictionary<string, LanguageDto> LanguageDicByCulture { get; set; }
@@ -74,7 +75,8 @@ namespace Slice.Web.Common
         {
             IGeneralService service = ServiceLocator.Current.GetInstance<IGeneralService>();
             StaticMetadataList = service.GetMetadata();
-            MainMenus = service.GetPublishedMenus().ToList();
+            HeaderMenus = service.GetHeaderMenus().ToList();
+            FooterMenus = service.GetFooterMenus().ToList();
             IEnumerable<LanguageDto> availableLanguages = service.GetLanguages().ToList();
 
             foreach (LanguageDto language in availableLanguages)

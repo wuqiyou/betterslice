@@ -8,7 +8,8 @@ namespace Slice.Service.Contract
     {
         IEnumerable<LanguageDto> GetLanguages();
         IEnumerable<MetadataDto> GetMetadata();
-        IEnumerable<MainMenuDto> GetPublishedMenus();
+        IEnumerable<MainMenuDto> GetHeaderMenus();
+        IEnumerable<MainMenuDto> GetFooterMenus();
         UserIdentity Authenticate(string email, string encryptedPassword);
     }
 }

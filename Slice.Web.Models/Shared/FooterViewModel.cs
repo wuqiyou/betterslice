@@ -14,10 +14,13 @@ namespace Slice.Web.Models
             FooterMenus = new List<MenuViewModel>();
         }
 
-        public void AddMenu(IList<MainMenuDto> menuItems, string menuTitle)
+        public void AddMenus(IList<MainMenuDto> menuItems)
         {
-            MenuViewModel menu = new MenuViewModel(menuItems, CurrentLanguage, menuTitle);
-            FooterMenus.Add(menu);
+            foreach (MainMenuDto menu in menuItems)
+            {
+                MenuViewModel menuViewModel = new MenuViewModel(menu.SubMenus, CurrentLanguage, menu.MenuText);
+                FooterMenus.Add(menuViewModel);
+            }
         }
     }
 }

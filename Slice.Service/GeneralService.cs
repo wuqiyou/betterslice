@@ -34,7 +34,7 @@ namespace Slice.Service
 
         private IEnumerable<MainMenuDto> BuildMenuTrees(IEnumerable<MainMenuDto> items)
         {
-            IEnumerable<MainMenuDto> topItems = items.Where(o => o.ParentId == null).OrderBy(o => o.Sort);
+            IEnumerable<MainMenuDto> topItems = items.Where(o => (o.ParentId == null) || object.Equals(o.ParentId, 0)).OrderBy(o => o.Sort);
             IEnumerable<MainMenuDto> Subitems = items.Where(o => o.ParentId != null);
             // Loop to get sub menus
             foreach (MainMenuDto item in topItems)
@@ -45,14 +45,27 @@ namespace Slice.Service
             return topItems;
         }
 
-        public IEnumerable<MainMenuDto> GetPublishedMenus()
+        public IEnumerable<MainMenuDto> GetHeaderMenus()
         {
             using (IUnitOfWork uow = UnitOfWorkFactory.Instance.Start(DataStoreResolver.CMSDataStoreKey))
             {
                 MainMenuFacade facade = new MainMenuFacade(uow);
                 List<MainMenuDto> items = facade.GetPublishedMenus(new MainMenuConverter());
 
-                return BuildMenuTrees(items);
+                IEnumerable<MainMenuDto> menuTrees = BuildMenuTrees(items);
+                return menuTrees.Where(o => o.ParentId == null);
+            }
+        }
+
+        public IEnumerable<MainMenuDto> GetFooterMenus()
+        {
+            using (IUnitOfWork uow = UnitOfWorkFactory.Instance.Start(DataStoreResolver.CMSDataStoreKey))
+            {
+                MainMenuFacade facade = new MainMenuFacade(uow);
+                List<MainMenuDto> items = facade.GetPublishedMenus(new MainMenuConverter());
+
+                IEnumerable<MainMenuDto> menuTrees = BuildMenuTrees(items);
+                return menuTrees.Where(o => object.Equals(o.ParentId, 0));
             }
         }
 

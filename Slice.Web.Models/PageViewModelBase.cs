@@ -89,24 +89,7 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateFooter()
         {
-            // Main menu
-            Footer.AddMenu(WebContext.Current.MainMenus, "Main");
-
-            // Inspiration menu
-            List<MainMenuDto> items = new List<MainMenuDto>();
-            MainMenuDto item1 = new MainMenuDto() { MenuText = "Chicken", NavigateUrl = "/" };
-            items.Add(item1);
-            MainMenuDto item2 = new MainMenuDto() { MenuText = "Pork", NavigateUrl = "/" };
-            items.Add(item2);
-            Footer.AddMenu(items, "Inspiration");
-
-            // AboutUs menu
-            List<MainMenuDto> aboutUsMenu = new List<MainMenuDto>();
-            MainMenuDto aboutUsItem1 = new MainMenuDto() { MenuText = "About Us", NavigateUrl = "/about-us" };
-            aboutUsMenu.Add(aboutUsItem1);
-            MainMenuDto aboutUsItem2 = new MainMenuDto() { MenuText = "Contact Us", NavigateUrl = "/contact-us" };
-            aboutUsMenu.Add(aboutUsItem2);
-            Footer.AddMenu(aboutUsMenu, "About Us");
+            Footer.AddMenus(WebContext.Current.FooterMenus);
         }
     }
 }

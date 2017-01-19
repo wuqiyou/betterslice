@@ -13,8 +13,8 @@
 }
 
 .recipe-ingredients-list {
-    float: left;
-    width: 45%;
+    display: inline-block;
+    vertical-align: top;
     list-style-type: disc;
     margin: 0 1em;
     padding: 0 0.5em;

@@ -24,7 +24,7 @@ namespace Slice.MockService
             return list;
         }
 
-        public IEnumerable<MainMenuDto> GetPublishedMenus()
+        public IEnumerable<MainMenuDto> GetHeaderMenus()
         {
             List<MainMenuDto> items = new List<MainMenuDto>();
 
@@ -37,7 +37,27 @@ namespace Slice.MockService
 
             MainMenuDto item3 = new MainMenuDto { NavigateUrl = "gallery", MenuText = "Photos" };
             items.Add(item3);
-            
+
+            MainMenuDto item4 = new MainMenuDto { NavigateUrl = "video", MenuText = "Videos" };
+            items.Add(item4);
+
+            return items;
+        }
+
+        public IEnumerable<MainMenuDto> GetFooterMenus()
+        {
+            List<MainMenuDto> items = new List<MainMenuDto>();
+
+            MainMenuDto item1 = new MainMenuDto { NavigateUrl = "recipe", MenuText = "Recipes" };
+            items.Add(item1);
+            SetSubMenu(item1);
+
+            MainMenuDto item2 = new MainMenuDto { NavigateUrl = "article", MenuText = "Articles" };
+            items.Add(item2);
+
+            MainMenuDto item3 = new MainMenuDto { NavigateUrl = "gallery", MenuText = "Photos" };
+            items.Add(item3);
+
             MainMenuDto item4 = new MainMenuDto { NavigateUrl = "video", MenuText = "Videos" };
             items.Add(item4);
 
