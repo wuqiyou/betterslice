@@ -80,7 +80,7 @@
     <Compile Include="SearchPageViewModel.cs" />
     <Compile Include="Shared\AdManagerViewModel.cs" />
     <Compile Include="Shared\AssetViewModel.cs" />
-    <Compile Include="Shared\FooterViewModel.cs" />
+    <Compile Include="FooterViewModel.cs" />
     <Compile Include="Shared\MetadataModel.cs" />
     <Compile Include="Shared\ReferenceKeywordsViewModel.cs" />
     <Compile Include="SubsiteHeaderViewModel.cs" />

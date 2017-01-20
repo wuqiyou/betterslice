@@ -17,7 +17,8 @@ namespace Slice.Web.Models
         public LanguageDto CurrentLanguage { get; set; }
         public AdManagerViewModel AdManagerModel { get; set; }
         public MetadataModel Metadata { get; set; }
-        public FooterViewModel Footer { get; set; }
+        public NavigationModel HeaderNavigationModel { get; set; }
+        public FooterViewModel FooterModel { get; set; }
         public AssetViewModel AssetModel { get; set; }
         public IList<AdUnitViewModel> AdUnits { get; set; }
 
@@ -27,7 +28,6 @@ namespace Slice.Web.Models
             CurrentLanguage = language;
             Metadata = new MetadataModel();
             AdManagerModel = new AdManagerViewModel();
-            Footer = new FooterViewModel(language);
             AssetModel = new AssetViewModel();
             AdUnits = new List<AdUnitViewModel>();
         }
@@ -38,6 +38,7 @@ namespace Slice.Web.Models
             PopulateMetadata();
             FinalizeMetadata();
             PopulateAdManager();
+            PopulateNavigation();
             PopulateFooter();
             UpdateAsset();
         }
@@ -73,7 +74,7 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateAdManager()
         {
-            // register leaderboard
+            // register first AD (leaderboard)
             AdUnits.Add(AdManagerModel.Register(AdType.Leaderboard));
 
             AdManagerModel.AddSetting("site", "betterswing");
@@ -87,9 +88,15 @@ namespace Slice.Web.Models
         {
         }
 
+        protected virtual void PopulateNavigation()
+        {
+            HeaderNavigationModel = new NavigationModel(WebContext.Current.HeaderMenus, CurrentLanguage);
+        }
+
         protected virtual void PopulateFooter()
         {
-            Footer.AddMenus(WebContext.Current.FooterMenus);
+            FooterModel = new FooterViewModel(CurrentLanguage);
+            FooterModel.AddMenus(WebContext.Current.FooterMenus);
         }
     }
 }

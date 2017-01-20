@@ -39,7 +39,7 @@
         }
       </div>
     </div>
-    @{Html.RenderAction(NavigateController.MainMenuAction, NavigateController.ControllerName);}
+    @{Html.RenderPartial("_HeaderNavigation", (NavigationModel)Model.HeaderNavigationModel);}
   </header>
   <div id="main">
     @RenderSection("SubsiteHead", required: false)
@@ -54,7 +54,7 @@
     </div>
   </div>
   <footer>
-    @{Html.RenderPartial("_Footer", (FooterViewModel)Model.Footer);}
+    @{Html.RenderPartial("_Footer", (FooterViewModel)Model.FooterModel);}
   </footer>
   @Scripts.Render(BundleConfig.TailJSBundles)
   @if (Model.EnableTracking)

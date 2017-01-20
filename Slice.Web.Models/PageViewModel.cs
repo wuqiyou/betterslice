@@ -42,6 +42,7 @@ namespace Slice.Web.Models
 
         protected override void PopulateAdManager()
         {
+            // Call base class to initilize AdManager 
             base.PopulateAdManager();
             // Loop all widgets to register Ads for each widget
             foreach (ZoneViewModel zone in Zones)
