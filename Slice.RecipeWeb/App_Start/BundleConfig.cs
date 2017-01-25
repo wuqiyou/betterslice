@@ -53,7 +53,7 @@ namespace Slice.RecipeWeb
             }
             BundleTable.Bundles.Add(tailJSBundle);
             // Enable minification js to be bundled even in Debug mode
-            //BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
