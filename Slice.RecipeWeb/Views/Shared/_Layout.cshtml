@@ -31,7 +31,7 @@
 <body style="background-color: @Model.BodyBackgroundColor;">
   <header>
     <div id="headerContainer">
-      <a class="site-logo" href='@Html.LocalizeHref("/")'></a>
+      <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
       <div id="ad-top">
         @{
           AdUnitViewModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
@@ -39,6 +39,9 @@
         }
       </div>
     </div>
+    <section>
+      <a class="site-logo bp-small" href='@Html.LocalizeHref("/")'></a>
+    </section>
     @{Html.RenderPartial("_HeaderNavigation", (NavigationModel)Model.HeaderNavigationModel);}
   </header>
   <div id="main">
