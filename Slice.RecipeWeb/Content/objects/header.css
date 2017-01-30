@@ -6,7 +6,7 @@
     z-index: 50;
 }
 
-#headerContainer {
+.headerContainer {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -18,14 +18,14 @@
     position: relative;
 }
 
-    #headerContainer:before, #headerContainer:after {
+    .headerContainer:before, .headerContainer:after {
         content: ".";
         display: block;
         height: 0;
         overflow: hidden;
     }
 
-    #headerContainer:after {
+    .headerContainer:after {
         clear: both;
     }
 
@@ -38,18 +38,31 @@
 
 @media (min-width: 0) and (max-width: 45em) {
     #ad-top {
-        height: 4em;
+        height: 3.75em;
         max-height: 4em;
     }
 
+    .smalllogo-container {
+        border-bottom: 5px solid #f2f2f2;
+    }
+
     .site-logo {
-        margin: 0.25em;
-        float: right;
+        margin: 0.1em auto;
         display: block;
         text-indent: -999em;
         width: 4em;
         height: 2em;
         background: url("/Content/images/logo_hotpizza50x30.png") no-repeat;
+    }
+
+    #nav-toggle {
+        color: #909090;
+        position: absolute;
+        cursor: pointer;
+        font-size: 1.4em;
+        top: 3em;
+        padding: 0.25em;
+        border-right: 1px solid #eee;
     }
 }
 
@@ -64,8 +77,17 @@
         padding: 0.5em 0.75em;
         display: block;
         text-indent: -999em;
-        width: 150px;
-        height: 70px;
+        width: 9.5em;
+        height: 4.5em;
         background: url("/Content/images/logo_hotpizza140x60.png") no-repeat;
+    }
+
+    .js #nav, .js #sub-navigation {
+        position: relative;
+        max-height: none;
+    }
+
+    #nav-toggle, #sub-navigation-toggle {
+        display: none;
     }
 }

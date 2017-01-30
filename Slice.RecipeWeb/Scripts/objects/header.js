@@ -2,11 +2,11 @@
     var slice = parent || {};
 
     //init reponsive navigation
-    //HEADER_navigation = responsiveNav('#nav', {
-    //    label: "",
-    //    insert: "before",
-    //    animate: false
-    //});
+    HEADER_navigation = responsiveNav('#nav', {
+        label: "",
+        insert: "before",
+        animate: false
+    });
 
     $(function () {
         $('#nav-mobileMenuClose').click(function (e) {
