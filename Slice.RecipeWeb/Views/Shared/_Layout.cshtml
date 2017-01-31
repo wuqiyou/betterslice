@@ -1,6 +1,7 @@
 ﻿@using Slice.RecipeWeb
 @using Slice.Core
 @using Slice.Web.Models
+@using Slice.Web.Models.Shared
 @using Slice.Web.Common
 @using Slice.Data
 @using Slice.RecipeWeb.Controllers
@@ -37,6 +38,9 @@
           AdUnitViewModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
           Html.RenderPartial("_AdUnit", adUnitModel);
         }
+      </div>
+      <div class="header-social">
+        @Html.Partial("_SocialLinks", (SocialLinksViewModel)Model.SocialLinks)
       </div>
     </div>
   </header>

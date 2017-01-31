@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Slice.Core;
 using Slice.Data;
 using Slice.Web.Common;
+using Slice.Web.Models.Shared;
 
 namespace Slice.Web.Models
 {
@@ -21,6 +22,7 @@ namespace Slice.Web.Models
         public FooterViewModel FooterModel { get; set; }
         public AssetViewModel AssetModel { get; set; }
         public IList<AdUnitViewModel> AdUnits { get; set; }
+        public SocialLinksViewModel SocialLinks { get; set; }
 
         public PageViewModelBase(Uri requestedUrl, LanguageDto language)
         {
@@ -30,6 +32,7 @@ namespace Slice.Web.Models
             AdManagerModel = new AdManagerViewModel();
             AssetModel = new AssetViewModel();
             AdUnits = new List<AdUnitViewModel>();
+            SocialLinks = new SocialLinksViewModel();
         }
 
         public void Populate()
@@ -122,7 +125,7 @@ namespace Slice.Web.Models
 
         protected virtual void PopulateFooter()
         {
-            FooterModel = new FooterViewModel(CurrentLanguage);
+            FooterModel = new FooterViewModel(CurrentLanguage, SocialLinks);
             FooterModel.AddMenus(WebContext.Current.FooterMenus);
         }
     }

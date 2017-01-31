@@ -167,6 +167,7 @@
     <Content Include="Content\objects\cardView.css" />
     <Content Include="Content\objects\ad.css" />
     <Content Include="Content\objects\comment.css" />
+    <Content Include="Content\objects\socialLinks.css" />
     <Content Include="Content\objects\header.css" />
     <Content Include="Content\objects\review.css" />
     <Content Include="Content\objects\genericBlock.css" />
@@ -334,6 +335,7 @@
     <Content Include="Views\Shared\_SubjectsCardView.cshtml" />
     <Content Include="Views\Widgets\AdWidget.cshtml" />
     <Content Include="Views\Shared\_HeaderNavigation.cshtml" />
+    <Content Include="Views\Shared\_SocialLinks.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

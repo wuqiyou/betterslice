@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Slice.Data;
+using Slice.Web.Models.Shared;
 
 namespace Slice.Web.Models
 {
@@ -7,11 +8,13 @@ namespace Slice.Web.Models
     {
         public LanguageDto CurrentLanguage { get; set; }
         public IList<MenuViewModel> FooterMenus { get; set; }
+        public SocialLinksViewModel SocialLinks { get; set; }
 
-        public FooterViewModel(LanguageDto language)
+        public FooterViewModel(LanguageDto language, SocialLinksViewModel socialLinks)
         {
             CurrentLanguage = language;
             FooterMenus = new List<MenuViewModel>();
+            SocialLinks = socialLinks;
         }
 
         public void AddMenus(IList<MainMenuDto> menuItems)

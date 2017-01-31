@@ -68,7 +68,10 @@
     <Compile Include="Shared\DucViewModel.cs" />
     <Compile Include="Shared\GridViewModel.cs" />
     <Compile Include="Shared\PaginationViewModel.cs" />
+    <Compile Include="Shared\SocialLinksViewModel.cs" />
     <Compile Include="Shared\SocialShareBarViewModel.cs" />
+    <Compile Include="Shared\SocialShareButton.cs" />
+    <Compile Include="Shared\SocialShareButtonType.cs" />
     <Compile Include="Shared\WidgetViewModel.cs" />
     <Compile Include="CategoryPageViewModel.cs" />
     <Compile Include="TagPageViewModel.cs" />

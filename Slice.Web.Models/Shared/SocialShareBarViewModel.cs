@@ -2,20 +2,6 @@
 
 namespace Slice.Web.Models.Shared
 {
-    public enum SocialShareButtonType
-    {
-        Facebook,
-        Twitter,
-        Pinterest,
-    }
-
-    public class SocialShareButton
-    {
-        public string Key { get; set; }
-        public string Name { get; set; }
-        public string Url { get; set; }
-    }
-
     public class SocialShareBarViewModel
     {
         public static readonly Dictionary<SocialShareButtonType, string> URL_FORMAT_DEFAULTS = new Dictionary<SocialShareButtonType, string>() {

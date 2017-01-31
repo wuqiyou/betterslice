@@ -1,6 +1,7 @@
 ﻿@using Slice.Web.Models
 @model FooterViewModel
 <section class="footerContainer">
+  <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
   @foreach (MenuViewModel menu in Model.FooterMenus)
   {
     <nav class="footer-menu">
@@ -15,4 +16,7 @@
       </ul>
     </nav>
   }
+  <div class="footer-social">
+    @Html.Partial("_SocialLinks", Model.SocialLinks)
+  </div>
 </section>

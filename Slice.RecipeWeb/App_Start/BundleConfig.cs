@@ -24,6 +24,7 @@ namespace Slice.RecipeWeb
                 "~/Content/objects/navigation.css",
                 "~/Content/objects/comment.css",
                 //"~/Content/objects/review.css",
+                "~/Content/objects/socialLinks.css",
                 "~/Content/objects/subsiteNav.css"
                 );
             foreach (string path in asset.IncludeCSSPaths)
