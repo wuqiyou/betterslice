@@ -55,6 +55,10 @@
         background: url("/Content/images/logo_hotpizza50x30.png") no-repeat;
     }
 
+    .header-social {
+        display: none;
+    }
+
     #nav-toggle {
         color: #909090;
         position: absolute;
@@ -80,6 +84,11 @@
         width: 9.5em;
         height: 4.5em;
         background: url("/Content/images/logo_hotpizza140x60.png") no-repeat;
+    }
+
+    .header-social {
+        float: right;
+        display: block;
     }
 
     .js #nav, .js #sub-navigation {
