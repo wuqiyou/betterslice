@@ -1,22 +1,22 @@
 ﻿@using Slice.Web.Models
 @model FooterViewModel
 <section class="footerContainer">
-  <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
+  <a class="site-logo bp-mediumToExtraLarge footer-col" href='@Html.LocalizeHref("/")'></a>
   @foreach (MenuViewModel menu in Model.FooterMenus)
   {
-    <nav class="footer-menu">
-      <h5 class="footer-menu-header">@menu.Title</h5>
-      <ul class="footer-menu-links">
+    <nav class="footer-col bp-mediumToExtraLarge">
+      <h5 class="footerMenu-header">@menu.Title</h5>
+      <ul class="footerMenu-links">
         @foreach (MenuItemViewModel item in menu.MenuItems)
         {
-          <li class="footer-menu-item">
-            <a class="footer-menu-item-link" href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
+          <li class="footerMenu-item">
+            <a class="footerMenu-item-link" href="@Html.LocalizeHref(@item.NavigateUrl)" title="@WebUtility.HtmlDecode(item.Tooltip)">@item.MenuText</a>
           </li>
         }
       </ul>
     </nav>
   }
-  <div class="footer-social">
+  <div class="footer-social-container footer-col">
     @Html.Partial("_SocialLinks", Model.SocialLinks)
   </div>
 </section>

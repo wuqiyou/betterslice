@@ -1,3 +1,14 @@
+.socialLinks {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.socialLinks-item {
+    float: left;
+}
+
 .socialLinks-icon {
     background-position: center;
     background-repeat: no-repeat;
@@ -8,15 +19,6 @@
     margin: 0px 4px;
     border-radius: 50%;
 }
-
-.socialLinks--horizontal {
-    display: inline-block;
-    font-weight: bold;
-}
-
-    .socialLinks--horizontal .socialLinks-item {
-        float: left;
-    }
 
 .socialLinks--facebook {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%2033%2033%22%20fill%3D%22white%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2017.996%2C32L%2012%2C32%20L%2012%2C16%20l-4%2C0%20l0-5.514%20l%204-0.002l-0.006-3.248C%2011.993%2C2.737%2C%2013.213%2C0%2C%2018.512%2C0l%204.412%2C0%20l0%2C5.515%20l-2.757%2C0%20c-2.063%2C0-2.163%2C0.77-2.163%2C2.209l-0.008%2C2.76l%204.959%2C0%20l-0.585%2C5.514L%2018%2C16L%2017.996%2C32z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");

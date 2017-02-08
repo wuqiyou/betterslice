@@ -1,8 +1,7 @@
 ﻿header {
-    width: 100%;
     position: relative;
-    background: #EFEFEF;
-    z-index: 50;
+    background-color: #5B5B5B;
+    /*background: #EFEFEF;*/
 }
 
 .headerContainer {
@@ -54,7 +53,7 @@
         background: url("/Content/images/logo_hotpizza50x30.png") no-repeat;
     }
 
-    .header-social {
+    .header-social-container {
         display: none;
     }
 
@@ -85,9 +84,10 @@
         background: url("/Content/images/logo_hotpizza140x60.png") no-repeat;
     }
 
-    .header-social {
+    .header-social-container {
+        margin: 1.5em 1em;
+        padding: 0;
         float: right;
-        display: block;
     }
 
     .js #nav, .js #sub-navigation {
