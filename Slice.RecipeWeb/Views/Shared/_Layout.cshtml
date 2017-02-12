@@ -24,23 +24,23 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
   @Scripts.Render(BundleConfig.HeadJSBundles)
-  @if (Model.AdManagerModel != null)
+@*  @if (Model.AdManagerModel != null)
   {
     Html.RenderPartial("_AdManager", (AdManagerViewModel)Model.AdManagerModel);
-  }
+  }*@
 </head>
 <body style="background-color: @Model.BodyBackgroundColor;">
   <header>
     <div class="headerContainer">
       <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
+      <div class="header-social-container">
+        @Html.Partial("_SocialLinks", (SocialLinksViewModel)Model.SocialLinks)
+      </div>
       <div id="ad-top">
         @{
           AdUnitViewModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
           Html.RenderPartial("_AdUnit", adUnitModel);
         }
-      </div>
-      <div class="header-social">
-        @Html.Partial("_SocialLinks", (SocialLinksViewModel)Model.SocialLinks)
       </div>
     </div>
   </header>

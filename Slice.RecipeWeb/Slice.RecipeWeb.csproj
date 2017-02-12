@@ -184,7 +184,6 @@
     <Content Include="Content\widgets\photoList.css" />
     <Content Include="Content\widgets\subjectDetail.css" />
     <Content Include="Content\widgets\recipeDetail.css" />
-    <Content Include="Content\objects\socialShare.css" />
     <Content Include="Content\objects\flexslider.css" />
     <Content Include="Content\objects\pagination.css" />
     <Content Include="Content\widgets\photoGallery.css" />
