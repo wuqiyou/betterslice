@@ -58,3 +58,9 @@
 .timing-serving {
     margin: 0 0 1em 0;
 }
+
+@media (min-width: 45em) {
+    .recipe-ingredients-list {
+        width: 46%;
+    }
+}
