@@ -4,15 +4,20 @@
 @model ReferenceKeywordsViewModel
 
 <p class="keywords">
-    <strong>Tags: </strong>
-    @if (Model.KeywordList.Count > 0)
+  <strong>Tags: </strong>
+  @if (Model.KeywordList.Count > 0)
+  {
+    for (int index = 0; index < Model.KeywordList.Count - 1; index++)
     {
-        for (int index = 0; index < Model.KeywordList.Count - 1; index++)
-        {
-            ReferenceKeywordInfoDto item = Model.KeywordList[index];
-        <a href="@Url.Action(RecipeController.TagAction, RecipeController.ControllerName, new { tag = item.KeywordSlug })/" title="@item.KeywordName">@item.KeywordName</a>
-        }
-        ReferenceKeywordInfoDto lastItem = Model.KeywordList[Model.KeywordList.Count - 1];      
-        <a href="@Url.Action(RecipeController.TagAction, RecipeController.ControllerName, new { tag = lastItem.KeywordSlug })/" title="@lastItem.KeywordName">@lastItem.KeywordName</a>
+      ReferenceKeywordInfoDto item = Model.KeywordList[index];
+    <span>
+      <a href="@Url.Action(RecipeController.TagAction, RecipeController.ControllerName, new { tag = item.KeywordSlug })/" title="@item.KeywordName">@item.KeywordName</a>
+      ,
+    </span>
     }
+    ReferenceKeywordInfoDto lastItem = Model.KeywordList[Model.KeywordList.Count - 1];      
+    <span>
+      <a href="@Url.Action(RecipeController.TagAction, RecipeController.ControllerName, new { tag = lastItem.KeywordSlug })/" title="@lastItem.KeywordName">@lastItem.KeywordName</a>
+    </span>
+  }
 </p>
