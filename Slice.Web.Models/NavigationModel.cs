@@ -1,4 +1,5 @@
 ﻿using Slice.Data;
+using System;
 using System.Collections.Generic;
 
 namespace Slice.Web.Models
@@ -8,51 +9,34 @@ namespace Slice.Web.Models
         public MenuViewModel MainVav { get; set; }
         public MenuViewModel SubNav { get; set; }
 
-        public NavigationModel(MainMenuDto menuItems, LanguageDto CurrentLanguage)
-        { 
-        }
-
-        public NavigationModel(IList<MainMenuDto> menuItems, LanguageDto CurrentLanguage)
+        public NavigationModel(IList<MainMenuDto> menuItems, Uri requestedUrl, LanguageDto currentLanguage)
         {
-            MainVav = new MenuViewModel(menuItems, CurrentLanguage);
-
-            //model.MenuItems = new List<MenuItemViewModel>();
-            //foreach (MainMenuDto item in menuItems)
-            //{
-            //    MenuItemViewModel menuItem = new MenuItemViewModel();
-            //    model.MenuItems.Add(menuItem);
-            //    menuItem.Tooltip = item.Tooltip;
-            //    if (item.MainMenuLanguagesDic != null && item.MainMenuLanguagesDic.ContainsKey(CurrentLanguage.Id))
-            //    {
-            //        menuItem.MenuText = item.MainMenuLanguagesDic[CurrentLanguage.Id].MenuText;
-            //    }
-            //    else
-            //    {
-            //        menuItem.MenuText = item.MenuText;
-            //    }
-            //    menuItem.NavigateUrl = item.NavigateUrl;
-            //    menuItem.IsCurrent = !string.IsNullOrEmpty(urlAlias) && urlAlias.StartsWith(item.NavigateUrl);
-            //    if (menuItem.IsCurrent && item.SubMenus != null)
-            //    {
-            //        model.SubMenus = new List<MenuItemViewModel>();
-            //        foreach (MainMenuDto subitem in item.SubMenus)
-            //        {
-            //            MenuItemViewModel subMenu = new MenuItemViewModel();
-            //            model.SubMenus.Add(subMenu);
-            //            if (item.MainMenuLanguagesDic != null && subitem.MainMenuLanguagesDic.ContainsKey(CurrentLanguage.Id))
-            //            {
-            //                subMenu.MenuText = subitem.MainMenuLanguagesDic[CurrentLanguage.Id].MenuText;
-            //            }
-            //            else
-            //            {
-            //                subMenu.MenuText = subitem.MenuText;
-            //            }
-            //            subMenu.NavigateUrl = subitem.NavigateUrl;
-            //            subMenu.IsCurrent = urlAlias.StartsWith(subitem.NavigateUrl);
-            //        }
-            //    }
-            //}
-
+            // Build main navigation view model 
+            MainVav = new MenuViewModel();
+            foreach (MainMenuDto item in menuItems)
+            {
+                MenuItemViewModel menuItem = new MenuItemViewModel(item, currentLanguage);
+                MainVav.MenuItems.Add(menuItem);
+                // Find out current item
+                if (requestedUrl.AbsolutePath.StartsWith(item.NavigateUrl))
+                {
+                    // current item found
+                    menuItem.IsCurrent = true;
+                    // Build sub menu view model
+                    SubNav = new MenuViewModel();
+                    foreach (MainMenuDto subItem in item.SubMenus)
+                    {
+                        MenuItemViewModel subMenuItem = new MenuItemViewModel(subItem, currentLanguage);
+                        SubNav.MenuItems.Add(subMenuItem);
+                        // Find out current item
+                        if (requestedUrl.AbsolutePath.StartsWith(subMenuItem.NavigateUrl))
+                        {
+                            // current item found
+                            subMenuItem.IsCurrent = true;
+                        }
+                    }
+                }
+            }
         }
     }
 }

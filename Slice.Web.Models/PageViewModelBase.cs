@@ -94,33 +94,7 @@ namespace Slice.Web.Models
         protected virtual void PopulateNavigation()
         {
             // populate header navigation
-            HeaderNavigationModel = new NavigationModel(WebContext.Current.HeaderMenus, CurrentLanguage);
-            // highlight navigation items
-            HighlightNavigation(HeaderNavigationModel);
-        }
-
-        protected virtual void HighlightNavigation(NavigationModel navigationModel)
-        {
-            if (navigationModel.MainVav != null)
-            {
-                HighlightMenuItem(navigationModel.MainVav);
-            }
-            if (navigationModel.SubNav != null)
-            {
-                HighlightMenuItem(navigationModel.SubNav);
-            }
-        }
-
-        private void HighlightMenuItem(MenuViewModel menu)
-        {
-            foreach (MenuItemViewModel item in menu.MenuItems)
-            {
-                if (RequestedUrl.AbsolutePath.StartsWith(item.NavigateUrl))
-                {
-                    item.IsCurrent = true;
-                    break;
-                }
-            }
+            HeaderNavigationModel = new NavigationModel(WebContext.Current.HeaderMenus, RequestedUrl, CurrentLanguage);
         }
 
         protected virtual void PopulateFooter()

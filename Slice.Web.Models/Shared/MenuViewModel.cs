@@ -8,6 +8,11 @@ namespace Slice.Web.Models
         public string Title { get; set; }
         public IList<MenuItemViewModel> MenuItems { get; set; }
 
+        public MenuViewModel()
+        {
+            MenuItems = new List<MenuItemViewModel>();
+        }
+
         public MenuViewModel(IEnumerable<MainMenuDto> items, LanguageDto language)
             : this(items, language, string.Empty)
         {
