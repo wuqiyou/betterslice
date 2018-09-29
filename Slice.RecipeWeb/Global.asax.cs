@@ -1,4 +1,10 @@
-﻿using Framework.Unity;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+using Framework.Unity;
 using Framework.UoW;
 using Microsoft.Practices.ServiceLocation;
 using NLog;
@@ -6,12 +12,6 @@ using Slice.Controllers.Common;
 using Slice.Registry;
 using Slice.Web.Common;
 using SubjectEngine.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
 
 namespace Slice.RecipeWeb
 {

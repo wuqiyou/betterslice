@@ -3,10 +3,10 @@
 
 @if (Model.HasValue)
 {
-  <div id="featuredcontent" class="featuredcontent">
-    <h3>@Model.Title</h3>
-    <ul class="cardview nonestyle">
-      @Html.Partial("_SubjectsCardView", Model.Items)
-    </ul>
-  </div>
+    <div id="featuredcontent" class="featuredcontent">
+        <h3>@Model.Title</h3>
+        <ul class="cardview nonestyle">
+            @Html.Partial("_SubjectsCardView", Model.Items)
+        </ul>
+    </div>
 }

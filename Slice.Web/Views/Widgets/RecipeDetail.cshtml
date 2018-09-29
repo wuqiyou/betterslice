@@ -1,10 +1,11 @@
-﻿@using Slice.Web.Models.Widgets
+﻿@using Slice.Web.Models
+@using Slice.Web.Models.Widgets
 @using Slice.Web.Models.Entity
 @model RecipeDetail
 
-<div id="recipe" class="subjectDetail">
-    <div id="recipe-basic">
-        <img src="@Html.FullImageUrl(Model.Recipe.ImageUrl)" alt="@Model.Recipe.ImageText" title="@Model.Recipe.ImageText"/>
+<div class="recipe subjectDetail">
+    <div class="recipe-basic">
+        <img src="@Html.FullImageUrl(Model.Recipe.ImageUrl)" alt="@Model.Recipe.ImageText" title="@Model.Recipe.ImageText" />
         <h1>@Model.Recipe.Name</h1>
         @if (!string.IsNullOrEmpty(Model.Recipe.Subtitle))
         {
@@ -24,10 +25,13 @@
                 <span><strong>SERVES </strong>@Model.Recipe.Servings.Value</span>
             }
         </div>
-        <div>@Html.Raw(Model.Recipe.Abstract)</div>
-        @{Html.RenderPartial("_SocialShareBar", Model.SocialShareBarViewModel);}
+        <div class="recipe-basic-social colorful-icon">
+            @{Html.RenderPartial("_SocialShareBar", Model.SocialShareBarViewModel);}
+        </div>
+        <div class="recipe-basic-abstract">
+            @Html.Raw(Model.Recipe.Abstract)
+        </div>
     </div>
-    @{Html.RenderPartial("_ReferenceKeywords", Model.KeywordsViewModel);}
     <div class="recipe-ingredients">
         <h2>Ingredients</h2>
         <ul class="recipe-ingredients-list">
@@ -63,5 +67,5 @@
         <h3>Tips</h3>
         <div>@Html.Raw(@Model.Recipe.Tips)</div>
     }
-    @{Html.RenderPartial("_ReferenceKeywords", Model.KeywordsViewModel);}
+    @{Html.RenderPartial("_ReferenceTags", Model.TagsViewModel);}
 </div>

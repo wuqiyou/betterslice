@@ -9,7 +9,7 @@
     @if (!string.IsNullOrEmpty(Model.ImageUrl))
     {
         <div class="subjectDetail-img">
-            <img src="@Html.FullImageUrl(Model.ImageUrl)" alt="@Model.ImageText" title="@Model.ImageText"/>
+            <img src="@Html.FullImageUrl(Model.ImageUrl)" alt="@Model.ImageText" title="@Model.ImageText" />
         </div>
     }
     <div class="subjectDetail-desc">
@@ -19,7 +19,7 @@
     {
         <div class="subjectDetail-youtubeVideo youtubeVideo">
             <iframe id="ytplayer" style="width: 100%; height: 100%;"
-        src="http://www.youtube.com/embed/@Model.VideoId" frameborder="0"></iframe>
+                    src="http://www.youtube.com/embed/@Model.VideoId" frameborder="0"></iframe>
         </div>
     }
 </div>

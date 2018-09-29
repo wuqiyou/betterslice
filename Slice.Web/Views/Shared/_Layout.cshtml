@@ -1,88 +1,87 @@
 ﻿@using Slice.Web
-@using Slice.Core
-@using Slice.Web.Controllers
 @using Slice.Web.Models
+@using Slice.Web.Models.Shared
 @using Slice.Web.Common
-@using Slice.Data
-
 @{
-  BundleConfig.RegisterBundles(Model.AssetModel); 
+    BundleConfig.RegisterBundles(Model.AssetModel);
 }
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
-  <link href="~/favicon.ico?v=1" rel="shortcut icon" type="image/png" />
-  @Styles.Render(BundleConfig.CSSBundles)
-  <title>@Model.PageTitle | @Slice.Web.Common.WebContext.Current.SiteName</title>
-  @if (Model.Metadata != null)
-  {
-    Html.RenderPartial("_Metadata", (MetadataModel)Model.Metadata);
-  }
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-  <script src="http://ajax.aspnetcdn.com/ajax/mvc/4.0/jquery.validate.unobtrusive.min.js"></script>
-  @Scripts.Render(BundleConfig.HeadJSBundles)
-  @if (Model.AdManagerModel != null)
-  {
-    //Html.RenderPartial("_AdManager", (AdManagerModel)Model.AdManagerModel);
-  }
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+    <link href="~/favicon.ico?v=1" rel="shortcut icon" type="image/png" />
+    @Styles.Render(BundleConfig.CSSBundles)
+    <title>@Model.PageTitle | @WebContext.Current.SiteName</title>
+    @if (Model.Metadata != null)
+    {
+        Html.RenderPartial("_Metadata", (MetadataModel)Model.Metadata);
+    }
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    @Scripts.Render(BundleConfig.HeadJSBundles)
+    @*  @if (Model.AdManagerModel != null)
+        {
+          Html.RenderPartial("_AdManager", (AdManagerViewModel)Model.AdManagerModel);
+        }*@
 </head>
 <body style="background-color: @Model.BodyBackgroundColor;">
-  <header>
-    <div id="headerContainer">
-      <a id="site-logo" class="bp-mediumToExtraLarge" href='@Html.LocalizeHref("")'></a>
-      <div id="viewerOptions" class="bp-mediumToExtraLarge">
-        @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
-        {
-          <div id="languageOptions">
-            @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
-          </div>
-        }
-      </div>
-      <div id="ad-top">
-        @Html.Partial("_Ad", new AdModel { AdManagerModel = Model.AdManagerModel, Slot = AdSlot.Leaderboard, CssClass = "leaderboard" })
-      </div>
-    </div>
-  </header>
-  <div id="mobile-toggle">
-    <div id="viewerOptions" class="bp-small">
-      @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
-      {
-        <div id="languageOptions">
-          @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
+    <header>
+        <div class="headerContainer">
+            <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
+            <div id="viewerOptions" class="bp-mediumToExtraLarge">
+                @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
+                {
+                    <div id="languageOptions">
+                        @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
+                    </div>
+                }
+            </div>
+            <div class="header-social-container">
+                @Html.Partial("_SocialLinks", (SocialLinksViewModel)Model.SocialLinks)
+            </div>
+            <div id="ad-top">
+                @{
+                    AdUnitViewModel adUnitModel = ((PageViewModelBase)Model).AdManagerModel.AdUnits[0];
+                    Html.RenderPartial("_AdUnit", adUnitModel);
+                }
+            </div>
         </div>
-      }
+    </header>
+    <section class="smalllogo-container">
+        <a class="site-logo bp-small" href='@Html.LocalizeHref("/")'></a>
+    </section>
+    <div id="mobile-toggle">
+        <div id="viewerOptions" class="bp-small">
+            @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
+            {
+                <div id="languageOptions">
+                    @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
+                </div>
+            }
+        </div>
     </div>
-  </div>
-  @{Html.RenderAction(NavigateController.MainMenuAction, NavigateController.ControllerName);}
-  <div id="main">
-    @RenderSection("SubsiteHead", required: false)
-    @RenderSection("FullWidthZone", required: false)
-    <div id="container">
-      <div id="mainwell">
-        @RenderBody()
-      </div>
-      <aside id="rightRail">
-        @RenderSection("RightRail", required: false)
-      </aside>
+    @{Html.RenderPartial("_HeaderNavigation", (NavigationModel)Model.HeaderNavigationModel);}
+    <div id="main">
+        @RenderSection("SubsiteHead", required: false)
+        @RenderSection("FullWidthZone", required: false)
+        <div id="container">
+            <div id="mainwell">
+                @RenderBody()
+            </div>
+            <aside id="rightRail">
+                @RenderSection("RightRail", required: false)
+            </aside>
+        </div>
     </div>
-  </div>
-  <footer>
-    @{Html.RenderPartial("_Footer", (FooterModel)Model.Footer);}
-  </footer>
-  @Scripts.Render(BundleConfig.TailJSBundles)
-  @if (Model.EnableTracking)
-  {
-    Html.RenderPartial("_TrafficTracking");
-  }
+    <footer>
+        @{Html.RenderPartial("_Footer", (FooterViewModel)Model.FooterModel);}
+    </footer>
+    @Scripts.Render(BundleConfig.TailJSBundles)
+    @if (Model.EnableTracking)
+    {
+        Html.RenderPartial("_TrafficTracking");
+    }
 </body>
 </html>
