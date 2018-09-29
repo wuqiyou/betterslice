@@ -1,0 +1,62 @@
+﻿
+#subSiteHeader {
+    padding: 0;
+    overflow: hidden;
+}
+
+    #subSiteHeader #subSiteLogo {
+        padding-left: 0.75em;
+        width: 50%;
+        float: left;
+    }
+
+    #subSiteHeader #contact {
+        margin-top: 0.25em;
+        float: right;
+    }
+
+#subSiteLogo h2 {
+    font-size: 2em;
+    text-transform: none;
+}
+
+#subSiteMenu {
+    margin: 1.5em 0 1em 0;
+    overflow: hidden;
+    padding: 0 1em;
+}
+
+ul.subnav {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    text-transform: none;
+}
+
+    ul.subnav li {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        float: left;
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+        ul.subnav li a {
+            border-bottom: 4px solid #e4e4e4;
+            padding-bottom: 1em;
+            color: #909090;
+            display: block;
+        }
+
+            ul.subnav li a.current {
+                border-bottom: 4px solid #666;
+                color: #444;
+            }
+
+        ul.subnav li > a:hover {
+            border-bottom: 4px solid #ababab;
+            color: #444;
+        }
