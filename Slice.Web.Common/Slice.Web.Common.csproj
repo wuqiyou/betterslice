@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\HtmlHelperExtension.cs" />
+    <Compile Include="Helpers\MenuItemHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="WebContext.cs" />

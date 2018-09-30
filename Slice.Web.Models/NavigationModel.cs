@@ -1,6 +1,7 @@
-﻿using Slice.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Slice.Data;
+using Slice.Web.Common.Helpers;
 
 namespace Slice.Web.Models
 {
@@ -18,10 +19,11 @@ namespace Slice.Web.Models
                 MenuItemViewModel menuItem = new MenuItemViewModel(item, currentLanguage);
                 MainVav.MenuItems.Add(menuItem);
                 // Find out current item
-                if (requestedUrl.AbsolutePath.StartsWith(item.NavigateUrl))
+                menuItem.IsCurrent = MenuItemHelper.IsCurrent(item.NavigateUrl, requestedUrl.AbsolutePath, currentLanguage);
+
+                if (menuItem.IsCurrent)
                 {
                     // current item found
-                    menuItem.IsCurrent = true;
                     // Build sub menu view model
                     SubNav = new MenuViewModel();
                     foreach (MainMenuDto subItem in item.SubMenus)
@@ -29,11 +31,7 @@ namespace Slice.Web.Models
                         MenuItemViewModel subMenuItem = new MenuItemViewModel(subItem, currentLanguage);
                         SubNav.MenuItems.Add(subMenuItem);
                         // Find out current item
-                        if (requestedUrl.AbsolutePath.StartsWith(subMenuItem.NavigateUrl))
-                        {
-                            // current item found
-                            subMenuItem.IsCurrent = true;
-                        }
+                        subMenuItem.IsCurrent = MenuItemHelper.IsCurrent(subMenuItem.NavigateUrl, requestedUrl.AbsolutePath, currentLanguage);
                     }
                 }
             }
