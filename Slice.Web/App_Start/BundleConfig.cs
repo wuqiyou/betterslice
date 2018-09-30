@@ -9,13 +9,24 @@ namespace Slice.Web
         public static readonly string HeadJSBundles = "~/bundles/headjs";
         public static readonly string TailJSBundles = "~/bundles/tailjs";
 
-        public static void RegisterBundles(AssetModel asset)
+        public static void RegisterBundles(AssetViewModel asset)
         {
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
             Bundle cssBundle = new StyleBundle(BundleConfig.CSSBundles);
-            cssBundle.Include("~/Content/site.css");
+            cssBundle.Include(
+                "~/Content/site.css",
+                "~/Content/objects/ad.css",
+                "~/Content/objects/header.css",
+                "~/Content/objects/footer.css",
+                "~/Content/objects/genericBlock.css",
+                "~/Content/objects/navigation.css",
+                "~/Content/objects/comment.css",
+                //"~/Content/objects/review.css",
+                "~/Content/objects/socialLinks.css",
+                "~/Content/objects/subsiteNav.css"
+                );
             foreach (string path in asset.IncludeCSSPaths)
             {
                 cssBundle.Include(path);
@@ -24,8 +35,6 @@ namespace Slice.Web
 
             Bundle headJSBundle = new ScriptBundle(BundleConfig.HeadJSBundles);
             headJSBundle.Include(
-                        "~/Scripts/pages/review.js",
-                        "~/Scripts/jquery.unobtrusive-ajax.min.js",
                         "~/Scripts/vendor/modernizr-2.6.2.min.js",
                         "~/Scripts/vendor/responsive-nav.min.js");
             foreach (string path in asset.IncludeHeadJSPaths)
@@ -45,7 +54,7 @@ namespace Slice.Web
             }
             BundleTable.Bundles.Add(tailJSBundle);
             // Enable minification js to be bundled even in Debug mode
-            //BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

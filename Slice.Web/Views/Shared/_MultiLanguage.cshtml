@@ -2,7 +2,7 @@
 @using Slice.Data
 @using Slice.Web.Models
 @model PageViewModelBase
-<select onchange="document.location.href = '/' + this.options[this.selectedIndex].value + '/' + '@ViewContext.RouteData.Values["location"]' + '/' + '@ViewContext.RouteData.Values["urlAlias"]';">
+<select onchange="document.location.href = '/' + this.options[this.selectedIndex].value + '/' + '@ViewContext.RouteData.Values["urlAlias"]';">
     @foreach (LanguageDto item in WebContext.Current.LanguageDic.Values)
     {
         if (item.Id == Model.CurrentLanguage.Id)

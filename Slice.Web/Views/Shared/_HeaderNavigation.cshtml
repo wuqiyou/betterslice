@@ -1,7 +1,8 @@
-﻿@model Slice.Web.Models.NavigationModel
+﻿@using Slice.Web.Models
+@model NavigationModel
 <nav id="nav">
     <ul class="menu">
-        @foreach (var item in Model.MenuItems)
+        @foreach (MenuItemViewModel item in Model.MainVav.MenuItems)
         {
             if (item.IsCurrent)
             {
@@ -18,11 +19,11 @@
         }
     </ul>
 </nav>
-@if (Model.SubMenus != null && Model.SubMenus.Count > 0)
+@if (Model.SubNav != null && Model.SubNav.MenuItems.Count > 0)
 {
     <nav id="submenuContainer" class="bp-mediumToExtraLarge">
         <ul class="menu">
-            @foreach (var item in Model.SubMenus)
+            @foreach (MenuItemViewModel item in Model.SubNav.MenuItems)
             {
                 if (item.IsCurrent)
                 {

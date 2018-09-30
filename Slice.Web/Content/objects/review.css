@@ -1,0 +1,53 @@
+﻿.reviewForm {
+    margin-top: 1em;
+    padding: 0.25em 1em 0.5em 1em;
+    border: 1px solid #d6d6d6;
+    background-color: #efefef;
+}
+
+.reviewForm-row {
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+.reviewForm-name {
+    padding: 0;
+}
+
+.reviewForm-submit {
+    font-size: 1em;
+    font-family: Montserrat,sans-serif;
+    padding: 0.25em;
+    float: right;
+}
+
+.reviewForm-content {
+    width: 100%;
+}
+
+.reviewList {
+    padding: 0em;
+    margin: 0;
+    border: 1px solid #d6d6d6;
+    clear: both;
+}
+
+.reviewList-title {
+    padding: 0.5em 1em;
+    margin: 0;
+    background-color: #efefef;
+}
+
+.reviewList-item {
+    padding: 0.25em 1em;
+    margin: 0;
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+    .reviewList-item:hover {
+        background-color: #ededed;
+    }
+
+.reviewContent {
+    word-wrap: break-word;
+}

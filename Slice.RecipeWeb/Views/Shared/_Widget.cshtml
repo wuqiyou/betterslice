@@ -4,15 +4,15 @@
 
 @foreach (DucViewModel subitem in Model.Ducs)
 {
-  if (subitem.DucType != DucTypes.Grid)
-  {
-    Html.RenderPartial("_Duc", subitem);
-  }
-  else
-  {
-    if (subitem.Grid != null)
+    if (subitem.DucType != DucTypes.Grid)
     {
-      Html.RenderPartial("_Grid", subitem.Grid);
+        Html.RenderPartial("_Duc", subitem);
     }
-  }
+    else
+    {
+        if (subitem.Grid != null)
+        {
+            Html.RenderPartial("_Grid", subitem.Grid);
+        }
+    }
 }

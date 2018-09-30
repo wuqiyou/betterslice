@@ -4,18 +4,22 @@
 <div class="subjectDetail">
     @if (!string.IsNullOrEmpty(Model.Title))
     {
-        <h1>@Model.Title</h1>
+        <h1 class="subjectDetail-header">@Model.Title</h1>
     }
     @if (!string.IsNullOrEmpty(Model.ImageUrl))
     {
-        <img src="@Html.FullImageUrl(Model.ImageUrl)" alt="@Model.ImageText" title="@Model.ImageText"/>
+        <div class="subjectDetail-img">
+            <img src="@Html.FullImageUrl(Model.ImageUrl)" alt="@Model.ImageText" title="@Model.ImageText" />
+        </div>
     }
-    <div>@Html.Raw(@Model.Description)</div>
+    <div class="subjectDetail-desc">
+        <p>@Html.Raw(@Model.Description)</p>
+    </div>
     @if (!string.IsNullOrEmpty(Model.VideoId))
     {
-        <div class="youtube-video">
+        <div class="subjectDetail-youtubeVideo youtubeVideo">
             <iframe id="ytplayer" style="width: 100%; height: 100%;"
-        src="http://www.youtube.com/embed/@Model.VideoId" frameborder="0"></iframe>
+                    src="http://www.youtube.com/embed/@Model.VideoId" frameborder="0"></iframe>
         </div>
     }
 </div>

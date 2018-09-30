@@ -38,9 +38,7 @@ namespace Slice.Web.Controllers
                     throw new HttpException(404, string.Format("Page {0} doesn't exist.", HttpContext.Request.RawUrl));
                 }
 
-                int? pageIndex = HttpContext.Request.QueryString[WebContext.Current.PagingQueryString].TryToParse<int>();
-
-                PageViewModel model = new PageViewModel(reference, HttpContext.Request.Url, pageIndex, CurrentLanguage);
+                PageViewModel model = new PageViewModel(reference, HttpContext.Request.Url, PageIndex, CurrentLanguage);
                 model.Populate();
 
                 // Set info for subsite

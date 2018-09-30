@@ -2,28 +2,28 @@
 @model ListViewWidget
 
 <ul class="listview nonestyle">
-  @if (Model.Items != null)
-  {
-    foreach (var subject in Model.Items)
+    @if (Model.Items != null)
     {
-    <li>
-      @if (!string.IsNullOrEmpty(subject.ImageUrl))
-      {
-        <a href="@Html.LocalizeHref(@subject.UrlAlias)">
-          <img src="@Html.FullImageUrl(@subject.ImageUrl)" alt="@subject.Title" title="@subject.Title" />
-        </a>
-      }
-      <h3><a href="@Html.LocalizeHref(@subject.UrlAlias)">@subject.Title</a></h3>
-      @if (!string.IsNullOrEmpty(subject.MasterSubjectTitle))
-      {
-        <h4><a href="@Html.LocalizeHref(subject.MasterSubjectUrlAlias)">[ @subject.MasterSubjectTitle ]</a></h4>
-      }
-      <div>@Html.Raw(@subject.Description)</div>
-    </li>
+        foreach (var subject in Model.Items)
+        {
+            <li>
+                @if (!string.IsNullOrEmpty(subject.ImageUrl))
+                {
+                    <a href="@Html.LocalizeHref(@subject.UrlAlias)">
+                        <img src="@Html.FullImageUrl(@subject.ImageUrl)" alt="@subject.Title" title="@subject.Title" />
+                    </a>
+                }
+                <h3><a href="@Html.LocalizeHref(@subject.UrlAlias)">@subject.Title</a></h3>
+                @if (!string.IsNullOrEmpty(subject.MasterSubjectTitle))
+                {
+                    <h4><a href="@Html.LocalizeHref(subject.MasterSubjectUrlAlias)">[ @subject.MasterSubjectTitle ]</a></h4>
+                }
+                <div>@Html.Raw(@subject.Description)</div>
+            </li>
+        }
     }
-  }
 </ul>
 @if (Model.PaginationViewModel != null && !Model.PaginationViewModel.IsSuppressed)
 {
-  Html.RenderPartial("_Pagination", Model.PaginationViewModel);
+    Html.RenderPartial("_Pagination", Model.PaginationViewModel);
 }
