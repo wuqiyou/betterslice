@@ -30,15 +30,14 @@
     <header>
         <div class="headerContainer">
             <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
-            <div id="viewerOptions" class="bp-mediumToExtraLarge">
-                @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
-                {
-                    <div id="languageOptions">
-                        @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
-                    </div>
-                }
-            </div>
+
             <div class="header-social-container">
+                <div id="viewerOptions" class="bp-mediumToExtraLarge">
+                    @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
+                    {
+                        @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
+                    }
+                </div>
                 @Html.Partial("_SocialLinks", (SocialLinksViewModel)Model.SocialLinks)
             </div>
             <div id="ad-top">

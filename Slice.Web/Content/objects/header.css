@@ -80,13 +80,17 @@
         text-indent: -999em;
         width: 9.5em;
         height: 4.5em;
-        background: url("/Content/images/logo_hotpizza140x60.png") no-repeat;
+        background: url("/Content/images/logo_study140x60.png") no-repeat;
     }
 
     .header-social-container {
-        margin: 1.5em 1em;
+        margin: 1.25em 1em;
         padding: 0;
         float: right;
+    }
+
+    .language-options {
+        width:100%;
     }
 
     .js #nav, .js #sub-navigation {

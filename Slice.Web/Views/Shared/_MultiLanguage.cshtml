@@ -2,16 +2,11 @@
 @using Slice.Data
 @using Slice.Web.Models
 @model PageViewModelBase
-<select onchange="document.location.href = '/' + this.options[this.selectedIndex].value + '/' + '@ViewContext.RouteData.Values["urlAlias"]';">
-    @foreach (LanguageDto item in WebContext.Current.LanguageDic.Values)
+@foreach (LanguageDto item in WebContext.Current.LanguageDic.Values)
+{
+    if (item.Id != Model.CurrentLanguage.Id)
     {
-        if (item.Id == Model.CurrentLanguage.Id)
-        {
-        <option value="@item.Culture" selected="selected">@item.Label</option>
-        }
-        else
-        {
-        <option value="@item.Culture">@item.Label</option>
-        }
+        string languageUrl = string.Format("/{0}/{1}", item.Culture, ViewContext.RouteData.Values["urlAlias"]);
+    <a href="@languageUrl" title="@item.Label">@item.Label</a>
     }
-</select>
+}
