@@ -84,13 +84,17 @@
     }
 
     .header-social-container {
-        margin: 1.25em 1em;
+        margin: 1em;
         padding: 0;
         float: right;
     }
 
+    .viewerOptions-language {
+        width: 100%;
+    }
+
     .language-options {
-        width:100%;
+        margin-bottom: 0.5em;
     }
 
     .js #nav, .js #sub-navigation {

@@ -32,7 +32,7 @@
             <a class="site-logo bp-mediumToExtraLarge" href='@Html.LocalizeHref("/")'></a>
 
             <div class="header-social-container">
-                <div id="viewerOptions" class="bp-mediumToExtraLarge">
+                <div id="viewerOptions" class="bp-mediumToExtraLarge language-options">
                     @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
                     {
                         @Html.Partial("_MultiLanguage", (PageViewModelBase)Model)
@@ -52,7 +52,7 @@
         <a class="site-logo bp-small" href='@Html.LocalizeHref("/")'></a>
     </section>
     <div id="mobile-toggle">
-        <div id="viewerOptions" class="bp-small">
+        <div id="viewerOptions" class="bp-small language-options">
             @if (WebContext.Current.IsMultiLanguageSupported && Model.CurrentLanguage != null)
             {
                 <div id="languageOptions">

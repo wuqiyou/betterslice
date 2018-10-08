@@ -7,6 +7,6 @@
     if (item.Id != Model.CurrentLanguage.Id)
     {
         string languageUrl = string.Format("/{0}/{1}", item.Culture, ViewContext.RouteData.Values["urlAlias"]);
-    <a href="@languageUrl" title="@item.Label">@item.Label</a>
+    <a class="viewerOptions-language" href="@languageUrl" title="@item.Label">@item.Label</a>
     }
 }
