@@ -52,10 +52,6 @@
         background: url("/Content/images/logo_hotpizza50x30.png") no-repeat;
     }
 
-    .header-social-container {
-        display: none;
-    }
-
     #nav-toggle {
         color: #909090;
         position: absolute;
@@ -83,18 +79,15 @@
         background: url("/Content/images/logo_study140x60.png") no-repeat;
     }
 
-    .header-social-container {
+    .language-options {
         margin: 1em;
         padding: 0;
         float: right;
     }
 
     .viewerOptions-language {
-        width: 100%;
-    }
-
-    .language-options {
-        margin-bottom: 0.5em;
+        font-weight:bold;
+        text-decoration:underline;
     }
 
     .js #nav, .js #sub-navigation {
