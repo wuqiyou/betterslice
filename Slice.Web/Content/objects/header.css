@@ -86,8 +86,9 @@
     }
 
     .viewerOptions-language {
-        font-weight:bold;
+        font-size:large;
         text-decoration:underline;
+        color:#efefef;
     }
 
     .js #nav, .js #sub-navigation {
